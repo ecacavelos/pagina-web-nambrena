@@ -24,9 +24,6 @@ a img {
 }
 
 #wrap {
-	min-width:  100%;
-	min-height: 100%;
-	
 	padding: 0px;
 	margin:  0px auto;
 }
@@ -38,76 +35,50 @@ a img {
 }
 
 #logo {
-/*      width: 25%;*/
-        width: auto;
-        height: 40%;
-
-        max-width: 18%;
-        max-height: 40%;
-        
-        float: left;
-        overflow:visible;
+	margin-right: 3%;
+	width: 15%;
+	height: auto;
+	
+	float: right;
 }
 
 #logo img {
-        width: 100%;
-        height:auto;
-        /*max-height: 50%;
-        width: auto;
-        max-width:50%;*/
+	width: 100%;
+	height:auto;
 }
 
-#content-upper-right1a {
-	position:relative;
-	top: 16px;
-
-	width: 20%;
-	float: right;
-
+#content-upper-left {
+	margin-left: 3%;
+	width: 48%;
 }
 
-#content-upper-right1a img {
+#content-upper-left img {
+	margin-top: 4%;
 	width: 100%;
 	height: auto;
 }
 
-#content-upper-right1b {
-	padding: 5px !important;
-	text-align: right;
-	
-	width: 12%;
-	float: right;
-}
-
-#content-upper-right1b img {
-	width: 50%;
-	height: auto;
-}
-
-#content-upper-right2 {
-	width:  43%;
-	
-	float: right;
-	clear: right;
-}
-
-#content-upper-right2 img {
-	width: 100%;
-	height: auto;
-}
-
-#content-lower {
+#content-lower-menu {
+	text-align: center;
 	clear: both;
 }
 
-#content-lower img {
-	width:  24%;
+img.frontlight {
+	width: 20%;
 	height: auto;
-	
-	position: relative;
 }
 
-#content-lower img {
+img.backlight {
+	width: 24%;
+	height: auto;
+}
+
+img.adhesivo {
+	width: 20%;
+	height: auto;
+}
+
+#content-lower-menu img {
 	/*transition: top 1s;
 	-moz-transition: top 1s;
 	-webkit-transition: top 1s;
@@ -118,11 +89,21 @@ a img {
 	-ms-transition: all 1s ease;
 }
 
-#content-lower img:hover {
+#content-lower-menu img:hover {
 	/*top: -25px;*/
 	transform:translate(0px,-30px);
 	-ms-transform:translate(0px,-30px); /* IE 9 */
 	-moz-transform:translate(0px,-30px); /* Firefox */
 	-webkit-transform:translate(0px,-30px); /* Safari and Chrome */
 	-o-transform:translate(0px,-30px); /* Opera */
+}
+
+#content-lema {
+	text-align: center;
+	clear: both;
+}
+
+#content-lema img {
+	width: 75%;
+	height: auto;
 }
