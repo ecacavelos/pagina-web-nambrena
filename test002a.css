@@ -4,6 +4,8 @@
 html {
     /*height: 100%;*/
 	/*background-color: #F2DE22;*/
+	background: #F2DE22 url("images/yellow_bg.png");
+	background-repeat: repeat;
 }
 
 body {
@@ -13,8 +15,8 @@ body {
 	
 	font-size:100%;
 	font-family:verdana,arial,'sans serif';
-	background: #F2DE22 url("images/yellow_bg.png");
-	background-repeat: repeat;
+	/*background: #F2DE22 url("images/yellow_bg.png");
+	background-repeat: repeat;*/
 
 	color:#000080;
 }
@@ -38,23 +40,23 @@ a img {
 }
 
 #logo {
-/*      width: 25%;*/
-        width: auto;
-        height: 40%;
+	/*width: 25%;*/
+	width: auto;
+	height: 40%;
 
-        max-width: 18%;
-        max-height: 40%;
-        
-        float: left;
-        overflow:visible;
+	max-width: 18%;
+	max-height: 40%;
+	
+	float: left;
+	overflow:visible;
 }
 
 #logo img {
-        width: 100%;
-        height:auto;
-        /*max-height: 50%;
-        width: auto;
-        max-width:50%;*/
+	width: 100%;
+	height:auto;
+	/*max-height: 50%;
+	width: auto;
+	max-width:50%;*/
 }
 
 #content-upper-right1a {
@@ -63,7 +65,6 @@ a img {
 
 	width: 20%;
 	float: right;
-
 }
 
 #content-upper-right1a img {
@@ -97,21 +98,22 @@ a img {
 }
 
 #content-lower {
+	/*background: red;*/
+	width: 97%;
 	clear: both;
+	top: 45%;
+	position: absolute;
+	text-align: center;
 }
 
 #content-lower img {
 	width:  24%;
 	height: auto;
 	
-	position: relative;
+	/*position: relative;*/
 }
 
 #content-lower img {
-	/*transition: top 1s;
-	-moz-transition: top 1s;
-	-webkit-transition: top 1s;
-	-o-transition: top 1s;*/
 	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-o-transition: all 1s ease;
@@ -119,7 +121,6 @@ a img {
 }
 
 #content-lower img:hover {
-	/*top: -25px;*/
 	transform:translate(0px,-30px);
 	-ms-transform:translate(0px,-30px); /* IE 9 */
 	-moz-transform:translate(0px,-30px); /* Firefox */
