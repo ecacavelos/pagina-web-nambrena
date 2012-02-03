@@ -4,6 +4,9 @@
 html {
     /*height: 100%;*/
 	/*background-color: #F2DE22;*/
+	background: #F2DE22 url("images/yellow_bg.png");
+	background-repeat: repeat;
+	overflow-x: hidden;
 }
 
 body {
@@ -13,8 +16,8 @@ body {
 	
 	font-size:100%;
 	font-family:verdana,arial,'sans serif';
-	background: #F2DE22 url("images/yellow_bg.png");
-	background-repeat: repeat;
+	/*background: #F2DE22 url("images/yellow_bg.png");
+	background-repeat: repeat;*/
 
 	color:#000080;
 }
@@ -58,9 +61,15 @@ a img {
 }
 
 #content-lower-menu {
-	text-align: center;
+	/*left: 100%;*/
+	left: 1920px;
+
+	width: 100%;	
 	clear: both;
-	widht: 100%;	
+
+	top: 30%;
+	position: absolute;
+	text-align: center;
 }
 
 img.sobrepared {
@@ -102,6 +111,9 @@ img.yaposeo {
 }
 
 #content-lema {
+	width: 100%;
+	position: absolute;
+	top: 80%;	
 	text-align: center;
 	clear: both;
 }

@@ -1,12 +1,18 @@
 $(document).ready(function() {
 	$("body").css("display", "none");
-	$("body").fadeIn(750);
+	$("body").fadeIn(500, redirectEnter1);
+	
+	$("#content-lower-menu").animate({
+		/*opacity: 0,*/
+		left: '0px'
+	}, 500
+	);
 	
 	$("a.transition-out").click(function(event){
         event.preventDefault();
         linkLocation = this.href;
         //$("body").fadeOut(750, redirectPage);
-		$("#content-lower").animate({
+		$("#content-lower-menu").animate({
 			/*opacity: 0,*/
 			left: '-=1920'
 			/*height: 'toggle'*/
@@ -20,6 +26,14 @@ $(document).ready(function() {
 	
     function redirectPage2() {
         window.location = linkLocation;
+    }
+	
+	function redirectEnter1() {
+		$("#content-lower-menu").animate({
+			/*opacity: 0,*/
+			left: '0px'
+		}, 500
+		);
     }	
 	
 	function displayPage() {
@@ -28,5 +42,4 @@ $(document).ready(function() {
 
 	window.addEventListener("load", displayPage, false);
 	window.addEventListener("unload", displayPage, false);
-	
 });
