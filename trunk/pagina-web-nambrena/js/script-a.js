@@ -1,12 +1,13 @@
 $(document).ready(function() {
 	$("body").css("display", "none");
 	$("body").fadeIn(750);
+	$("#content-lower-menu").animate({left: '0px'}, 0);
 	
 	$("a.transition-out").click(function(event){
         event.preventDefault();
         linkLocation = this.href;
         //$("body").fadeOut(750, redirectPage);
-		$("#content-lower").animate({
+		$("#content-lower-menu").animate({
 			/*opacity: 0,*/
 			left: '-=1920px'
 			/*height: 'toggle'*/
