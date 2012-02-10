@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content-upper-left img {
+	width: 30%;
+	height: auto;
+}
+
+#content-lower-menu {
+	top: 25% !important;
+}
+
+img.unacara {
+	width: 30%;
+	height: auto;
+}
+
+img.doscara {
+	width: 30%;
+	height: auto;
+}
+
+#content-lema img {
+	width: 75%;
+	height: auto;
+}

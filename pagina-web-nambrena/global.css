@@ -16,8 +16,6 @@ body {
 	
 	font-size:100%;
 	font-family:verdana,arial,'sans serif';
-	/*background: #F2DE22 url("images/yellow_bg.png");
-	background-repeat: repeat;*/
 
 	color:#000080;
 }
@@ -59,18 +57,14 @@ a img {
 	width: 70%;
 }
 
-#content-upper-left img {
-	width: 45%;
-	height: auto;
-}
-
 #content-lower-menu {
 	/*background: red;*/
-	width: 96%;
+	width: 100%;
 	left: 1920px;
-	right: 2%;
 	clear: both;
-	top: 30%;
+	
+	top: 31%;
+	
 	position: absolute;
 	text-align: center;
 	
@@ -78,29 +72,7 @@ a img {
 	margin-right: auto;*/	
 }
 
-img.sobrepared {
-	vertical-align: middle;
-	width: 22%;
-	height: auto;
-}
-
-img.sobreposte {
-	vertical-align: middle;
-	width: 23%;
-	height: auto;
-}
-
-img.yaposeo {
-	vertical-align: middle;
-	width: 17%;
-	height: auto;
-}
-
 #content-lower-menu img {
-	/*transition: top 1s;
-	-moz-transition: top 1s;
-	-webkit-transition: top 1s;
-	-o-transition: top 1s;*/
 	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-o-transition: all 1s ease;
@@ -108,7 +80,6 @@ img.yaposeo {
 }
 
 #content-lower-menu img:hover {
-	/*top: -25px;*/
 	transform:translate(0px,-30px);
 	-ms-transform:translate(0px,-30px); /* IE 9 */
 	-moz-transform:translate(0px,-30px); /* Firefox */
@@ -121,15 +92,29 @@ img.yaposeo {
 	position: absolute;
 	left: 0px;
 	
-	top: 75%;	
+	top: 80%;
+		
 	text-align: center;
 	clear: both;
-
+	
 	margin-left: auto;
-	margin-right: auto;	
+	margin-right: auto;
 }
 
-#content-lema img {
-	width: 60%;
+img.separador_medio {
+	width: 2%;
 	height: auto;
+	
+	-webkit-transition: all 0 ease 0 !important;
+	-moz-transition: all 0 ease 0 !important;
+	-o-transition: all 0 ease 0 !important;
+	-ms-transition: all 0 ease 0 !important;
+}
+
+img.separador_medio:hover {
+	transform: none !important;
+	-ms-transform: none !important; /* IE 9 */
+	-moz-transform: none !important; /* Firefox */
+	-webkit-transform: none !important; /* Safari and Chrome */
+	-o-transform: none !important; /* Opera */	
 }
