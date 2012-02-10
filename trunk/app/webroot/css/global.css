@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+    /*height: 100%;*/
+	/*background-color: #F2DE22;*/
+	background: #F2DE22 url("images/yellow_bg.png");
+	background-repeat: repeat;
+	overflow-x: hidden;
+}
+
+body {
+	/*height: 100%;*/
+	margin: 0px;
+	padding: 10px;
+	
+	font-size:100%;
+	font-family:verdana,arial,'sans serif';
+
+	color:#000080;
+}
+
+a img {
+	border: none; 
+}
+
+#wrap {
+	padding: 0px;
+	margin:  0px auto;
+}
+
+#content {
+	width: 100%;	
+}
+
+#content div {
+	padding: 10px;
+	padding-bottom: 0px;
+	/*border:  1px solid #bbb;*/
+}
+
+#logo {
+	margin-right: 3%;
+	width: 15%;
+	height: auto;
+	
+	float: right;
+}
+
+#logo img {
+	width: 100%;
+	height:auto;
+}
+
+#content-upper-left {
+	margin-left: 3%;
+	width: 70%;
+}
+
+#content-lower-menu {
+	/*background: red;*/
+	width: 100%;
+	left: 1920px;
+	clear: both;
+	
+	top: 31%;
+	
+	position: absolute;
+	text-align: center;
+	
+	/*margin-left: auto;
+	margin-right: auto;*/	
+}
+
+#content-lower-menu img {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+}
+
+#content-lower-menu img:hover {
+	transform:translate(0px,-30px);
+	-ms-transform:translate(0px,-30px); /* IE 9 */
+	-moz-transform:translate(0px,-30px); /* Firefox */
+	-webkit-transform:translate(0px,-30px); /* Safari and Chrome */
+	-o-transform:translate(0px,-30px); /* Opera */
+}
+
+#content-lema {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	
+	top: 80%;
+		
+	text-align: center;
+	clear: both;
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.separador_medio {
+	width: 2%;
+	height: auto;
+	
+	-webkit-transition: all 0 ease 0 !important;
+	-moz-transition: all 0 ease 0 !important;
+	-o-transition: all 0 ease 0 !important;
+	-ms-transition: all 0 ease 0 !important;
+}
+
+img.separador_medio:hover {
+	transform: none !important;
+	-ms-transform: none !important; /* IE 9 */
+	-moz-transform: none !important; /* Firefox */
+	-webkit-transform: none !important; /* Safari and Chrome */
+	-o-transform: none !important; /* Opera */	
+}
