@@ -5,11 +5,17 @@ $(document).ready(function() {
 	$("a.transition-out").click(function(event){
         event.preventDefault();
         linkLocation = this.href;
-        //$("body").fadeOut(750, redirectPage);
 		$("#content-lower-menu").animate({
-			/*opacity: 0,*/
 			left: '-=1920px'
-			/*height: 'toggle'*/
+		}, 500, redirectPage1
+		);
+    });
+	
+	$("a.transition-back").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+		$(this).animate({
+			opacity: '0%'
 		}, 500, redirectPage1
 		);
     });
@@ -24,7 +30,6 @@ $(document).ready(function() {
 	
 	function redirectEnter1() {
 		$("#content-lower-menu").animate({
-			/*opacity: 0,*/
 			left: '0px'
 		}, 500
 		);
