@@ -2,7 +2,6 @@
 /* CSS Document */
 
 #main-logo {
-	/*width: 25%;*/
 	width: auto;
 	height: 40%;
 
@@ -16,9 +15,6 @@
 #main-logo img {
 	width: 100%;
 	height:auto;
-	/*max-height: 50%;
-	width: auto;
-	max-width:50%;*/
 }
 
 #content-upper-right1a {
@@ -48,6 +44,7 @@
 }
 
 #content-upper-right2 {
+	text-align: right;
 	width:  43%;
 	
 	float: right;

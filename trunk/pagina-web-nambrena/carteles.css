@@ -7,13 +7,9 @@
 }
 
 #content-upper-left img {
-	margin-top: 4%;
+	margin-top: 3%;
 	width: 100%;
 	height: auto;
-}
-
-#content-lower-menu {
-	top: 33% !important;
 }
 
 img.frontlight {
@@ -29,10 +25,6 @@ img.backlight {
 img.adhesivo {
 	width: 20%;
 	height: auto;
-}
-
-#content-lema {
-	top: 80%;	
 }
 
 #content-lema img {
