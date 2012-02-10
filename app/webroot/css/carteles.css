@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content-upper-left {
+	margin-left: 3%;
+	width: 48% !important;
+}
+
+#content-upper-left img {
+	margin-top: 4%;
+	width: 100%;
+	height: auto;
+}
+
+#content-lower-menu {
+	top: 33% !important;
+}
+
+img.frontlight {
+	width: 20%;
+	height: auto;
+}
+
+img.backlight {
+	width: 24%;
+	height: auto;
+}
+
+img.adhesivo {
+	width: 20%;
+	height: auto;
+}
+
+#content-lema {
+	top: 80%;	
+}
+
+#content-lema img {
+	width: 75%;
+	height: auto;
+}
