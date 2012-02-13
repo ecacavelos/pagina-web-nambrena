@@ -92,7 +92,8 @@ a img {
 	position: absolute;
 	left: 0px;
 	
-	top: 80%;
+	/*top: 80%;*/
+	bottom: 5%;
 		
 	text-align: center;
 	clear: both;
