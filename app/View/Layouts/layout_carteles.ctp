@@ -43,43 +43,43 @@
 		<div id="wrap">
         	<div id="content">
 				<div id="logo">
-<!--					<img src="images/carteles/nmb_carteles_front_001.png" width="304" height="322" alt="">-->
+<!--					<a href="index.html" class="transition-back"><img src="images/logo.png" width="304" height="322" alt=""></a>-->
 				<?php echo $this->Html->link(
-					$this->Html->image('carteles/nmb_carteles_front_001.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "304", 'height' => "322")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
+					$this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "304", 'height' => "322")),
+					'/',
+					array('target' => '_self', 'escape' => false, 'class' => "transition-back" )
 				);
 			   ?>
 				</div>
     			<div id="content-upper-left">
-<!--                	<img src="images/carteles/nmb_carteles_front_002.png" width="948" height="246" alt="">-->
+<!--                	<img src="images/header_big.carteles.png" width="948" height="246" alt="">-->
 				<?php echo $this->Html->link(
-					$this->Html->image('carteles/nmb_carteles_front_002.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "948", 'height' => "246")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
+					$this->Html->image('header_big.carteles.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "948", 'height' => "246")),
+					array('controller' => 'carteles'),
+					array('target' => '_self', 'escape' => false)
 				);
 			   ?>
                 </div>
 			  	<div id="content-lower-menu">
-<!--                	<a href="carteles_frontlight.html" class="transition-out"><img class="frontlight" src="images/carteles/nmb_carteles_front_003.png" width="450" height="492" alt=""></a>-->
+<!--                	<a href="carteles_frontlight.html" class="transition-out"><img class="frontlight" src="images/carteles.frontlight.png" width="450" height="492" alt=""></a>-->
 				<?php echo $this->Html->link(
-					$this->Html->image('carteles/nmb_carteles_front_003.png', array( 'class' => "frontlight" , 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false , 'class' => "transition-out")
+					$this->Html->image('carteles.frontlight.png', array( 'class' => "frontlight" , 'alt' => "NAMBRE!", 'width'=> "450", 'height' => "492")),
+					array('controller' => 'carteles', 'action' => "front_light"),
+					array('target' => '_self', 'escape' => false , 'class' => "transition-out")
 				);
 			   ?>
 <!--                    <a href="carteles_backlight.html" class="transition-out"><img class="backlight" src="images/carteles/nmb_carteles_front_004.png" width="540" height="492" alt=""></a>-->
 				<?php echo $this->Html->link(
 					$this->Html->image('carteles/nmb_carteles_front_004.png', array('class' => "backlight", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "540", 'height' => "492")),
 					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false , 'class' => "transition-out")
+					array('target' => '_self', 'escape' => false , 'class' => "transition-out")
 				);
 			   ?>
 <!--                    <img class="adhesivo" src="images/carteles/nmb_carteles_front_005.png" width="450" height="492" alt="">-->
 				<?php echo $this->Html->link(
 					$this->Html->image('carteles/nmb_carteles_front_005.png', array( 'class'=>"adhesivo", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
 					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
+					array('target' => '_self', 'escape' => false)
 				);
 			   ?>
 
@@ -89,7 +89,7 @@
                 <?php echo $this->Html->link(
 					$this->Html->image('carteles/nmb_carteles_front_006.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "1458", 'height' => "122")),
 					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
+					array('target' => '_self', 'escape' => false)
 				);
 			   ?>
                 </div>
