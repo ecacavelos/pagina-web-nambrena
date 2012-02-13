@@ -106,25 +106,25 @@
 	                <?php echo $this->Html->link(
 						$this->Html->image('index.carteles.png', array('alt' => "NAMBRE!", 'width'=> "404", 'height' => "401")),
 						array('controller' => 'carteles'),
-						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
 <!--                    <img src="images/index.corporeos.png" width="465" height="401" alt="">-->
                     <?php echo $this->Html->link(
 						$this->Html->image('index.corporeos.png', array('alt' => "NAMBRE!", 'width'=> "465", 'height' => "401")),
 						array('controller' => 'corporeos'),
-						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
 <!--                    <img src="images/index.impresiones.png" width="504" height="401" alt="">-->
                     <?php echo $this->Html->link(
 						$this->Html->image('index.impresiones.png', array('alt' => "NAMBRE!", 'width'=> "508", 'height' => "401")),
 						array('controller' => 'impresiones'),
-						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
 <!--                    <img src="images/index.cortedevinilos.png" width="449" height="401" alt="">-->
                     <?php echo $this->Html->link(
 						$this->Html->image('index.cortedevinilos.png', array('alt' => "NAMBRE!", 'width'=> "441", 'height' => "401")),
 						array('controller' => 'vinilos'),
-						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
                 </div>
             </div>
