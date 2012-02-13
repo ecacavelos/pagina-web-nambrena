@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content-upper-left img {
+	width: 45%;
+	height: auto;
+}
+
+img.sobrepared {
+	vertical-align: middle;
+	width: 22%;
+	height: auto;	
+}
+
+img.sobreposte {
+	vertical-align: middle;
+	width: 23%;
+	height: auto;
+}
+
+img.yaposeo {
+	vertical-align: middle;
+	width: 17%;
+	height: auto;
+}
+
+/*#content-lema {
+	top: 75%;	
+}*/
+
+#content-lema img {
+	width: 60%;
+	height: auto;
+}

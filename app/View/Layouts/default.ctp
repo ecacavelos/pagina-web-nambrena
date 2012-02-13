@@ -15,8 +15,8 @@
 		<?php echo $this->Html->css('frontpage'); ?>
 
 
-		<!--        <link rel="stylesheet" type="text/css" href="carteles_sub.css" />-->
-		<?php echo $this->Html->css('carteles_sub'); ?>
+		<!--        <link rel="stylesheet" type="text/css" href="global.css" />-->
+		<?php echo $this->Html->css('global'); ?>
 
 
         
@@ -30,8 +30,8 @@
 		<!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
 		<?php echo $this->Html->script('jquery-1.7.1.min');?>
 		
-		<!--        <script type="text/javascript" src="js/script-a.js"></script>-->
-		<?php echo $this->Html->script('script-a.js');?>
+		<!--        <script type="text/javascript" src="js/script-frontpage.js"></script>-->
+		<?php echo $this->Html->script('script-frontpage.js');?>
        
         <noscript>
             <style type="text/css">
@@ -60,68 +60,71 @@
                 EL HTML ORIGINAL ESTA COMENTADO ARRIBA DEL CODIGO CAKEPHP PARA GENERAR LOS ELEMENTOS HTML
                 ##########################################################################
                 #####################################################################-->
-<!--           <img src="images/nmb_front_001.png" width="388" height="429" alt="">-->
+<!--           <img src="images/index.logo.png" width="388" height="429" alt="">-->
 			   <?php echo $this->Html->link(
-					$this->Html->image('nmb_front_001.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "388", 'height' => "429")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
+					$this->Html->image('index.logo.png', array('alt' => "NAMBRE!", 'width'=> "388", 'height' => "429")),
+					'/',
+					array('target' => '_self', 'escape' => false)
+				); echo "\n"
 			   ?>
                 </div>
                 <div id="content-upper-right1b">
 
-<!--             <img src="images/nmb_front_002.png" width="83" height="81" alt=""><img src="images/nmb_front_003.png" width="83" height="81" alt="">-->
+<!--             <img src="images/index.icontw.png" width="83" height="81" alt=""><img src="images/index.iconfb.png" width="83" height="81" alt="">-->
 				<?php echo $this->Html->link(
-					$this->Html->image('nmb_front_002.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "83", 'height' => "81")),
-					'http://www.cakephp.org/',
+					$this->Html->image('index.icontw.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
+					'https://twitter.com/#!/Nambrena_nmb',
+					array('target' => '_blank', 'escape' => false)
+				);
+			   ?>
+			   <?php echo $this->Html->link(
+					$this->Html->image('index.iconfb.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
+					'https://www.facebook.com/pages/Nambrena-nmb/217230554954632',
 					array('target' => '_blank', 'escape' => false)
 				);
 			   ?>
                 </div>                    
                 <div id="content-upper-right1a">
-<!--                    <img src="images/nmb_front_004.png" width="307" height="59" alt="">-->
+<!--                    <img src="images/index.seguinospues.png" width="307" height="59" alt="">-->
                 
                 <?php echo $this->Html->link(
-					$this->Html->image('nmb_front_004.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "307", 'height' => "59")),
-					'http://www.cakephp.org/',
+					$this->Html->image('index.seguinospues.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "307", 'height' => "59")),
+					'https://twitter.com/#!/Nambrena_nmb',
 					array('target' => '_blank', 'escape' => false)
 				);
 			   ?>
                 </div>
                 <div id="content-upper-right2">
-<!--                    <img src="images/nmb_front_005.png" width="780" height="103" alt="">-->
-                <?php echo $this->Html->link(
-					$this->Html->image('nmb_front_005.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "780", 'height' => "103")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
+<!--                    <img src="images/index.lema.png" width="780" height="103" alt="">-->
+                <?php 
+					echo $this->Html->image('index.lema.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "780", 'height' => "103"));
 			   ?>
 			   
                 </div>
                 <div id="content-lower-menu">
-<!--                	<a href="carteles.html" class="transition-out"><img src="images/nmb_front_006.png" width="400" height="401" alt=""></a>-->
+<!--                	<a href="carteles.html" class="transition-out"><img src="images/index.carteles.png" width="404" height="401" alt=""></a>-->
 	                <?php echo $this->Html->link(
-						$this->Html->image('nmb_front_006.png', array('alt' => "NAMBRE!", 'width'=> "400", 'height' => "401")),
-						'http://www.cakephp.org/',
+						$this->Html->image('index.carteles.png', array('alt' => "NAMBRE!", 'width'=> "404", 'height' => "401")),
+						array('controller' => 'carteles'),
 						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
 					);?>
-<!--                    <img src="images/nmb_front_006.png" width="465" height="401" alt="">-->
+<!--                    <img src="images/index.corporeos.png" width="465" height="401" alt="">-->
                     <?php echo $this->Html->link(
-					$this->Html->image('nmb_front_007.png', array('alt' => "NAMBRE!", 'width'=> "400", 'height' => "401")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						$this->Html->image('index.corporeos.png', array('alt' => "NAMBRE!", 'width'=> "465", 'height' => "401")),
+						array('controller' => 'corporeos'),
+						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
 					);?>
-<!--                    <img src="images/nmb_front_008.png" width="504" height="401" alt="">-->
+<!--                    <img src="images/index.impresiones.png" width="504" height="401" alt="">-->
                     <?php echo $this->Html->link(
-					$this->Html->image('nmb_front_008.png', array('alt' => "NAMBRE!", 'width'=> "400", 'height' => "401")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						$this->Html->image('index.impresiones.png', array('alt' => "NAMBRE!", 'width'=> "508", 'height' => "401")),
+						array('controller' => 'impresiones'),
+						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
 					);?>
-<!--                    <img src="images/nmb_front_009.png" width="449" height="401" alt="">-->
+<!--                    <img src="images/index.cortedevinilos.png" width="449" height="401" alt="">-->
                     <?php echo $this->Html->link(
-					$this->Html->image('nmb_front_009.png', array('alt' => "NAMBRE!", 'width'=> "400", 'height' => "401")),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
+						$this->Html->image('index.cortedevinilos.png', array('alt' => "NAMBRE!", 'width'=> "441", 'height' => "401")),
+						array('controller' => 'vinilos'),
+						array('target' => '_blank', 'escape' => false, 'class' => "transition-out")
 					);?>
                 </div>
             </div>
