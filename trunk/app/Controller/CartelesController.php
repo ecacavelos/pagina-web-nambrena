@@ -4,7 +4,11 @@ class CartelesController extends AppController {
     public $helpers = array('Html', 'Form');
     
  public function index() {
-        $this->set('carteles', $this->Cartele->find('all'));
+        
         $this->layout = 'layout_carteles';
+    } 
+    public function front_light(){
+    	
+        $this->layout = 'layout_carteles_front_light';
     } 
 }	
