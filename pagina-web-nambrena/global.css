@@ -7,7 +7,7 @@ html {
 	background: #F2DE22 url("images/yellow_bg.png");
 	background-repeat: repeat;
 	overflow-x: hidden;
-	/*overflow-y: hidden;*/
+	overflow-y: hidden;
 }
 
 body {
@@ -68,6 +68,38 @@ a img {
 #content-upper-left {
 	margin-left: 3%;
 	width: 70%;
+}
+
+#content-social-icons {
+	padding: 5px !important;
+	text-align: right;
+	
+	width: 10%;
+	float: right;
+}
+
+#content-social-icons:hover img {
+	opacity: 0.2;
+}
+
+#content-social-icons img {
+	width: 50%;
+	height: auto;
+	
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+
+#content-social-icons img:hover {
+	opacity: 1;
+	
+	transform:translate(0px,-10px);
+	-ms-transform:translate(0px,-10px); /* IE 9 */
+	-moz-transform:translate(0px,-10px); /* Firefox */
+	-webkit-transform:translate(0px,-10px); /* Safari and Chrome */
+	-o-transform:translate(0px,-10px); /* Opera */
 }
 
 #content-lower-menu {
