@@ -18,6 +18,7 @@
 		<?php echo $this->Html->css('global'); ?>
 		
 		
+		
 		<!-- ACA HAY QUE INCLUIR ESTAS LIBRERIAS DE MANERA CORRECTA CON CAKE, ASI COMO ESTAN NO VA A FUNCIONAR.   
 		########################################################
 				###################################################
@@ -53,11 +54,8 @@
 				</div>
     			<div id="content-upper-left">
 <!--                	<img src="images/header_big.carteles.png" width="948" height="246" alt="">-->
-				<?php echo $this->Html->link(
-					$this->Html->image('header_big.carteles.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "948", 'height' => "246")),
-					array('controller' => 'carteles'),
-					array('target' => '_self', 'escape' => false)
-				);
+				<?php echo $this->Html->image('header_big.carteles.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "948", 'height' => "246"));
+				
 			   ?>
                 </div>
 			  	<div id="content-lower-menu">
