@@ -56,7 +56,7 @@
 <!--                	<a href="carteles_frontlight_sobrepared.html" class="transition-out"><img class="sobrepared" src="images/carteles_frontlight.sobrepared.png" width="516" height="496" alt=""></a>-->
                     <?php echo $this->Html->link(
 						$this->Html->image('carteles_frontlight.sobrepared.png', array('class' => "sobrepared", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "516", 'height' => "496")),
-						array('controller' => 'carteles', 'action' => "index"),
+						array('controller' => 'carteles', 'action' => "front_light", "sobre_pared"),
 						array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 				);
 			   ?>	
@@ -64,7 +64,7 @@
 <!--                    <a href="carteles_frontlight_sobreposte.html" class="transition-out"><img class="sobreposte" src="images/carteles_frontlight.sobreposte.png" width="561" height="496" alt=""></a>-->
 				<?php echo $this->Html->link(
 						$this->Html->image('carteles_frontlight.sobreposte.png', array('class' => "sobreposte", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "561", 'height' => "496")),
-						array('controller' => 'carteles', 'action' => "index"),
+						array('controller' => 'carteles', 'action' => "front_light", "sobre_poste"),
 						array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 				);
 			   ?>	
@@ -72,7 +72,7 @@
 <!--                    <a href="carteles_frontlight_mantenimiento.html" class="transition-out"><img class="yaposeo" src="images/carteles_frontlight.yaposeo.png" width="393" height="496" alt=""></a>-->
              	<?php echo $this->Html->link(
 						$this->Html->image('carteles_frontlight.yaposeo.png', array('class' => "yaposeo", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "393", 'height' => "496")),
-						array('controller' => 'carteles', 'action' => "index"),
+						array('controller' => 'carteles', 'action' => "front_light", "ya_poseo"),
 						array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 				);
 			   ?>	
