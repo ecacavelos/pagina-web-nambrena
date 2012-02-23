@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	$("body").css("display", "none");
+});
+
+$(window).load(function() {
+	/*$("body").css("display", "none");*/
 	$("body").fadeIn(750, redirectEnter1);
 	
 	$("a.transition-out").click(function(event){
