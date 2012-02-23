@@ -3,15 +3,15 @@ class CartelesController extends AppController {
 	
     public $name = 'Carteles';
     public $helpers = array('Html', 'Form');
+	
+	    
+	 public function index() {
+	        
+	        $this->layout = 'layout_carteles';
+	        $this->set('carteles_actuales', $this->Cartele->find('all'));
+	       
+	    }
 
-    
- public function index() {
-        
-        $this->layout = 'layout_carteles';
-        $this->set('carteles_actuales', $this->Cartele->find('all'));
-       
-    }
-    
     
     
     //**************************
@@ -45,6 +45,7 @@ class CartelesController extends AppController {
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
 		    					$this->Session->write('Cartele.luminosidad', 1);
+		    					$this->Session->write('Cartele.mantenimiento', -1);
     							break;
     							
     							case "sin_luz":
@@ -52,6 +53,7 @@ class CartelesController extends AppController {
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
 		    					$this->Session->write('Cartele.luminosidad', 0);
+		    					$this->Session->write('Cartele.mantenimiento', -1);
     							break;
     					}
     				}
@@ -74,13 +76,16 @@ class CartelesController extends AppController {
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 1);
+		    					$this->Session->write('Cartele.mantenimiento', -1);
     							break;
     							
     							case "sin_luz":
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					echo "ooop";
 		    					$this->Session->write('Cartele.luminosidad', 0);
+		    					$this->Session->write('Cartele.mantenimiento', -1);
     							break;
     					}
     				}
@@ -94,6 +99,7 @@ class CartelesController extends AppController {
     					$this->Session->write('Cartele.tipo', 'front_light');
     					$this->Session->write('Cartele.soporte', 'ya_poseo');
     					
+    					
     				}
     				else{
     					switch ($luminosidad_mantenimiento){
@@ -103,6 +109,7 @@ class CartelesController extends AppController {
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.mantenimiento', 1);
+		    					$this->Session->write('Cartele.luminosidad', -1);
     							break;
     							
     							case "sin_mantenimiento":
@@ -110,6 +117,7 @@ class CartelesController extends AppController {
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.mantenimiento', 0);
+		    					$this->Session->write('Cartele.luminosidad', -1);
     							break;
     					}
     				}
@@ -119,6 +127,8 @@ class CartelesController extends AppController {
         }
 //      
         $cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
+        $session = $this->Session->read();
+        print_r($session);
         //print_r($cartel_array);
         //$this->Cartele->save($cartel_array);
     
