@@ -45,11 +45,18 @@
                 </div>
               <div id="content-form">
 					<p>Input</p>
-                    <form>
-                    	X (metros): <input type="text" name="tama–ox" /><br />
-                    	Y (metros): <input type="text" name="tama–oy" />
-                    </form>
-                    <button id="boton_ok" type="button">OK</button>
+<!--                    <form>-->
+<!--                    	X (metros): <input type="text" name="tama–ox" /><br />-->
+<!--                    	Y (metros): <input type="text" name="tama–oy" />-->
+<!--                    </form>-->
+<!--                    <button id="boton_ok" type="button">OK</button>-->
+
+				<?php
+					echo $this->Form->create('Presupuestos', array('action' => 'llenar_ficha'));
+					echo $this->Form->input('Ancho');
+					echo $this->Form->input('Largo');
+					echo $this->Form->end('Ok');
+				?>
                 </div>
                 <div class="clear"></div>
             </div>
