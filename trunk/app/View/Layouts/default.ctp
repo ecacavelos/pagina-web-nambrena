@@ -19,13 +19,7 @@
 		<?php echo $this->Html->css('global'); ?>
 
 
-        
-		<!-- ACA HAY QUE INCLUIR ESTAS LIBRERIAS DE MANERA CORRECTA CON CAKE, ASI COMO ESTAN NO VA A FUNCIONAR.   
-		########################################################
-				###################################################
-				linkeado a los scripts utilizados. JQuery y el scrip-a
-				#####################################################
-				#####################################################    -->
+
 		
 		<!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
 		<?php echo $this->Html->script('jquery-1.7.1.min');?>
@@ -60,24 +54,23 @@
                 EL HTML ORIGINAL ESTA COMENTADO ARRIBA DEL CODIGO CAKEPHP PARA GENERAR LOS ELEMENTOS HTML
                 ##########################################################################
                 #####################################################################-->
-<!--           <img src="images/index.logo.png" width="388" height="429" alt="">-->
+<!--          <img src="images/index.logo.png" width="388" height="429" alt="">-->
 			   <?php echo $this->Html->link(
 					$this->Html->image('index.logo.png', array('alt' => "NAMBRE!", 'width'=> "388", 'height' => "429")),
 					'/',
 					array('target' => '_self', 'escape' => false)
-				); echo "\n"
+				); 
 			   ?>
                 </div>
-                <div id="content-upper-right1b">
+                <div id="content-social-icons">
 
-<!--             <img src="images/index.icontw.png" width="83" height="81" alt=""><img src="images/index.iconfb.png" width="83" height="81" alt="">-->
+<!--            <img src="images/index.icontw.png" width="83" height="81" alt=""><img src="images/index.iconfb.png" width="83" height="81" alt="">-->
 				<?php echo $this->Html->link(
 					$this->Html->image('index.icontw.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
 					'https://twitter.com/#!/Nambrena_nmb',
 					array('target' => '_blank', 'escape' => false)
 				);
-			   ?>
-			   <?php echo $this->Html->link(
+			   ?><?php echo $this->Html->link(
 					$this->Html->image('index.iconfb.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
 					'https://www.facebook.com/pages/Nambrena-nmb/217230554954632',
 					array('target' => '_blank', 'escape' => false)
@@ -87,11 +80,7 @@
                 <div id="content-upper-right1a">
 <!--                    <img src="images/index.seguinospues.png" width="307" height="59" alt="">-->
                 
-                <?php echo $this->Html->link(
-					$this->Html->image('index.seguinospues.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "307", 'height' => "59")),
-					'https://twitter.com/#!/Nambrena_nmb',
-					array('target' => '_blank', 'escape' => false)
-				);
+                <?php $this->Html->image('index.seguinospues.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "307", 'height' => "59"));
 			   ?>
                 </div>
                 <div id="content-upper-right2">
