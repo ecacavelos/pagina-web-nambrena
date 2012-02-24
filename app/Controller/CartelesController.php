@@ -238,107 +238,17 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     
     } 
        
+    public function back_light($soporte = null , $luminosidad_mantenimiento = null){
+     
+    	if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/back_light
+        	
+        	$this->layout = 'layout_carteles_back_light';
+        	$this->Session->write('Cartele.tipo', 'back_light');
+			   
+        }
     
-
-    //**************************
-    //TIPO
-    ///***************************
     
-    
-
-//    //**************************
-//    //SOPORTE
-//    ///***************************
-//    public function sobre_pared(){
-//    	
-//        $this->layout = 'layout_carteles_sobre_pared';
-//    	$this->Session->write('Cartele.soporte', 'sobre_pared');
-//        print_r($this->Session->read('Cartele'));
-//    
-//    } 
-//    
-//	public function sobre_poste(){
-//    	
-//        $this->layout = 'layout_carteles_sobre_poste';
-//    	$this->Session->write('Cartele.soporte', 'sobre_poste');
-//        print_r($this->Session->read('Cartele'));
-//
-//	}
-//    
-//	public function ya_poseo(){
-//    	
-//        $this->layout = 'layout_carteles_ya_poseo';
-//    	$this->Session->write('Cartele.soporte', 'ya_poseo');
-//        print_r($this->Session->read('Cartele'));
-//
-//	}
-//    //**************************
-//    //SOPORTE
-//    ///***************************
-//    
-//    
-//    
-//    
-//    
-//    //**************************
-//    //LUMINOSIDAD
-//    ///***************************
-//    public function luminosidad_si(){
-//    	  	
-//        $this->layout = 'layout_carteles_luminosidad_si';
-//    	$this->Session->write('Cartele.luminosidad', 1);
-//        print_r($this->Session->read('Cartele'));
-//        $datos = array ("Cartele" => $this->Session->read('Cartele'));
-//        $this->Cartele->save($datos);
-//
-//    } 
-//    
-//	public function luminosidad_no(){
-//    	
-//        $this->layout = 'layout_carteles_luminosidad_no';
-//    	$this->Session->write('Cartele.luminosidad', 0);
-//        print_r($this->Session->read('Cartele'));
-//        $datos = array ("Cartele" => $this->Session->read('Cartele'));
-//        $this->Cartele->save($datos);
-//
-//	}
-//    //**************************
-//    //LUMINOSIDAD
-//    ///***************************
-//    
-//    
-//    
-//    
-//    
-//    
-//    
-//    //**************************
-//    //MANTENIMIENTO
-//    ///***************************
-//    public function mantenimiento_si(){
-//    	
-//        $this->layout = 'layout_carteles_mantenimiento_si';
-//    	$this->Session->write('Cartele.mantenimiento', 1);
-//        print_r($this->Session->read('Cartele'));
-//        $datos = array ("Cartele" => $this->Session->read('Cartele'));
-//        $this->Cartele->save($datos);
-//
-//    } 
-//    
-//	public function mantenimiento_no(){
-//    	
-//        $this->layout = 'layout_carteles_mantenimiento_no';
-//    	$this->Session->write('Cartele.mantenimiento', 0);
-//        print_r($this->Session->read('Cartele'));
-//        $datos = array ("Cartele" => $this->Session->read('Cartele'));
-//        $this->Cartele->save($datos);
-//
-//	}
-//    //**************************
-//    //MANTENIMIENTO
-//    ///***************************
-
-
+    }
 
 
 
