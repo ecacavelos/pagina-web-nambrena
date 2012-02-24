@@ -66,29 +66,25 @@
 					array('target' => '_self', 'escape' => false , 'class' => "transition-out")
 				);
 			   ?>
-<!--                    <a href="carteles_backlight.html" class="transition-out"><img class="backlight" src="images/carteles/nmb_carteles_front_004.png" width="540" height="492" alt=""></a>-->
+<!--                    <a href="carteles_frontlight.html" class="transition-out"><img class="frontlight" src="images/carteles.frontlight.png" width="450" height="492" alt=""></a>-->
 				<?php echo $this->Html->link(
-					$this->Html->image('carteles/nmb_carteles_front_004.png', array('class' => "backlight", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "540", 'height' => "492")),
-					'http://www.cakephp.org/',
+					$this->Html->image('carteles.backlight.png', array('class' => "backlight", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
+					array('controller' => 'carteles', 'action' => "back_light"),
 					array('target' => '_self', 'escape' => false , 'class' => "transition-out")
 				);
 			   ?>
-<!--                    <img class="adhesivo" src="images/carteles/nmb_carteles_front_005.png" width="450" height="492" alt="">-->
+<!--                    <img class="adhesivo" src="images/carteles.adhesivo.png" width="450" height="492" alt="">-->
 				<?php echo $this->Html->link(
-					$this->Html->image('carteles/nmb_carteles_front_005.png', array( 'class'=>"adhesivo", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
-					'http://www.cakephp.org/',
+					$this->Html->image('carteles.adhesivo.png', array( 'class'=>"adhesivo", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
+					array('controller' => 'carteles', 'action' => "adhesivos"),
 					array('target' => '_self', 'escape' => false)
 				);
 			   ?>
 
                     </div>
                 <div id="content-lema">
-<!--                <img src="images/carteles/nmb_carteles_front_006.png" width="1458" height="122" alt="">-->
-                <?php echo $this->Html->link(
-					$this->Html->image('carteles/nmb_carteles_front_006.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "1458", 'height' => "122")),
-					'http://www.cakephp.org/',
-					array('target' => '_self', 'escape' => false)
-				);
+<!--                <img src="images/carteles.lema.png" width="1458" height="122" alt="">-->
+                <?php echo $this->Html->image('carteles.lema.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "1458", 'height' => "122"));
 			   ?>
                 </div>
             </div>
