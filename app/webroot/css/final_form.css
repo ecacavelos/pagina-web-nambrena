@@ -9,7 +9,7 @@
 	
 	position: absolute;
 	top: 23%;
-	right: 20%;
+	right: 15%;
 	
 	float: right;
 	
@@ -30,4 +30,23 @@
 	position: relative;
 	top: 20px;
 	width: 100%;
+}
+#content-form2 {
+	/*background: red;*/
+
+	width: 30%;
+	height: 54%;
+	
+	position: absolute;
+	top: 23%;
+	left: 15%;
+	
+	float: left;
+	
+	border:  1px solid #888;
+	border-radius: 15px;
+	
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
 }
