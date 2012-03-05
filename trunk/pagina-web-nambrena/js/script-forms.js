@@ -65,6 +65,6 @@ $(document).ready(function() {
 function show_alert(){
 	/*alert("I am an alert box!");*/
 	$("#main-logo").animate({width: '15%', marginLeft: '12%', top:'5%'}, 400);
-	$("#content-form2").animate({right: '15%'}, 400);
-	$("#content-info").animate({left: '10%'}, 400);
+	$("#content-form2").fadeIn(200).animate({right: '15%'}, 400);
+	$("#content-info").fadeIn(200).animate({left: '10%'}, 400);
 }
