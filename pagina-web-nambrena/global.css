@@ -27,6 +27,15 @@ a img {
 	border: none; 
 }
 
+#progressbar {	
+	position: absolute;
+	left: 0%;
+	top: 48%;
+	width: 100%;
+	height: 22px;
+	background: #CCC;
+}
+
 #wrap {
 	padding: 0px;
 
@@ -43,7 +52,7 @@ a img {
 #content div {
 	padding: 10px;
 	padding-bottom: 0px;
-	/*border:  1px solid #bbb;*/
+	/*border:  1px solid #BBB;*/
 }
 
 .clear {
@@ -86,16 +95,16 @@ a img {
 	width: 50%;
 	height: auto;
 	
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
 }
 
 #content-social-icons img:hover {
 	opacity: 1;
 	
-	transform:translate(0px,-10px);
+	/*transform:translate(0px,-10px);*/
 	-ms-transform:translate(0px,-10px); /* IE 9 */
 	-moz-transform:translate(0px,-10px); /* Firefox */
 	-webkit-transform:translate(0px,-10px); /* Safari and Chrome */
@@ -125,14 +134,14 @@ a img {
 }
 
 #content-lower-menu img {
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
 	-ms-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;
 }
 
 #content-lower-menu img:hover {
-	transform:translate(0px,-30px);
+	/*transform:translate(0px,-30px);*/
 	-ms-transform:translate(0px,-30px); /* IE 9 */
 	-moz-transform:translate(0px,-30px); /* Firefox */
 	-webkit-transform:translate(0px,-30px); /* Safari and Chrome */
@@ -166,14 +175,14 @@ img.separador_medio {
 	width: 2%;
 	height: auto;
 	
-	-webkit-transition: all 0 ease 0 !important;
-	-moz-transition: all 0 ease 0 !important;
-	-o-transition: all 0 ease 0 !important;
 	-ms-transition: all 0 ease 0 !important;
+	-moz-transition: all 0 ease 0 !important;
+	-webkit-transition: all 0 ease 0 !important;
+	-o-transition: all 0 ease 0 !important;
 }
 
 img.separador_medio:hover {
-	transform: none !important;
+	/*transform: none !important;*/
 	-ms-transform: none !important; /* IE 9 */
 	-moz-transform: none !important; /* Firefox */
 	-webkit-transform: none !important; /* Safari and Chrome */
