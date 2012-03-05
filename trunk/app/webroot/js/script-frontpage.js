@@ -1,10 +1,14 @@
 $(document).ready(function() {
-	$("body").css("display", "none");
+	$("#wrap").css("display", "none");	
+	$("#progressbar").progressbar({
+		value: 100 
+	});
 });
 	
 $(window).load(function() {
 	/*$("body").css("display", "none");*/
-	$("body").fadeIn(750);
+	$("#wrap").fadeIn(750);
+	$("#progressbar").fadeOut(750);
 	$("#content-lower-menu").animate({left: '0px'}, 0);
 	
 	$("a.transition-out").click(function(event){
