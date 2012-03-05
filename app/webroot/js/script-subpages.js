@@ -1,11 +1,14 @@
 $(document).ready(function() {
-	$("body").css("display", "none");
+	$("#wrap").css("display", "none");
+	$("#progressbar").progressbar({
+		value: 100 
+	});
 });
 
 $(window).load(function() {
 	/*$("body").css("display", "none");*/
-	$("body").fadeIn(750, redirectEnter1);
-	
+	$("#wrap").fadeIn(750, redirectEnter1);
+	$("#progressbar").fadeOut(750);	
 	$("a.transition-out").click(function(event){
         event.preventDefault();
         linkLocation = this.href;
