@@ -16,14 +16,17 @@
                 #content-lower-menu {
                     left: 0px;
                 }
+				#progressbar{
+					display: none;
+				}
             </style>
         </noscript>
     </head>
     <body>
         <!--Script para detectar la resolucón del usuario.-->
 		<!--
-        <script type="text/javascript">
-			document.write(screen.width+'x'+screen.height);
+		<script type="text/javascript">
+			document.write(screen.width+'x'+screen.height+';');
 		</script>
         -->
         <div id="progressbar"><img src="images/cargando.png" width="410" height="100" alt=""></div>
@@ -32,7 +35,7 @@
                 <div id="main-logo">
                     <img src="images/index.logo.png" width="388" height="429" alt="">
                 </div>
-                <div id="content-form">
+                <div id="content-form" class="form_gradiente">
 					<form id="DimensionsUserForm" action="" method="post">
 						<fieldset>
 						<p><label for="ancho">Ancho</label><input id="ancho" name="ancho" type="number" class="text" value="" /></p>
@@ -41,7 +44,7 @@
 						</fieldset>
 					</form>
                 </div>
-				<div id="content-form2">
+				<div id="content-form2" class="form_gradiente">
                 	<form id="RegisterUserForm" action="" method="post">
                     	<fieldset>
                         <p><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" class="text" value="" />
@@ -67,7 +70,7 @@
                         </fieldset>
                     </form>
                 </div>
-                <div id="content-info">
+                <div id="content-info" class="form_gradiente">
                 	<p>Hola que tal</p>
                 </div>
                 <div class="clear"></div>

@@ -16,9 +16,13 @@ $(document).ready(function() {
 		 base.showing = true; base.init = function() {
             base.options = $.extend( {
                }
-            , $.InFieldLabels.defaultOptions, options); base.$label.css('position', 'absolute'); var fieldPosition = base.$field.position();
-            base.$label.css('left',
-            '40px'); if (base.$field.val() != "") {
+            , $.InFieldLabels.defaultOptions, options); base.$label.css('position', 'absolute');
+			var fieldPosition = base.$field.position();
+			base.$label.css({
+			  'left' : fieldPosition,
+			  'top' : fieldPosition
+			}).addClass(base.options.labelClass);
+			if (base.$field.val() != "") {
                base.$label.hide(); base.showing = false; }; base.$field.focus(function() {
                base.fadeOnFocus(); }
             ).blur(function() {
@@ -65,6 +69,6 @@ $(document).ready(function() {
 function show_alert(){
 	/*alert("I am an alert box!");*/
 	$("#main-logo").animate({width: '15%', marginLeft: '12%', top:'5%'}, 400);
-	$("#content-form2").fadeIn(200).animate({right: '15%'}, 400);
+	$("#content-form2").fadeIn(400);
 	$("#content-info").fadeIn(200).animate({left: '10%'}, 400);
 }
