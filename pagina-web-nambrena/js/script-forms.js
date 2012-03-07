@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$("#final_fields").css("display", "none");
+	$("#content-info").css("display", "none");
    /*
    * In-Field Label jQuery Plugin
    * http://fuelyourcoding.com/scripts/infield.html
@@ -61,14 +63,16 @@ $(document).ready(function() {
             $field[0], options)); }
          ); }; }
    )(jQuery);
-	$("#DimensionsUserForm label").inFieldLabels();
-	$("#RegisterUserForm label").inFieldLabels();
+/*	$("#DimensionsUserForm label").inFieldLabels();
+	$("#RegisterUserForm label").inFieldLabels();*/
+	$("#MainForm label").inFieldLabels();
    }
 );
 
 function show_alert(){
 	/*alert("I am an alert box!");*/
 	$("#main-logo").animate({width: '15%', marginLeft: '12%', top:'5%'}, 400);
-	$("#content-form2").fadeIn(400);
+	/*$("#content-form2").fadeIn(400);*/
+	$("#final_fields").fadeIn(400);
 	$("#content-info").fadeIn(200).animate({left: '10%'}, 400);
 }

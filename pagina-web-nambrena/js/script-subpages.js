@@ -6,9 +6,9 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-	/*$("body").css("display", "none");*/
 	$("#wrap").fadeIn(750, redirectEnter1);
-	$("#progressbar").fadeOut(750);	
+	$("#progressbar").fadeOut(750);
+	
 	$("a.transition-out").click(function(event){
         event.preventDefault();
         linkLocation = this.href;
