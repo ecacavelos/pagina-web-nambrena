@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$("#MainForm").validate();
+	
 	$("#final_fields").css("display", "none");
 	$("#content-info").css("display", "none");
    /*
@@ -58,21 +60,30 @@ $(document).ready(function() {
                base.$label.hide(); base.showing = false; }; base.$field.unbind('keydown.infieldlabel'); }; base.init(); }; $.InFieldLabels.defaultOptions = {
          fadeOpacity : 0.5, fadeDuration : 300, labelClass : 'infield' }; $.fn.inFieldLabels = function(options) {
          return this.each(function() {
-            var for_attr = $(this).attr('for'); if (!for_attr) return; var $field = $("input#" + for_attr + "[type='text']," + "input#" + for_attr + "[type='number']," + "input#" + for_attr + "[type='tel']," + "input#" + for_attr + "[type='email']," + "textarea#" + for_attr); if ($field.length == 0) return; 
+            var for_attr = $(this).attr('for'); if (!for_attr) return; var $field = $("input#" + for_attr + "[type='text']," + "input#" + for_attr + "[type='number']," + "input#" + for_attr + "[type='time']," + "input#" + for_attr + "[type='tel']," + "input#" + for_attr + "[type='email']," + "textarea#" + for_attr); if ($field.length == 0) return; 
 			(new $.InFieldLabels(this,
             $field[0], options)); }
          ); }; }
    )(jQuery);
-/*	$("#DimensionsUserForm label").inFieldLabels();
-	$("#RegisterUserForm label").inFieldLabels();*/
 	$("#MainForm label").inFieldLabels();
    }
 );
 
 function show_alert(){
 	/*alert("I am an alert box!");*/
-	$("#main-logo").animate({width: '15%', marginLeft: '12%', top:'5%'}, 400);
-	/*$("#content-form2").fadeIn(400);*/
-	$("#final_fields").fadeIn(400);
-	$("#content-info").fadeIn(200).animate({left: '10%'}, 400);
+	var valid = $("#xy_fields").validate().form();
+	if(valid){
+		$("#main-logo").animate({width: '15%', marginLeft: '12%', top:'5%'}, 400);
+		$("#xy_ok").fadeOut(400);
+		$("#final_fields").fadeIn(400);
+		$("#content-info").fadeIn(200).animate({left: '10%'}, 400);
+	}else{
+		if(!$("#MainForm").validate().element( "input#ancho" )){
+			$("input#ancho").focus();
+		}else{
+			if(!$("#MainForm").validate().element( "input#alto" )){
+				$("input#alto").focus();
+			}
+		}
+	}
 }
