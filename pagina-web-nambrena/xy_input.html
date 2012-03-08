@@ -7,8 +7,14 @@
         <link rel="stylesheet" type="text/css" href="css/xy_input.css" />
         <link rel="stylesheet" type="text/css" href="global.css" />
         <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
-        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+        
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods.min.js"></script>
+        <script type="text/javascript" src="js/messages_es.js"></script>
+        
 		<script type="text/javascript" src="js/script-subpages.js"></script>
         <script type="text/javascript" src="js/script-forms.js"></script>
 		<noscript>
@@ -36,30 +42,30 @@
                     <img src="images/index.logo.png" width="388" height="429" alt="">
                 </div>
                 <div id="content-form" class="form_gradiente">
-					<form id="MainForm" action="" method="post">
+					<form id="MainForm">
 						<fieldset id="xy_fields">
-                            <p><label for="ancho">Ancho</label><input id="ancho" name="ancho" type="number" class="text" value="" /></p>
-                            <p><label for="alto">Alto</label><input id="alto" name="alto" type="number" class="text" value="" /></p>
+                            <p><label for="ancho">Ancho</label><input id="ancho" name="ancho" type="number" class="text" min="1" required/></p>
+                            <p><label for="alto">Alto</label><input id="alto" name="alto" type="number" class="text" min="1" required/></p>
                             <p><button class="boton gray" id="xy_ok" type="button" onclick="show_alert()">OK</button>
 						</fieldset>
 						<fieldset id="final_fields">
-                            <p><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" class="text" value="" />
+                            <p><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" class="text" required/>
                             </p>
-                            <p><label for="apellido">Apellido</label><input id="apellido" name="apellido" type="text" class="text" value="" />
+                            <p><label for="apellido">Apellido</label><input id="apellido" name="apellido" type="text" class="text" required/>
                             </p>
-                            <p><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" class="text" value="" />
+                            <p><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" class="text" required/>
                             </p>
-                            <p><label for="email">Email</label><input id="email" name="email" type="email" class="text" value="" />
+                            <p><label for="email">Email</label><input id="email" name="email" type="email" class="text" required/>
                             </p>
-                            <p><label for="email_verificacion">Email de Verificacion</label><input id="email_verificacion" name="email_verificacion" type="email" class="text" value="" />
+                            <p><label for="email_verificacion">Email de Verificacion</label><input id="email_verificacion" name="email_verificacion" type="email" class="text" required/>
                             </p>
-                            <p><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" class="text" value="" />
+                            <p><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" class="text" required/>
                             </p>
-                            <p><label for="departamento">Ubicacion</label><input id="departamento" name="departamento" type="text" class="text" value="" />
+                            <p><label for="departamento">Ubicacion</label><input id="departamento" name="departamento" type="text" class="text" required/>
                             </p>
-                            <p><label for="direccion">Direccion</label><input id="direccion" name="direccion" type="text" class="text" value="" />
+                            <p><label for="direccion">Direccion</label><input id="direccion" name="direccion" type="text" class="text" />
                             </p>
-                            <p><label for="hora_trabajo">Hora de Trabajo</label><input id="hora_trabajo" name="hora_trabajo" type="text" class="text" value="" />
+                            <p><label for="hora_trabajo">Hora de Trabajo (hh:mm)</label><input id="hora_trabajo" name="hora_trabajo" type="time" class="text" required=/>
                             </p>                         
                             <p><button class="boton gray" id="form_ok" type="submit">OK</button>
                             </p>
