@@ -4,33 +4,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="robots" content="noindex" />
         <title>Nambrena Industria Publicitaria</title>
-        <!--       INCLUIR ESTO DE MANERA CORRECTA EN CAKE.
-		########################################################
-		###################################################
-		LINK A LOS ARCHIVOS CSS
-		#####################################################
-		#####################################################  -->
-		<!--        <link rel="stylesheet" type="text/css" href="carteles.css" />-->
-		<?php echo $this->Html->css('carteles'); ?>
-
-
-		<!--        <link rel="stylesheet" type="text/css" href="global.css" />-->
+     
+<!-- 		<link rel="stylesheet" type="text/css" href="css/carteles.css" />-->
+<!--        <link rel="stylesheet" type="text/css" href="global.css" />-->
+<!--        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
+<!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
+<!--        <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>-->
+<!--		<script type="text/javascript" src="js/script-subpages.js"></script>     -->
+     
+     
+     	<?php echo $this->Html->css('carteles'); ?>
 		<?php echo $this->Html->css('global'); ?>
-		
-		
-		
-		<!-- ACA HAY QUE INCLUIR ESTAS LIBRERIAS DE MANERA CORRECTA CON CAKE, ASI COMO ESTAN NO VA A FUNCIONAR.   
-		########################################################
-				###################################################
-				linkeado a los scripts utilizados. JQuery y el scrip-a
-				#####################################################
-				#####################################################    -->
-		
-		<!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
+		<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
 		<?php echo $this->Html->script('jquery-1.7.1.min');?>
+		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min');?>
+		<?php echo $this->Html->script('script-subpages');?>
 		
-		<!--        <script type="text/javascript" src="js/script-subpages.js"></script>-->
-		<?php echo $this->Html->script('script-subpages.js');?>
        
         <noscript>
             <style type="text/css">
@@ -41,6 +30,8 @@
         </noscript>
     </head>
 	<body>
+	<!--        <div id="progressbar"><img src="images/cargando.png" width="410" height="100" alt=""></div><div id="wrap">-->
+      <div id="progressbar"><?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100")) ;?></div>
 		<div id="wrap">
         	<div id="content">
 				<div id="logo">
