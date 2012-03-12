@@ -4,17 +4,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="robots" content="noindex" />
         <title>Nambrena Industria Publicitaria</title>
-<!--		<link rel="stylesheet" type="text/css" href="carteles_frontlight_backlight.css" />-->
-		<?php echo $this->Html->css('carteles_frontlight_backlight'); ?>
-		
+
+
+<!--		<link rel="stylesheet" type="text/css" href="css/carteles_frontlight_backlight.css" />-->
 <!--		<link rel="stylesheet" type="text/css" href="global.css" />-->
-		<?php echo $this->Html->css('global'); ?>
-
+<!--        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
 <!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
-		<?php echo $this->Html->script('jquery-1.7.1.min');?>
+<!--        <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>-->
+<!--		<script type="text/javascript" src="js/script-subpages.js"></script>-->
 
-<!--        <script type="text/javascript" src="js/script-subpages.js"></script>-->
+
+		<?php echo $this->Html->css('carteles_frontlight_backlight'); ?>
+		<?php echo $this->Html->css('global'); ?>
+		<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
+		<?php echo $this->Html->script('jquery-1.7.1.min');?>
+		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min');?>
 		<?php echo $this->Html->script('script-subpages');?>
+		
         <noscript>
             <style type="text/css">
                 #content-lower-menu {
@@ -24,9 +30,12 @@
         </noscript>        
     </head>
 	<body>
+	<!--        <div id="progressbar"><img src="images/cargando.png" width="410" height="100" alt=""></div><div id="wrap">-->
+      <div id="progressbar"><?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100")) ;?></div>
 		<div id="wrap">
 			<div id="content">
 				<div id="logo">
+				
 <!--				<a href="index.html" class="transition-back"><img src="images/logo.png" width="304" height="322" alt=""></a>-->
 				<?php echo $this->Html->link(
 					$this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "304", 'height' => "322")),

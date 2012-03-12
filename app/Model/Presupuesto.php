@@ -1,4 +1,4 @@
 <?php
-class Cartele extends AppModel {
+class Presupuesto extends AppModel {
     public $name = 'Presupuesto';
 }

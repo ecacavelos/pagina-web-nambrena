@@ -3,7 +3,7 @@ class PresupuestosController extends AppController {
 	
     public $name = 'Presupuestos';
     public $helpers = array('Html', 'Form');
-
+	public $uses = array('Cartele');
     
  	public function index() {
         
@@ -14,14 +14,16 @@ class PresupuestosController extends AppController {
     { 
       
         $this->layout = 'pdf'; //this will use the pdf.ctp layout 
-        $nombre = $this->request->data['Presupuestos']['Nombre*:'];
-        $apellido = $this->request->data['Presupuestos']['Apellido*:'];
-        $empresa = $this->request->data['Presupuestos']['Empresa*:'];
-        $email = $this->request->data['Presupuestos']['Email*:'];
-        $telefono = $this->request->data['Presupuestos']['Telefono*:'];
-        $departamento = $this->request->data['Presupuestos']['Departamento:'];
-        $direccion = $this->request->data['Presupuestos']['Direccion:'];
-        $horario = $this->request->data['Presupuestos']['Horario:'];
+        $nombre = $this->request->data['nombre'];
+        $apellido = $this->request->data['apellido'];
+        $empresa = $this->request->data['empresa'];
+        $email = $this->request->data['email'];
+        $telefono = $this->request->data['telefono'];
+        $departamento = $this->request->data['departamento'];
+        $direccion = $this->request->data['direccion'];
+        $horario = $this->request->data['hora_trabajo'];
+        $ancho = $this->request->data['ancho'];
+        $alto = $this->request->data['alto'];
         
         $this->Session->write('Presupuesto.nombre', $nombre);
         $this->Session->write('Presupuesto.apellido', $apellido);
@@ -31,8 +33,9 @@ class PresupuestosController extends AppController {
         $this->Session->write('Presupuesto.departamento', $departamento);
         $this->Session->write('Presupuesto.direccion', $direccion);
         $this->Session->write('Presupuesto.horario', $horario);
-        
-         
+        $this->Session->write('Cartele.ancho', $ancho);
+        $this->Session->write('Cartele.alto', $alto);
+         $this->set('precio', $ancho*$alto);
        
         $this->render(); 
     } 
@@ -54,5 +57,9 @@ class PresupuestosController extends AppController {
 
     	$this->render();
      
+    }
+    public function test(){
+    
+    	print_r($this->request->data);
     }
 }	
