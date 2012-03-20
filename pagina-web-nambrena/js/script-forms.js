@@ -1,8 +1,5 @@
 $(document).ready(function() {
-	$("#MainForm").validate();
-	
-	$("#final_fields").css("display", "none");
-	$("#content-info").css("display", "none");
+	$("#MainForm").validate();	
    /*
    * In-Field Label jQuery Plugin
    * http://fuelyourcoding.com/scripts/infield.html
@@ -70,13 +67,11 @@ $(document).ready(function() {
 );
 
 function show_alert(){
-	/*alert("I am an alert box!");*/
 	var valid = $("#xy_fields").validate().form();
 	if(valid){
-		$("#main-logo").animate({width: '15%', marginLeft: '12%', top:'5%'}, 400);
-		$("#xy_ok").fadeOut(400);
-		$("#final_fields").fadeIn(400);
-		$("#content-info").fadeIn(200).animate({left: '10%'}, 400);
+		$("#instrucciones").hide();
+		$('#content-form').animate({top: '5%'}, 400);
+		$("#content-lower-menu2").animate({left: '0%'}, 400);
 	}else{
 		if(!$("#MainForm").validate().element( "input#ancho" )){
 			$("input#ancho").focus();
