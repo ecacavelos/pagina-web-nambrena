@@ -3,6 +3,8 @@ class CartelesController extends AppController {
 	
     public $name = 'Carteles';
     public $helpers = array('Html', 'Form');
+   // public $uses = array('Presupuesto', 'Cartele');
+    
 	
 	    
 	 public function index() {
@@ -17,7 +19,7 @@ class CartelesController extends AppController {
     //**************************
     //TIPO
     ///**************************
-    public function front_light($soporte = null , $luminosidad_mantenimiento = null){
+public function front_light($soporte = null , $luminosidad_mantenimiento = null){
     	
         
         
@@ -238,7 +240,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     
     } 
        
-    public function back_light($soporte = null , $luminosidad_mantenimiento = null){
+public function back_light($soporte = null , $luminosidad_mantenimiento = null){
      
     	if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/back_light
         	
@@ -284,8 +286,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     			case "sobre_poste":
     				if ($luminosidad_mantenimiento == null){
     					
-    					$this->layout = 'layout_carteles_front_light-sobre_poste';
-    					$this->Session->write('Cartele.tipo', 'front_light');
+    					$this->layout = 'layout_carteles_back_light-sobre_poste';
+    					$this->Session->write('Cartele.tipo', 'back_light');
     					$this->Session->write('Cartele.soporte', 'sobre_poste');
     					
     				}
@@ -294,7 +296,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     						
      		 				case "con_luz":
 		    					$this->layout = 'layout_carteles_elegir_medida';
-		    					$this->Session->write('Cartele.tipo', 'front_light');
+		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
@@ -302,7 +304,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     							
     							case "sin_luz":
 		    					$this->layout = 'layout_carteles_elegir_medida';
-		    					$this->Session->write('Cartele.tipo', 'front_light');
+		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 0);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
@@ -315,8 +317,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     				case "ya_poseo":
     				if ($luminosidad_mantenimiento == null){
     					
-    					$this->layout = 'layout_carteles_front_light-ya_poseo';
-    					$this->Session->write('Cartele.tipo', 'front_light');
+    					$this->layout = 'layout_carteles_back_light-ya_poseo';
+    					$this->Session->write('Cartele.tipo', 'back_light');
     					$this->Session->write('Cartele.soporte', 'ya_poseo');
     					
     					
@@ -326,7 +328,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     						
      		 				case "con_mantenimiento":
 		    					$this->layout = 'layout_carteles_elegir_medida';
-		    					$this->Session->write('Cartele.tipo', 'front_light');
+		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.mantenimiento', 1);
 		    					$this->Session->write('Cartele.luminosidad', -1);
@@ -334,7 +336,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     							
     							case "sin_mantenimiento":
 		    					$this->layout = 'layout_carteles_elegir_medida';
-		    					$this->Session->write('Cartele.tipo', 'front_light');
+		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.mantenimiento', 0);
 		    					$this->Session->write('Cartele.luminosidad', -1);
