@@ -88,7 +88,11 @@
 							);
 			  		    ?>	
                 </div>
-              <div id="content-lema"><img src="images/carteles_frontlight_sobrepared.lema.png" width="1356" height="124" alt=""></div>
+<!--              <div id="content-lema">	<img src="images/carteles_frontlight_sobreposte.lema.png" width="1356" height="124" alt=""></div>-->
+				<div id="content-lema">	
+			    <?php echo $this->Html->image('carteles_frontlight_sobreposte.lema.png', array('alt' => "NAMBRE!", 'width'=> "1356", 'height' => "124"));
+			    ?>
+				</div>
 			</div>
 		</div>
     </body>

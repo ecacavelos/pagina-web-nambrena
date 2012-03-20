@@ -24,11 +24,14 @@
         	
         
 		<noscript>
-        	<style type="text/css">
-            	#content-lower-menu {
-                	left: 0px;
-            	}
-        	</style>
+            <style type="text/css">
+                #content-lower-menu {
+                    left: 0px;
+                }
+				#progressbar{
+					display: none;
+				}
+            </style>
         </noscript>
     </head>
 
@@ -89,7 +92,10 @@
 							);
 			  		    ?>	
                 </div>
-              <div id="content-lema"><img src="images/carteles_frontlight_sobrepared.lema.png" width="1356" height="124" alt=""></div>
+              <div id="content-lema">
+<!--              <img src="images/carteles_frontlight_mantenimiento.lema.png" width="1356" height="122" alt="">-->
+				<?php echo $this->Html->image('carteles_frontlight_mantenimiento.lema.png', array('alt' => "NAMBRE!", 'width'=> "1356", 'height' => "122"));?>
+              </div>
 			</div>
 		</div>
     </body>
