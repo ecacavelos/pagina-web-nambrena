@@ -7,7 +7,7 @@
 
 
 
-<!--    	<link rel="stylesheet" type="text/css" href="css/carteles_frontlight_luz.css" />-->
+<!--    	<link rel="stylesheet" type="text/css" href="css/carteles_consinluz.css" />-->
 <!--		<link rel="stylesheet" type="text/css" href="global.css" />-->
 <!--        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
 <!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
@@ -15,7 +15,7 @@
 <!--		<script type="text/javascript" src="js/script-subpages.js"></script>-->
 
 
-		<?php echo $this->Html->css('carteles_frontlight_luz'); ?>
+		<?php echo $this->Html->css('carteles_consinluz'); ?>
 		<?php echo $this->Html->css('global'); ?>
 		<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
 		<?php echo $this->Html->script('jquery-1.7.1.min');?>
@@ -24,11 +24,14 @@
         	
         
 		<noscript>
-        	<style type="text/css">
-            	#content-lower-menu {
-                	left: 0px;
-            	}
-        	</style>
+            <style type="text/css">
+                #content-lower-menu {
+                    left: 0px;
+                }
+				#progressbar{
+					display: none;
+				}
+            </style>
         </noscript>
     </head>
 
@@ -89,7 +92,10 @@
 							);
 			  		    ?>	
                 </div>
-              <div id="content-lema"><img src="images/carteles_frontlight_sobrepared.lema.png" width="1356" height="124" alt=""></div>
+              <div id="content-lema">
+<!--              <img src="images/carteles_frontlight_sobrepared.lema.png" width="1356" height="124" alt="">-->
+			  <?php echo $this->Html->image('carteles_frontlight_sobrepared.lema.png', array('alt' => "NAMBRE!", 'width'=> "1356", 'height' => "124"));?>
+              </div>
 			</div>
 		</div>
     </body>
