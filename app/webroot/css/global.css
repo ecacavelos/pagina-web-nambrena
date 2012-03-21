@@ -148,14 +148,14 @@ a img {
 	margin-right: auto;*/	
 }
 
-#content-lower-menu img {
+#content-lower-menu img, #content-lower-menu2 img {
 	-ms-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-webkit-transition: all 1s ease;
 	-o-transition: all 1s ease;
 }
 
-#content-lower-menu img:hover {
+#content-lower-menu img:hover, #content-lower-menu2 img:hover {
 	/*transform:translate(0px,-30px);*/
 	-ms-transform:translate(0px,-30px); /* IE 9 */
 	-moz-transform:translate(0px,-30px); /* Firefox */
