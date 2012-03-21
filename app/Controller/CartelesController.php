@@ -139,8 +139,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
         
         if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/frontlight
         	
-        	$this->layout = 'layout_carteles_adhesivos';
-        	$this->Session->write('Cartele.tipo', 'adhesivos');
+        	$this->layout = 'layout_carteles_adhesivo';
+        	$this->Session->write('Cartele.tipo', 'adhesivo');
 			   
         } // aca se emmpiezan a parsear el unico parametro que se manda de los views, llega como un string la configuracion. Cada configuracion es bien descriptiva. 
         else{
@@ -150,22 +150,22 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     				if ($luminosidad_mantenimiento == null){
     					
     					$this->layout = 'layout_carteles_adhesivo-sobre_pared';
-    					$this->Session->write('Cartele.tipo', 'adhesivos');
+    					$this->Session->write('Cartele.tipo', 'adhesivo');
     					$this->Session->write('Cartele.soporte', 'sobre_pared');
     				}
     				else{
     					switch ($luminosidad_mantenimiento){
     						
      		 				case "con_luz":
-		    					$this->layout = 'layout_carteles_adhesivos-sobre_pared-con_luz';
-		    					$this->Session->write('Cartele.tipo', 'adhesivos');
+		    					$this->layout = 'layout_carteles_adhesivo-sobre_pared-con_luz';
+		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
 		    					$this->Session->write('Cartele.luminosidad', 1);
     							break;
     							
     							case "sin_luz":
-		    					$this->layout = 'layout_carteles_adhesivos-sobre_pared-sin_luz';
-		    					$this->Session->write('Cartele.tipo', 'adhesivos');
+		    					$this->layout = 'layout_carteles_adhesivo-sobre_pared-sin_luz';
+		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
 		    					$this->Session->write('Cartele.luminosidad', 0);
     							break;
@@ -177,8 +177,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     			case "sobre_poste":
     				if ($luminosidad_mantenimiento == null){
     					
-    					$this->layout = 'layout_carteles_adhesivos-sobre_poste';
-    					$this->Session->write('Cartele.tipo', 'adhesivos');
+    					$this->layout = 'layout_carteles_adhesivo-sobre_poste';
+    					$this->Session->write('Cartele.tipo', 'adhesivo');
     					$this->Session->write('Cartele.soporte', 'sobre_poste');
     					
     				}
@@ -186,15 +186,15 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     					switch ($luminosidad_mantenimiento){
     						
      		 				case "con_luz":
-		    					$this->layout = 'layout_carteles_adhesivos-sobre_poste-con_luz';
-		    					$this->Session->write('Cartele.tipo', 'adhesivos');
+		    					$this->layout = 'layout_carteles_adhesivo-sobre_poste-con_luz';
+		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 1);
     							break;
     							
     							case "sin_luz":
-		    					$this->layout = 'layout_carteles_adhesivos-sobre_poste-sin_luz';
-		    					$this->Session->write('Cartele.tipo', 'adhesivos');
+		    					$this->layout = 'layout_carteles_adhesivo-sobre_poste-sin_luz';
+		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 0);
     							break;
@@ -206,8 +206,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     				case "ya_poseo":
     				if ($luminosidad_mantenimiento == null){
     					
-    					$this->layout = 'layout_carteles_adhesivos-ya_poseo';
-    					$this->Session->write('Cartele.tipo', 'adhesivos');
+    					$this->layout = 'layout_carteles_adhesivo-ya_poseo';
+    					$this->Session->write('Cartele.tipo', 'adhesivo');
     					$this->Session->write('Cartele.soporte', 'ya_poseo');
     					
     				}
@@ -215,15 +215,15 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     					switch ($luminosidad_mantenimiento){
     						
      		 				case "con_luz":
-		    					$this->layout = 'layout_carteles_adhesivos-ya_poseo-con_luz';
-		    					$this->Session->write('Cartele.tipo', 'adhesivos');
+		    					$this->layout = 'layout_carteles_adhesivo-ya_poseo-con_luz';
+		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.luminosidad', 1);
     							break;
     							
     							case "sin_luz":
-		    					$this->layout = 'layout_carteles_adhesivos-ya_poseo-sin_luz';
-		    					$this->Session->write('Cartele.tipo', 'adhesivos');
+		    					$this->layout = 'layout_carteles_adhesivo-ya_poseo-sin_luz';
+		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.luminosidad', 0);
     							break;
@@ -235,7 +235,6 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
         }
 //      
         $cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
-        print_r($cartel_array);
         $this->Cartele->save($cartel_array);
     
     } 
