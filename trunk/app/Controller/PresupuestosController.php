@@ -22,8 +22,8 @@ class PresupuestosController extends AppController {
         $departamento = $this->request->data['departamento'];
         $direccion = $this->request->data['direccion'];
         $horario = $this->request->data['hora_trabajo'];
-        $ancho = $this->request->data['ancho'];
-        $alto = $this->request->data['alto'];
+        $ancho = $this->Session->read('Cartele.ancho');
+        $alto = $this->Session->read('Cartele.alto');;
         
         $this->Session->write('Presupuesto.nombre', $nombre);
         $this->Session->write('Presupuesto.apellido', $apellido);
