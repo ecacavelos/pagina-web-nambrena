@@ -57,7 +57,7 @@
 
 <!--					<a href="carteles_frontlight.html" class="transition-back"><img src="images/header_small.frontlight.png" width="442" height="201" alt=""></a>-->
 				<?php echo $this->Html->link(
-					$this->Html->image('header_small.frontlight.png', array('alt' => "NAMBRE!", 'width'=> "422", 'height' => "201")),
+					$this->Html->image('header_small.adhesivo.png', array('alt' => "NAMBRE!", 'width'=> "422", 'height' => "201")),
 					array('controller' => 'carteles', 'action' => "front_light"),
 					array('target' => '_self', 'escape' => false, 'class' => "transition-back" )
 				);
@@ -71,8 +71,8 @@
                 <div id="content-lower-menu">
 <!--                	<img class="sinluz" src="images/carteles_frontlight_sobrepared.sinluz.png" width="589" height="478" alt="">-->
 						<?php echo $this->Html->link(
-							$this->Html->image('carteles_frontlight_sobrepared.sinluz.png', array( 'class' => "sinluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
-							array('controller' => 'carteles', 'action' => "front_light" ,'sobre_poste', 'sin_luz'),
+							$this->Html->image('carteles_frontlight_sobreposte.sinluz.png', array( 'class' => "sinluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
+							array('controller' => 'carteles', 'action' => "adhesivos" ,'sobre_poste', 'sin_luz'),
 							array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 							);
 			  		    ?>	
@@ -82,8 +82,8 @@
 			   			?>
 <!--                    <img class="conluz" src="images/carteles_frontlight_sobrepared.conluz.png" width="589" height="478" alt="">-->
 						<?php echo $this->Html->link(
-							$this->Html->image('carteles_frontlight_sobrepared.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
-							array('controller' => 'carteles', 'action' => "front_light" ,'sobre_poste', 'con_luz'),
+							$this->Html->image('arteles_frontlight_sobreposte.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
+							array('controller' => 'carteles', 'action' => "adhesivos" ,'sobre_poste', 'con_luz'),
 							array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 							);
 			  		    ?>	

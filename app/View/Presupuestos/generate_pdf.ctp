@@ -9,9 +9,9 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nambrena');
-$pdf->SetTitle('oooooooo');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+$pdf->SetTitle('Nambrena');
+$pdf->SetSubject('Nambrena');
+$pdf->SetKeywords('nambrena');
 
 // set default header data
 $pdf->SetHeaderData('logo_nambre.png', 21, 'Nambrena Industria publicitaria', '');
@@ -47,7 +47,7 @@ $pdf->SetFont('dejavusans', 'B', 18);
 $pdf->AddPage();
 
 $pdf->Ln(1);$pdf->Ln(1);$pdf->Ln(1);
-$pdf->Write(0, 'Presupuesto tentativo de colocacion de carteles', '', 0, 'C', true, 0, false, false, 0);
+$pdf->Write(0, 'Presupuesto tentativo de colocacion de cartel', '', 0, 'C', true, 0, false, false, 0);
 
 $pdf->Ln(5);
 
@@ -68,8 +68,7 @@ $pdf->Ln(1);
 $pdf->Ln(1);
 $pdf->Ln(1);
 
-
-
+$pdf->SetFont('dejavusans','I', 11);;
 $pdf->Write(0, 'Detalles del cartel seleccionado', '', 0, 'L', true, 0, false, false, 0);
 $pdf->Ln(1);
 $pdf->Ln(1);
@@ -82,23 +81,75 @@ $pdf->SetFillColor(255, 255, 255);
 
 // set color for text
 $pdf->SetTextColor(0, 63, 127);
-$pdf->SetFontSize(10);
+$pdf->SetFont('dejavusans', 10);
 // write the first column
-$pdf->MultiCell(30, 0, 'Tipo', 1, 'J', 1, 0, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(50, 0, $cartel_array['Cartele']['tipo'], 1, 'J', 2, 1, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(30, 0, 'Soporte', 1, 'J', 1, 0, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(50, 0, $cartel_array['Cartele']['soporte'], 1, 'J', 2, 1, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(30, 0, 'Luminosidad', 1, 'J', 1, 0, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(50, 0, $cartel_array['Cartele']['luminosidad'], 1, 'J', 2, 1, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(30, 0, 'Mantenimiento', 1, 'J', 1, 0, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(50, 0, $cartel_array['Cartele']['mantenimiento'], 1, 'J', 2, 1, '', '', true, 0, false, true, 0);
+
+// Se obtienen el tipo, soporte, luminosidad y mantenimiento. 
+global $tipo, $soporte, $mantenimiento, $luminosidad;
+if ($cartel_array['Cartele']['tipo'] == "front_light"){
+     $tipo =  "Front Light";
+}
+if ($cartel_array['Cartele']['tipo'] == "back_light"){
+     $tipo =  "Back Light";
+}
+if ($cartel_array['Cartele']['tipo'] == "adhesivo"){
+     $tipo =  "Adhesivo";
+}
+
+
+
+if ($cartel_array['Cartele']['soporte'] == "sobre_pared"){
+     $soporte =  "Sobre pared";
+}
+if ($cartel_array['Cartele']['soporte'] == "sobre_poste"){
+     $soporte =  "Sobre poste";
+}
+if ($cartel_array['Cartele']['soporte'] == "ya_poseo"){
+     $soporte =  "Ya posee";
+}
+
+
+if ($cartel_array['Cartele']['luminosidad'] == 0){
+     $luminosidad =  "Sin luz";
+}                	
+if ($cartel_array['Cartele']['luminosidad'] == 1){
+     $luminosidad =  "Con luz";
+}
+
+
+if ($cartel_array['Cartele']['mantenimiento'] == 0){
+     $mantenimiento =  "Sin mantenimiento";
+}
+if ($cartel_array['Cartele']['mantenimiento'] == 1){
+     $mantenimiento =  "Con mantenimiento";
+}                	                               	                		
+                		
+                		
+$pdf->MultiCell(30, 0, 'Tipo', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+$pdf->MultiCell(50, 0, $tipo, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+$pdf->MultiCell(30, 0, 'Soporte', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+$pdf->MultiCell(50, 0, $soporte, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+
+if ($cartel_array['Cartele']['luminosidad'] != -1){
+	
+	$pdf->MultiCell(30, 0, 'Luminosidad', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $luminosidad, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+}
+if ($cartel_array['Cartele']['mantenimiento'] != -1){
+	
+	$pdf->MultiCell(30, 0, 'Mantenimiento', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $mantenimiento, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+}
 
 //PRECIO
 
 $pdf->Ln(1);
 $pdf->Ln(1);
-
-$pdf->Write(0, 'Precio : '.$precio. ' Gs.', '', 0, 'L', true, 0, false, false, 0);
+$factor = 3;
+$precio = $cartel_array['Cartele']['ancho']*$cartel_array['Cartele']['ancho']*$factor;
+$pdf->SetFontSize(12);
+$pdf->Write(0, 'Precio estimativo: '.$precio. ' Gs.', '', 0, 'L', true, 0, false, false, 0);
 
 // set some text to print
 //$txt = <<<EOD

@@ -11,6 +11,9 @@ class CartelesController extends AppController {
 	        
 	        $this->layout = 'layout_carteles';
 	        $this->set('carteles_actuales', $this->Cartele->find('all'));
+//	        $cartel_array = array ("Cartele" => $this->Session->read());
+//            print_r($cartel_array);
+			   
 	       
 	    }
 
@@ -27,7 +30,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
         	
         	$this->layout = 'layout_carteles_front_light';
         	$this->Session->write('Cartele.tipo', 'front_light');
-			   
+        	
         } // aca se emmpiezan a parsear el unico parametro que se manda de los views, llega como un string la configuracion. Cada configuracion es bien descriptiva. 
         else{
     		switch ($soporte){
@@ -126,8 +129,9 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
     				
     		}
         }
+        
 //      
-        $cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
+        //$cartel_array = array ("Cartele" => $this->Session->read());
         //print_r($cartel_array);
         //$this->Cartele->save($cartel_array);
     
@@ -234,8 +238,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     		}
         }
 //      
-        $cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
-        $this->Cartele->save($cartel_array);
+       // $cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
+        //$this->Cartele->save($cartel_array);
     
     } 
        
@@ -351,6 +355,13 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
     
     }
 
-
+public function ficha(){
+	 
+			$this->layout = 'layout_presupuestos_ingresar_datos';
+	        //$cartel_array = array ("Cartele" => $this->Session->read());
+            //print_r($cartel_array);
+	
+	
+}
 
 }	
