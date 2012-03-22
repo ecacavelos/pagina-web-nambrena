@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	$("#MainForm").validate();	
+	$("#MainForm").validate();
+	$("#content-lower-menu2").css("display", "none");
    /*
    * In-Field Label jQuery Plugin
    * http://fuelyourcoding.com/scripts/infield.html
@@ -70,7 +71,8 @@ function show_alert(){
 	var valid = $("#xy_fields").validate().form();
 	if(valid){
 		$("#instrucciones").hide();
-		$('#content-form').animate({top: '5%'}, 400);
+		$("#content-form").animate({top: '5%'}, 400);
+		$("#content-lower-menu2").fadeIn(400);
 		$("#content-lower-menu2").animate({left: '0%'}, 400);
 	}else{
 		if(!$("#MainForm").validate().element( "input#ancho" )){
