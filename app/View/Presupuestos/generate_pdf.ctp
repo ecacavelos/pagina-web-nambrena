@@ -164,7 +164,7 @@ $pdf->Write(0, 'Precio estimativo: '.$precio. ' Gs.', '', 0, 'L', true, 0, false
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('presupuesto.pdf', 'D');
+$pdf->Output('presupuesto.pdf', 'I');
 
 
 ?> 
