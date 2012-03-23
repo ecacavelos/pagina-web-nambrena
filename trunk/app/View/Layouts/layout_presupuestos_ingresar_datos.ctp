@@ -142,6 +142,8 @@
                 			echo "Mantenimiento: Sin Mantenimiento"."</br>";
                 		if($carteles['mantenimiento'] == 1)
                 			echo "Luminosidad: Con Mantenimiento"."</br>";
+                			
+                		echo "</br>"
                 ?>
                 </div>
                 <div class="clear"></div>
