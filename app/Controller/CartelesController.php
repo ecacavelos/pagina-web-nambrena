@@ -3,7 +3,6 @@ class CartelesController extends AppController {
 	
     public $name = 'Carteles';
     public $helpers = array('Html', 'Form');
-   // public $uses = array('Presupuesto', 'Cartele');
     
 	
 	    
@@ -12,7 +11,7 @@ class CartelesController extends AppController {
 	        $this->layout = 'layout_carteles';
 	        $this->set('carteles_actuales', $this->Cartele->find('all'));
 //	        $cartel_array = array ("Cartele" => $this->Session->read());
-//            print_r($cartel_array);
+//          print_r($cartel_array);
 			   
 	       
 	    }
@@ -24,6 +23,10 @@ class CartelesController extends AppController {
     ///**************************
 public function front_light($soporte = null , $luminosidad_mantenimiento = null){
     	
+        
+        $this->Session->write('Corporeo',null);
+        $this->Session->write('Impresione',null);
+        $this->Session->write('Decuvinyl',null);
         
         
         if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/frontlight
@@ -131,14 +134,21 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
         }
         
 //      
-        //$cartel_array = array ("Cartele" => $this->Session->read());
-        //print_r($cartel_array);
+//        $cartel_array = $this->Session->read();
+//        print_r($cartel_array);
+//        $datos = $this->request->query;
+//        print_r($datos);
+//        
         //$this->Cartele->save($cartel_array);
     
     } 
     
 public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     	
+        
+        $this->Session->write('Corporeo',null);
+        $this->Session->write('Impresione',null);
+        $this->Session->write('Decuvinyl',null);
         
         
         if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/frontlight
@@ -161,14 +171,14 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     					switch ($luminosidad_mantenimiento){
     						
      		 				case "con_luz":
-		    					$this->layout = 'layout_carteles_adhesivo-sobre_pared-con_luz';
+		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
 		    					$this->Session->write('Cartele.luminosidad', 1);
     							break;
     							
     							case "sin_luz":
-		    					$this->layout = 'layout_carteles_adhesivo-sobre_pared-sin_luz';
+		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
 		    					$this->Session->write('Cartele.luminosidad', 0);
@@ -190,14 +200,14 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     					switch ($luminosidad_mantenimiento){
     						
      		 				case "con_luz":
-		    					$this->layout = 'layout_carteles_adhesivo-sobre_poste-con_luz';
+		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 1);
     							break;
     							
     							case "sin_luz":
-		    					$this->layout = 'layout_carteles_adhesivo-sobre_poste-sin_luz';
+		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
 		    					$this->Session->write('Cartele.luminosidad', 0);
@@ -219,14 +229,14 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     					switch ($luminosidad_mantenimiento){
     						
      		 				case "con_luz":
-		    					$this->layout = 'layout_carteles_adhesivo-ya_poseo-con_luz';
+		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.luminosidad', 1);
     							break;
     							
     							case "sin_luz":
-		    					$this->layout = 'layout_carteles_adhesivo-ya_poseo-sin_luz';
+		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
 		    					$this->Session->write('Cartele.luminosidad', 0);
@@ -237,7 +247,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     				
     		}
         }
-//      
+      
        // $cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
         //$this->Cartele->save($cartel_array);
     
@@ -245,13 +255,19 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
        
 public function back_light($soporte = null , $luminosidad_mantenimiento = null){
      
-    	if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/back_light
+    	
+		$this->Session->write('Corporeo',null);
+        $this->Session->write('Impresione',null);
+        $this->Session->write('Decuvinyl',null);
+        
+        
+		if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/back_light
         	
         	$this->layout = 'layout_carteles_back_light';
         	$this->Session->write('Cartele.tipo', 'back_light');
 			   
         }
-    else{
+    	else{
     		switch ($soporte){
     		
     			case "sobre_pared":
@@ -347,21 +363,37 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
     					}
     				}
     				break;
-    				
     		}
         }
-        
-    
-    
     }
 
 public function ficha(){
-	 
+	 			
+			// Se setea el layout para presentar el formulario antes de generar el presupuesto. 
 			$this->layout = 'layout_presupuestos_ingresar_datos';
-	        //$cartel_array = array ("Cartele" => $this->Session->read());
-            //print_r($cartel_array);
-	
-	
-}
+			
+			// Se obtienen el ancho y alto a partir del formulario en layout_carteles_elegir_medida.ctp
+			$this->Session->write('ancho', $this->request->data['ancho']);
+			$this->Session->write('alto', $this->request->data['alto']);
+			
+      		// Se setea el tipo de envio que eligio el usuario. 
+      		if (array_key_exists('colocado',$this->request->data)){//COLOCADO
+        		$this->Session->write('Cartele.tipoEnvio', 'colocado');
+        	}
+			if (array_key_exists('pickup',$this->request->data)){//PICKUP
+      	  		$this->Session->write('Cartele.tipoEnvio', 'pickup');
+      		}
+			if (array_key_exists('envio',$this->request->data)){//ENVIO
+      			$this->Session->write('Cartele.tipoEnvio', 'envio');
+            }
 
+//          IMPRESION DE LOS DATOS PARA DEBUGGEAR.
+//    		$datos = $this->request->query;
+//          print_r($datos);
+//      	$datos2 = $this->request->data;
+//      	print_r($datos2);
+//      	$cartel_array = $this->Session->read();
+//          print_r($cartel_array);
+	
+	}
 }	

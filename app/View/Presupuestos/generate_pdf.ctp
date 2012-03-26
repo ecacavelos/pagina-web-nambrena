@@ -1,7 +1,7 @@
 <?php 
 App::import('Vendor','tcpdf/tcpdf'); 
 $ficha_array = array ("Presupuesto" => $this->Session->read('Presupuesto'));
-$cartel_array = array ("Cartele" => $this->Session->read('Cartele'));
+$datos = $this->Session->read();
 
 // create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -33,7 +33,6 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
 //set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-$fontname = $pdf->addTTFfont('falsepositive.ttf');
 
 
 
@@ -47,7 +46,24 @@ $pdf->SetFont('dejavusans', 'B', 18);
 $pdf->AddPage();
 
 $pdf->Ln(1);$pdf->Ln(1);$pdf->Ln(1);
-$pdf->Write(0, 'Presupuesto tentativo de colocacion de cartel', '', 0, 'C', true, 0, false, false, 0);
+if ($datos['Cartele'] != null){
+	
+	$producto = 'cartel'; 
+}
+if ($datos['Corporeo'] != null){
+	
+	$producto = 'corporeo'; 
+}
+if ($datos['Impresione'] != null){
+	
+	$producto = 'impresion'; 
+}
+if ($datos['Decuvinyl'] != null){
+	
+	$producto = 'vinilo'; 
+}
+
+$pdf->Write(0, 'Presupuesto tentativo de ' .$producto, '', 0, 'C', true, 0, false, false, 0);
 
 $pdf->Ln(5);
 
@@ -68,8 +84,8 @@ $pdf->Ln(1);
 $pdf->Ln(1);
 $pdf->Ln(1);
 
-$pdf->SetFont('dejavusans','I', 11);;
-$pdf->Write(0, 'Detalles del cartel seleccionado', '', 0, 'L', true, 0, false, false, 0);
+$pdf->SetFont('dejavusans','I', 11);
+$pdf->Write(0, 'Detalles del ' .$producto. ' seleccionado', '', 0, 'L', true, 0, false, false, 0);
 $pdf->Ln(1);
 $pdf->Ln(1);
 // write the first column
@@ -86,85 +102,82 @@ $pdf->SetFont('dejavusans', 10);
 
 // Se obtienen el tipo, soporte, luminosidad y mantenimiento. 
 global $tipo, $soporte, $mantenimiento, $luminosidad;
-if ($cartel_array['Cartele']['tipo'] == "front_light"){
-     $tipo =  "Front Light";
-}
-if ($cartel_array['Cartele']['tipo'] == "back_light"){
-     $tipo =  "Back Light";
-}
-if ($cartel_array['Cartele']['tipo'] == "adhesivo"){
-     $tipo =  "Adhesivo";
-}
 
-
-
-if ($cartel_array['Cartele']['soporte'] == "sobre_pared"){
-     $soporte =  "Sobre pared";
-}
-if ($cartel_array['Cartele']['soporte'] == "sobre_poste"){
-     $soporte =  "Sobre poste";
-}
-if ($cartel_array['Cartele']['soporte'] == "ya_poseo"){
-     $soporte =  "Ya posee";
-}
-
-
-if ($cartel_array['Cartele']['luminosidad'] == 0){
-     $luminosidad =  "Sin luz";
-}                	
-if ($cartel_array['Cartele']['luminosidad'] == 1){
-     $luminosidad =  "Con luz";
-}
-
-
-if ($cartel_array['Cartele']['mantenimiento'] == 0){
-     $mantenimiento =  "Sin mantenimiento";
-}
-if ($cartel_array['Cartele']['mantenimiento'] == 1){
-     $mantenimiento =  "Con mantenimiento";
-}                	                               	                		
-                		
-                		
-$pdf->MultiCell(30, 0, 'Tipo', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(50, 0, $tipo, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(30, 0, 'Soporte', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-$pdf->MultiCell(50, 0, $soporte, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
-
-if ($cartel_array['Cartele']['luminosidad'] != -1){
+if ($datos['Cartele'] != null){
 	
-	$pdf->MultiCell(30, 0, 'Luminosidad', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(50, 0, $luminosidad, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	if ($datos['Cartele']['tipo'] == "front_light"){
+	     $tipo =  "Front Light";
+	}
+	if ($datos['Cartele']['tipo'] == "back_light"){
+	     $tipo =  "Back Light";
+	}
+	if ($datos['Cartele']['tipo'] == "adhesivo"){
+	     $tipo =  "Adhesivo";
+	}
+	
+	
+	
+	if ($datos['Cartele']['soporte'] == "sobre_pared"){
+	     $soporte =  "Sobre pared";
+	}
+	if ($datos['Cartele']['soporte'] == "sobre_poste"){
+	     $soporte =  "Sobre poste";
+	}
+	if ($datos['Cartele']['soporte'] == "ya_poseo"){
+	     $soporte =  "Ya posee";
+	}
+	
+	
+	if ($datos['Cartele']['luminosidad'] == 0){
+	     $luminosidad =  "Sin luz";
+	}                	
+	if ($datos['Cartele']['luminosidad'] == 1){
+	     $luminosidad =  "Con luz";
+	}
+	
+	
+	if ($datos['Cartele']['mantenimiento'] == 0){
+	     $mantenimiento =  "Sin mantenimiento";
+	}
+	if ($datos['Cartele']['mantenimiento'] == 1){
+	     $mantenimiento =  "Con mantenimiento";
+	}                	                               	                		
+	                		
+	                		
+	$pdf->MultiCell(30, 0, 'Tipo', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $tipo, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(30, 0, 'Soporte', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $soporte, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	if ($datos['Cartele']['luminosidad'] != -1){
+		
+		$pdf->MultiCell(30, 0, 'Luminosidad', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+		$pdf->MultiCell(50, 0, $luminosidad, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+		
+	}
+	if ($datos['Cartele']['mantenimiento'] != -1){
+		
+		$pdf->MultiCell(30, 0, 'Mantenimiento', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+		$pdf->MultiCell(50, 0, $mantenimiento, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	}
+	$pdf->MultiCell(30, 0, 'Ancho', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['ancho'], 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	$pdf->MultiCell(30, 0, 'Alto', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['alto'], 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	$pdf->Ln(1);
+	$pdf->Ln(1);
+	$factor = 3;
+	$precio = $datos['ancho']*$datos['alto']*$factor;
+	$pdf->SetFontSize(12);
+	$pdf->Write(0, 'Precio estimativo: '.$precio. ' Gs.', '', 0, 'L', true, 0, false, false, 0);
 	
 }
-if ($cartel_array['Cartele']['mantenimiento'] != -1){
-	
-	$pdf->MultiCell(30, 0, 'Mantenimiento', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(50, 0, $mantenimiento, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
-}
 
-//PRECIO
-
-$pdf->Ln(1);
-$pdf->Ln(1);
-$factor = 3;
-$precio = $cartel_array['Cartele']['ancho']*$cartel_array['Cartele']['ancho']*$factor;
-$pdf->SetFontSize(12);
-$pdf->Write(0, 'Precio estimativo: '.$precio. ' Gs.', '', 0, 'L', true, 0, false, false, 0);
-
-// set some text to print
-//$txt = <<<EOD
-//TCPDF Example 003
-//
-//Custom page header and footer are defined by extending the TCPDF class and overriding the Header() and Footer() methods.
-//EOD;
-//
-//// print a block of text using Write()
-//$pdf->Write($h=0, $txt, $link='', $fill=0, $align='C', $ln=true, $stretch=0, $firstline=false, $firstblock=false, $maxh=0);
-
-// ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('presupuesto.pdf', 'I');
+$pdf->Output('Presupuesto-'.$producto.'.pdf', 'D');
 
 
 ?> 

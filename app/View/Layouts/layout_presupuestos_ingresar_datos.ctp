@@ -110,39 +110,57 @@
                 </div>
                 <div id="content-info" class="form_gradiente">
                 	<h3>Seleccionaste los siguientes opciones !</h3>
-                <?php $carteles =  $this->Session->read('Cartele');
-                		if ($carteles['tipo'] == "front_light"){
-                			echo "Tipo: Front Light"."</br>";	
-                			
-                		}
-                		if ($carteles['tipo'] == "back_light"){
-                			echo "Tipo: Back Light"."</br>";	
-                			
-                		}
-                		if ($carteles['tipo'] == "adhesivo"){
-                			echo "Tipo: Adhesivo"."</br>";	
-                			
+                <?php $datos =  $this->Session->read();
+                	  
+                		
+                		if ($datos['Cartele'] != null){
+	                		
+                			echo "Producto: Cartel </br>";
+                			if ($datos['Cartele']['tipo'] == "front_light"){
+	                			echo "Tipo: Front light"."</br>";	
+	                			
+	                		}
+	                		if ($datos['Cartele']['tipo'] == "back_light"){
+	                			echo "Tipo: Back light"."</br>";	
+	                			
+	                		}
+	                		if ($datos['Cartele']['tipo'] == "adhesivo"){
+	                			echo "Tipo: Adhesivo"."</br>";	
+	                			
+	                		}
+	                		
+	                		if ($datos['Cartele']['soporte'] == "sobre_pared"){
+	                			echo "Soporte: Sobre pared"."</br>";
+	                		}
+	                		
+	                		if ($datos['Cartele']['soporte'] == "sobre_poste"){
+	                			echo "Soporte: Sobre poste"."</br>";
+	                		}
+	                		if ($datos['Cartele']['soporte'] == "ya_poseo"){
+	                			echo "Soporte: Ya tengo soporte"."</br>";
+	                		}
+	                		if($datos['Cartele']['luminosidad'] == 0)
+	                			echo "Luminosidad: Sin Luz"."</br>";
+	                		if($datos['Cartele']['luminosidad'] == 1)
+	                			echo "Luminosidad: Con Luz"."</br>";
+	                		if($datos['Cartele']['mantenimiento'] == 0)
+	                			echo "Mantenimiento: Sin Mantenimiento"."</br>";
+	                		if($datos['Cartele']['mantenimiento'] == 1)
+	                			echo "Luminosidad: Con Mantenimiento"."</br>";
+	                			
+	                		if($datos['Cartele']['tipoEnvio'] == 'envio')
+	                			echo "Instalaci&oacute;n: Te enviamos el cartel!"."</br>";
+	                			
+	                		if($datos['Cartele']['tipoEnvio'] == 'colocado')
+	                			echo "Instalaci&oacute;n: Te colocamos el cartel!"."</br>";
+	                		
+	                		if($datos['Cartele']['tipoEnvio'] == 'pickup')
+	                			echo "Instalaci&oacute;n: Lo pasas a buscar!"."</br>";
                 		}
                 		
-                		if ($carteles['soporte'] == "sobre_pared"){
-                			echo "Soporte: Sobre pared"."</br>";
-                		}
-                		
-                		if ($carteles['soporte'] == "sobre_poste"){
-                			echo "Soporte: Sobre poste"."</br>";
-                		}
-                		if ($carteles['soporte'] == "ya_poseo"){
-                			echo "Soporte: Ya tengo soporte"."</br>";
-                		}
-                		if($carteles['luminosidad'] == 0)
-                			echo "Luminosidad: Sin Luz"."</br>";
-                		if($carteles['luminosidad'] == 1)
-                			echo "Luminosidad: Con Luz"."</br>";
-                		if($carteles['mantenimiento'] == 0)
-                			echo "Mantenimiento: Sin Mantenimiento"."</br>";
-                		if($carteles['mantenimiento'] == 1)
-                			echo "Luminosidad: Con Mantenimiento"."</br>";
-                			
+                		echo "Ancho:  ". $datos['ancho']." metros </br>";
+                		echo "Alto:  ". $datos['alto']." metros </br>";
+                				
                 		echo "</br>"
                 ?>
                 </div>
