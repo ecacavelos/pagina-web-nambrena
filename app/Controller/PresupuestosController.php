@@ -3,7 +3,7 @@ class PresupuestosController extends AppController {
 	
     public $name = 'Presupuestos';
     public $helpers = array('Html', 'Form');
-	public $uses = array('Cartele');
+	public $uses = array('Cartele', 'Corporeo');
     
  	public function index() {
         
@@ -22,8 +22,6 @@ class PresupuestosController extends AppController {
         $departamento = $this->request->data['departamento'];
         $direccion = $this->request->data['direccion'];
         $horario = $this->request->data['hora_trabajo'];
-        $ancho = $this->Session->read('Cartele.ancho');
-        $alto = $this->Session->read('Cartele.alto');;
         
         $this->Session->write('Presupuesto.nombre', $nombre);
         $this->Session->write('Presupuesto.apellido', $apellido);
@@ -33,33 +31,16 @@ class PresupuestosController extends AppController {
         $this->Session->write('Presupuesto.departamento', $departamento);
         $this->Session->write('Presupuesto.direccion', $direccion);
         $this->Session->write('Presupuesto.horario', $horario);
-        $this->Session->write('Cartele.ancho', $ancho);
-        $this->Session->write('Cartele.alto', $alto);
-         $this->set('precio', $ancho*$alto);
+        
        
         $this->render(); 
     } 
-    
-    public function llenar_ficha(){
-    
-    	$this->layout = 'layout_presupuestos_llenar_ficha';
-    	//print_r($this->request->data);
-    	//$ancho_largo = $this->request->data;
-    	
-    	//echo $this->request->data['Presupuestos']['Ancho'];
-//    	$session = $this->Session->read();
-//    	$session = "hola";
-//        print_r($session);
-		$ancho = $this->request->data['Presupuestos']['Ancho'];
-		$largo = $this->request->data['Presupuestos']['Largo'];
-    	$this->Session->write('Cartele.ancho', $ancho);
-		$this->Session->write('Cartele.largo', $largo);
 
-    	$this->render();
-     
-    }
     public function test(){
     
+    	$this->layout = 'layout_test';
     	print_r($this->request->data);
+    	$cartel_array = $this->Session->read();
+        print_r($cartel_array);
     }
 }	

@@ -149,7 +149,8 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
         $this->Session->write('Corporeo',null);
         $this->Session->write('Impresione',null);
         $this->Session->write('Decuvinyl',null);
-        
+        $this->Session->write('Cartele.mantenimiento', -1);
+        $this->Session->write('Cartele.luminosidad', -1);
         
         if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/frontlight
         	
@@ -259,6 +260,8 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
 		$this->Session->write('Corporeo',null);
         $this->Session->write('Impresione',null);
         $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Cartele.mantenimiento', -1);
+        $this->Session->write('Cartele.luminosidad', -1);
         
         
 		if( $soporte == null ){ // Esto quiere decir que se estan en el URL /carteles/back_light
@@ -377,13 +380,13 @@ public function ficha(){
 			$this->Session->write('alto', $this->request->data['alto']);
 			
       		// Se setea el tipo de envio que eligio el usuario. 
-      		if (array_key_exists('colocado',$this->request->data)){//COLOCADO
+      		if (array_key_exists('colocado_x',$this->request->data)){//COLOCADO
         		$this->Session->write('Cartele.tipoEnvio', 'colocado');
         	}
-			if (array_key_exists('pickup',$this->request->data)){//PICKUP
+			if (array_key_exists('pickup_x',$this->request->data)){//PICKUP
       	  		$this->Session->write('Cartele.tipoEnvio', 'pickup');
       		}
-			if (array_key_exists('envio',$this->request->data)){//ENVIO
+			if (array_key_exists('envio_x',$this->request->data)){//ENVIO
       			$this->Session->write('Cartele.tipoEnvio', 'envio');
             }
 

@@ -157,6 +157,14 @@
 	                		if($datos['Cartele']['tipoEnvio'] == 'pickup')
 	                			echo "Instalaci&oacute;n: Lo pasas a buscar!"."</br>";
                 		}
+                		if ($datos['Corporeo'] != null){
+                			
+                			echo "Producto: Corporeo </br>";
+                			if($datos['Corporeo']['tipoEnvio'] == 'colocado')
+	                			echo "Instalaci&oacute;n: Te colocamos el cartel!"."</br>";
+	                		if($datos['Corporeo']['tipoEnvio'] == 'no-colocado')
+	                			echo "Instalaci&oacute;n: Sin instalaci&oacute;n"."</br>";
+                		}
                 		
                 		echo "Ancho:  ". $datos['ancho']." metros </br>";
                 		echo "Alto:  ". $datos['alto']." metros </br>";
