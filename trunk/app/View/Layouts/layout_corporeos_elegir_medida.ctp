@@ -63,9 +63,9 @@
 	<?php echo $this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "304", 'height' => "322"))?>
                 </div>	
                 <div id="content-form" class="form_gradiente">
-	                <p id="instrucciones">Ingres&aacute; las dimensiones que quer&eacute;s para tu cartel.</p>
+	                <p id="instrucciones">Ingres&aacute; las dimensiones que quer&eacute;s para tu corporeo.</p>
 	                <!--					<form id="MainForm">-->
-					<?php echo $this->Form->create('Cartele',array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
+					<?php echo $this->Form->create('Corporeo',array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
 						<fieldset id="xy_fields">
                             <p><label for="ancho">Ancho</label>
 <!--                            <input id="ancho" name="ancho" type="number" class="text" min="1" required/>-->
@@ -84,19 +84,13 @@
 			  	<div id="content-lower-menu2">
 <!--					<input type="image" name="colocado" class="colocado" id="colocado" src="images/transporte.colocado.png" width="598" height="565" alt="">-->
 <!--			        <input type="image" name="no-colocado" class="no-colocado" id="no-colocado" src="images/transporte.colocado.no.png" width="598" height="565" alt="">-->
-<!--			        <input type="image" name="pickup" class="pickup" id="pickup" src="images/transporte.pickup.png" width="596" height="565" alt="">-->
-<!--            		<input type="image" name="envio" class="envio" id="envio" src="images/transporte.envio.png" width="598" height="565" alt="">-->
 					
           			<?php $pathColocado = $this->webroot;
 						  $pathColocado=$pathColocado.'img/transporte.colocado.png';
           			echo $this->Form->input('transporte.colocado.png', array('type' => 'image','name' => 'colocado', 'class' => 'colocado', 'id' => 'colocado'  ,  'src' => $pathColocado,'width' => '598', 'height' => '565'));?>
-					<?php $pathPickup = $this->webroot;
-						  $pathPickup=$pathPickup.'img/transporte.pickup.png';
-          			echo $this->Form->input('transporte.pickup.png', array('type' => 'image','name' => 'pickup', 'class' => 'pickup', 'id' => 'pickup'  ,  'src' => $pathPickup,'width' => '598', 'height' => '565'));?>
-          			<?php $pathEnvio = $this->webroot;
-						  $pathEnvio=$pathEnvio.'img/transporte.envio.png';
-          			echo $this->Form->input('transporte.envio.png', array('type' => 'image','name' => 'envio', 'class' => 'envio', 'id' => 'envio'  ,  'src' => $pathEnvio,'width' => '598', 'height' => '565'));?>
-          			
+					<?php $pathNoColocado = $this->webroot;
+						  $pathNoColocado=$pathNoColocado.'img/transporte.colocado.no.png';
+          			echo $this->Form->input('transporte.pickup.png', array('type' => 'image','name' => 'no-colocado', 'class' => 'no-colocado', 'id' => 'no-colocado'  ,  'src' => $pathNoColocado,'width' => '598', 'height' => '565'));?>
           			<?php echo $this->Form->end();?>  
                 </div>
                 <div id="content-lema">

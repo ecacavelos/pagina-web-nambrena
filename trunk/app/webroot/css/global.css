@@ -148,14 +148,14 @@ a img {
 	margin-right: auto;*/	
 }
 
-#content-lower-menu img, #content-lower-menu2 img {
+#content-lower-menu img, #content-lower-menu2 input {
 	-ms-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-webkit-transition: all 1s ease;
 	-o-transition: all 1s ease;
 }
 
-#content-lower-menu img:hover, #content-lower-menu2 img:hover {
+#content-lower-menu img:hover, #content-lower-menu2 input:hover {
 	/*transform:translate(0px,-30px);*/
 	-ms-transform:translate(0px,-30px); /* IE 9 */
 	-moz-transform:translate(0px,-30px); /* Firefox */
@@ -202,4 +202,17 @@ img.separador_medio:hover {
 	-moz-transform: none !important; /* Firefox */
 	-webkit-transform: none !important; /* Safari and Chrome */
 	-o-transform: none !important; /* Opera */	
+}
+
+#final-logo {
+	width: 20%;
+	height: auto;
+	
+	position: absolute;
+	left: 40%;
+}
+
+#final-logo img {
+	width: 100%;
+	height: auto;
 }

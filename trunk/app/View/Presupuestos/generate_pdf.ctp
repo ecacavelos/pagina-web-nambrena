@@ -161,10 +161,10 @@ if ($datos['Cartele'] != null){
 		$pdf->MultiCell(50, 0, $mantenimiento, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
 	}
 	$pdf->MultiCell(30, 0, 'Ancho', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(50, 0, $datos['ancho'], 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['ancho'].' (metros)', 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
 	
 	$pdf->MultiCell(30, 0, 'Alto', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(50, 0, $datos['alto'], 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['alto'].' (metros)', 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
 	
 	$pdf->Ln(1);
 	$pdf->Ln(1);
@@ -172,6 +172,23 @@ if ($datos['Cartele'] != null){
 	$precio = $datos['ancho']*$datos['alto']*$factor;
 	$pdf->SetFontSize(12);
 	$pdf->Write(0, 'Precio estimativo: '.$precio. ' Gs.', '', 0, 'L', true, 0, false, false, 0);
+	
+}
+if ($datos['Corporeo'] != null){
+	
+	$pdf->MultiCell(30, 0, 'Ancho', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['ancho'].' (metros)', 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	$pdf->MultiCell(30, 0, 'Alto', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['alto'].' (metros)', 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	$pdf->Ln(1);
+	$pdf->Ln(1);
+	$factor = 3;
+	$precio = $datos['ancho']*$datos['alto']*$factor;
+	$pdf->SetFontSize(12);
+	$pdf->Write(0, 'Precio estimativo: '.$precio. ' Gs.', '', 0, 'L', true, 0, false, false, 0);
+	
 	
 }
 
