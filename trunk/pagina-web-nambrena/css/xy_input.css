@@ -33,7 +33,7 @@ html {
 	
 	top: 38%;
 	
-	position: absolute;
+	position: fixed;
 	/*position: relative;*/
 	text-align: center;
 	
@@ -41,7 +41,7 @@ html {
 	margin-right: auto;*/	
 }
 
-#content-lower-menu2 img {
+#content-lower-menu2 input {
 	width: 25%;
 	height: auto;
 }
