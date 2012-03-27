@@ -65,13 +65,13 @@
 			   ?>
    			   <?php echo $this->Html->link(
 					$this->Html->image('impresiones.adhesivo.png', array( 'class' => "adhesivo" , 'alt' => "NAMBRE!", 'width'=> "440", 'height' => "400")),
-					array('controller' => 'impresiones', 'action' => "back_light"),
+					array('controller' => 'impresiones', 'action' => "adhesivo"),
 					array('target' => '_self', 'escape' => false)
 				);
 			   ?>
 			   <?php echo $this->Html->link(
 					$this->Html->image('impresiones.microperforado.png', array( 'class' => "microperforado" , 'alt' => "NAMBRE!", 'width'=> "440", 'height' => "400")),
-					array('controller' => 'impresiones', 'action' => "back_light"),
+					array('controller' => 'impresiones', 'action' => "microperforado"),
 					array('target' => '_self', 'escape' => false)
 				);
 			   ?>

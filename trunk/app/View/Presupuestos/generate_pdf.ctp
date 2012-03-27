@@ -67,7 +67,7 @@ $pdf->Write(0, 'Presupuesto tentativo de ' .$producto, '', 0, 'C', true, 0, fals
 
 $pdf->Ln(5);
 
-$pdf->SetFont('dejavusans', 12);
+$pdf->SetFont('dejavusans', 11);
 
 $pdf->Write(0, 'Nombre: '.$ficha_array['Presupuesto']['nombre'], '', 0, 'L', true, 0, false, false, 0);
 $pdf->Ln(1);
@@ -85,7 +85,7 @@ $pdf->Ln(1);
 $pdf->Ln(1);
 
 $pdf->SetFont('dejavusans','I', 11);
-$pdf->Write(0, 'Detalles del ' .$producto. ' seleccionado', '', 0, 'L', true, 0, false, false, 0);
+$pdf->Write(0, 'Detalles del producto seleccionado', '', 0, 'L', true, 0, false, false, 0);
 $pdf->Ln(1);
 $pdf->Ln(1);
 // write the first column
@@ -191,7 +191,19 @@ if ($datos['Corporeo'] != null){
 	
 	
 }
-
+if ($datos['Impresione'] != null){
+	
+    $pdf->MultiCell(30, 0, 'Tipo', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['Impresione']['tipo'], 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	$pdf->MultiCell(30, 0, 'Ancho', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['ancho'].' (metros)', 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	$pdf->MultiCell(30, 0, 'Alto', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
+	$pdf->MultiCell(50, 0, $datos['alto'].' (metros)', 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+	
+	
+}
 
 //Close and output PDF document
 $pdf->Output('Presupuesto-'.$producto.'.pdf', 'D');

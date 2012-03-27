@@ -165,6 +165,25 @@
 	                		if($datos['Corporeo']['tipoEnvio'] == 'no-colocado')
 	                			echo "Instalaci&oacute;n: Sin instalaci&oacute;n"."</br>";
                 		}
+                		if ($datos['Impresione'] != null){
+                			
+                			echo "Producto: Impresi&oacute;n </br>";
+                			if($datos['Impresione']['tipo'] == 'Front light')
+	                			echo "Tipo: Front light"."</br>";
+                			if($datos['Impresione']['tipo'] == 'Back light')
+	                			echo "Tipo: Back light"."</br>";
+                			if($datos['Impresione']['tipo'] == 'Adhesivo')
+	                			echo "Tipo: Adhesivo"."</br>";
+                			if($datos['Impresione']['tipo'] == 'Microperforado')
+	                			echo "Tipo: Front light"."</br>";
+	                			
+	                		if($datos['Impresione']['tipoEnvio'] == 'envio')
+	                			echo "Instalaci&oacute;n: Te enviamos la impresi&oacute;n!"."</br>";
+	                		if($datos['Impresione']['tipoEnvio'] == 'pickiup')
+	                			echo "Instalaci&oacute;n: Lo pasas a buscar!"."</br>";
+	                			
+	                		
+                		}
                 		
                 		echo "Ancho:  ". $datos['ancho']." metros </br>";
                 		echo "Alto:  ". $datos['alto']." metros </br>";
