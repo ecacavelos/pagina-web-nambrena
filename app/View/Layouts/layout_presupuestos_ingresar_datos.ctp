@@ -184,6 +184,11 @@
 	                			
 	                		
                 		}
+                		if ($datos['Vinilo'] != null){
+                			
+                			echo "Producto: Vinilo </br>";
+                			
+                		}
                 		
                 		echo "Ancho:  ". $datos['ancho']." metros </br>";
                 		echo "Alto:  ". $datos['alto']." metros </br>";
