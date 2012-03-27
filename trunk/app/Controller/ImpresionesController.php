@@ -10,7 +10,7 @@ class ImpresionesController extends AppController {
 	        
  		$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 	  	
 	    $this->layout = 'layout_impresiones';
 //	        $cartel_array = array ("Cartele" => $this->Session->read());
@@ -23,7 +23,7 @@ class ImpresionesController extends AppController {
 	  
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 	  	
 	  	$this->layout = 'layout_impresiones_elegir_medida';
 	  	
@@ -34,7 +34,7 @@ class ImpresionesController extends AppController {
 	 	
 	  	$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 	  	
 	  	$this->layout = 'layout_impresiones_elegir_medida';	  
 	  	
@@ -45,7 +45,7 @@ class ImpresionesController extends AppController {
 	 	 
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 	  	
 	  	$this->layout = 'layout_impresiones_elegir_medida';	  
 	  	
@@ -56,7 +56,7 @@ class ImpresionesController extends AppController {
 	  
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 	  	
 	  	$this->layout = 'layout_impresiones_elegir_medida';	  
 	  	
@@ -66,7 +66,7 @@ class ImpresionesController extends AppController {
 	  	$this->layout = 'layout_presupuestos_ingresar_datos';
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 		
 			// Se setea el layout para presentar el formulario antes de generar el presupuesto. 
 			
