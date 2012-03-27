@@ -10,7 +10,7 @@ class CorporeosController extends AppController {
 	        
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Impresione',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
         
 	 	$this->layout = 'layout_corporeos_elegir_medida';
 	        
@@ -32,7 +32,7 @@ public function ficha(){
 	 
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Impresione',null);
-        $this->Session->write('Decuvinyl',null);
+        $this->Session->write('Vinilo',null);
 		
 			// Se setea el layout para presentar el formulario antes de generar el presupuesto. 
 			$this->layout = 'layout_presupuestos_ingresar_datos';
