@@ -203,3 +203,17 @@ img.separador_medio:hover {
 	-webkit-transform: none !important; /* Safari and Chrome */
 	-o-transform: none !important; /* Opera */	
 }
+
+#final-logo {
+	width: 20%;
+	height: auto;
+	
+	position: absolute;
+	bottom: 40%;
+	left: 40%;
+}
+
+#final-logo img {
+	width: 100%;
+	height: auto;
+}
