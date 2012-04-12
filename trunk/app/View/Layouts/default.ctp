@@ -44,6 +44,7 @@
         -->
 <!--        <div id="progressbar"><img src="images/cargando.png" width="410" height="100" alt=""></div><div id="wrap">-->
             <div id="progressbar"><?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100")) ;?></div>
+            <div id="wrap">
             <div id="content">
                 <div id="main-logo">
                 
@@ -115,6 +116,8 @@
 						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
                 </div>
+                <div class="clear"></div>
+            </div>
             </div>
         </div>
     </body>
