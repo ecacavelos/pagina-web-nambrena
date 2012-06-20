@@ -57,7 +57,7 @@
 
 <!--					<a href="carteles_frontlight.html" class="transition-back"><img src="images/header_small.frontlight.png" width="442" height="201" alt=""></a>-->
 				<?php echo $this->Html->link(
-					$this->Html->image('header_small.adhesivo.png', array('alt' => "NAMBRE!", 'width'=> "422", 'height' => "201")),
+					$this->Html->image('header_small.frontlight.png', array('alt' => "NAMBRE!", 'width'=> "422", 'height' => "201")),
 					array('controller' => 'carteles', 'action' => "front_light"),
 					array('target' => '_self', 'escape' => false, 'class' => "transition-back" )
 				);
@@ -82,7 +82,7 @@
 			   			?>
 <!--                    <img class="conluz" src="images/carteles_frontlight_sobrepared.conluz.png" width="589" height="478" alt="">-->
 						<?php echo $this->Html->link(
-							$this->Html->image('arteles_frontlight_sobreposte.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
+							$this->Html->image('carteles_frontlight_sobreposte.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
 							array('controller' => 'carteles', 'action' => "adhesivos" ,'sobre_poste', 'con_luz'),
 							array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 							);
