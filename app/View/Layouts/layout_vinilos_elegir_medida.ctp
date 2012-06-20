@@ -60,7 +60,12 @@
             <div id="content">
                 <div id="logo">
 <!--                    <img src="images/logo.png" width="304" height="322" alt="">-->
-	<?php echo $this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "304", 'height' => "322"))?>
+	<?php echo $this->Html->link(
+					$this->Html->image('logo.png', array('alt' => "NAMBRE!", 'width'=> "304", 'height' => "322")),
+					'/',
+					array('target' => '_self', 'escape' => false, 'class' => "transition-back" )
+				);
+			   ?>
                 </div>	
                 <div id="content-form" class="form_gradiente">
 	                <p id="instrucciones">Ingres&aacute; las dimensiones que quer&eacute;s para tu vinilo.</p>
