@@ -54,25 +54,25 @@
 				<?php echo $this->Html->link(
 					$this->Html->image('impresiones.frontlight.png', array( 'class' => "frontlight" , 'alt' => "NAMBRE!", 'width'=> "440", 'height' => "400")),
 					array('controller' => 'impresiones', 'action' => "front_light"),
-					array('target' => '_self', 'escape' => false)
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
 			   <?php echo $this->Html->link(
 					$this->Html->image('impresiones.backlight.png', array( 'class' => "backlight" , 'alt' => "NAMBRE!", 'width'=> "440", 'height' => "400")),
 					array('controller' => 'impresiones', 'action' => "back_light"),
-					array('target' => '_self', 'escape' => false)
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
    			   <?php echo $this->Html->link(
 					$this->Html->image('impresiones.adhesivo.png', array( 'class' => "adhesivo" , 'alt' => "NAMBRE!", 'width'=> "440", 'height' => "400")),
 					array('controller' => 'impresiones', 'action' => "adhesivo"),
-					array('target' => '_self', 'escape' => false)
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
 			   <?php echo $this->Html->link(
 					$this->Html->image('impresiones.microperforado.png', array( 'class' => "microperforado" , 'alt' => "NAMBRE!", 'width'=> "440", 'height' => "400")),
 					array('controller' => 'impresiones', 'action' => "microperforado"),
-					array('target' => '_self', 'escape' => false)
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
 			   

@@ -34,7 +34,7 @@
         
     </head>
     <body>
-        <!--Script para detectar la resoluc—n del usuario.-->
+        <!--Script para detectar la resolucï¿½n del usuario.-->
 		<!--
         <script type="text/javascript">
 			document.write(screen.width+'x'+screen.height);
@@ -75,7 +75,12 @@
 					'https://www.facebook.com/pages/Nambrena-nmb/217230554954632',
 					array('target' => '_blank', 'escape' => false)
 				);
-			   ?>
+			   ?><?php echo $this->Html->link(
+					$this->Html->image('index.iconbl.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
+					'https://www.facebook.com/pages/Nambrena-nmb/217230554954632',
+					array('target' => '_blank', 'escape' => false)
+				);
+			   ?>               
                 </div>                    
                 <div id="content-upper-right1a">
 <!--                    <img src="images/index.seguinospues.png" width="307" height="59" alt="">-->

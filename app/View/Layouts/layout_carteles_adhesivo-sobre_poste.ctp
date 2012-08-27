@@ -82,7 +82,7 @@
 			   			?>
 <!--                    <img class="conluz" src="images/carteles_frontlight_sobrepared.conluz.png" width="589" height="478" alt="">-->
 						<?php echo $this->Html->link(
-							$this->Html->image('carteles_frontlight_sobreposte.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
+							$this->Html->image('carteles_frontlight_sobreposte.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBREE!", 'width'=> "589", 'height' => "478")),
 							array('controller' => 'carteles', 'action' => "adhesivos" ,'sobre_poste', 'con_luz'),
 							array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 							);
