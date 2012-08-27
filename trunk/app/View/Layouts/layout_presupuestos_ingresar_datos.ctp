@@ -47,7 +47,7 @@
         </noscript>
     </head>
     <body>
-        <!--Script para detectar la resoluc—n del usuario.-->
+        <!--Script para detectar la resolucï¿½n del usuario.-->
 		<!--
 		<script type="text/javascript">
 			document.write(screen.width+'x'+screen.height+';');
@@ -102,7 +102,8 @@
                             <p><label for="hora_trabajo">Hora de Trabajo (hh:mm)</label>
 <!--                            <input id="hora_trabajo" name="hora_trabajo" type="time" class="text" required=/>-->
 							<?php echo $this->Form->input('hora_trabajo', array('name' => 'hora_trabajo', 'required' , 'class' => 'text', 'id' => 'hora_trabajo' , 'type'=>"time"));?>
-                            </p>
+                            </p>                                                       
+                            
                             <p><button class="boton gray" id="form_ok" type="submit">OK</button>
                             </p>                         
                         </fieldset>
@@ -117,28 +118,24 @@
 	                		
                 			echo "Producto: Cartel </br>";
                 			if ($datos['Cartele']['tipo'] == "front_light"){
-	                			echo "Tipo: Front light"."</br>";	
-	                			
+	                			echo "Tipo: Front light"."</br>";		                			
 	                		}
 	                		if ($datos['Cartele']['tipo'] == "back_light"){
-	                			echo "Tipo: Back light"."</br>";	
-	                			
+	                			echo "Tipo: Back light"."</br>";		                			
 	                		}
 	                		if ($datos['Cartele']['tipo'] == "adhesivo"){
-	                			echo "Tipo: Adhesivo"."</br>";	
-	                			
-	                		}
-	                		
+	                			echo "Tipo: Adhesivo"."</br>";		                			
+	                		}	                		
 	                		if ($datos['Cartele']['soporte'] == "sobre_pared"){
 	                			echo "Soporte: Sobre pared"."</br>";
-	                		}
-	                		
+	                		}	                		
 	                		if ($datos['Cartele']['soporte'] == "sobre_poste"){
 	                			echo "Soporte: Sobre poste"."</br>";
 	                		}
 	                		if ($datos['Cartele']['soporte'] == "ya_poseo"){
 	                			echo "Soporte: Ya tengo soporte"."</br>";
 	                		}
+							
 	                		if($datos['Cartele']['luminosidad'] == 0)
 	                			echo "Luminosidad: Sin Luz"."</br>";
 	                		if($datos['Cartele']['luminosidad'] == 1)
@@ -149,16 +146,13 @@
 	                			echo "Luminosidad: Con Mantenimiento"."</br>";
 	                			
 	                		if($datos['Cartele']['tipoEnvio'] == 'envio')
-	                			echo "Instalaci&oacute;n: Te enviamos el cartel!"."</br>";
-	                			
+	                			echo "Instalaci&oacute;n: Te enviamos el cartel!"."</br>";	                			
 	                		if($datos['Cartele']['tipoEnvio'] == 'colocado')
-	                			echo "Instalaci&oacute;n: Te colocamos el cartel!"."</br>";
-	                		
+	                			echo "Instalaci&oacute;n: Te colocamos el cartel!"."</br>";	                		
 	                		if($datos['Cartele']['tipoEnvio'] == 'pickup')
 	                			echo "Instalaci&oacute;n: Lo pasas a buscar!"."</br>";
                 		}
-                		if ($datos['Corporeo'] != null){
-                			
+                		if ($datos['Corporeo'] != null){                			
                 			echo "Producto: Corporeo </br>";
                 			if($datos['Corporeo']['tipoEnvio'] == 'colocado')
 	                			echo "Instalaci&oacute;n: Te colocamos el cartel!"."</br>";
@@ -180,14 +174,11 @@
 	                		if($datos['Impresione']['tipoEnvio'] == 'envio')
 	                			echo "Instalaci&oacute;n: Te enviamos la impresi&oacute;n!"."</br>";
 	                		if($datos['Impresione']['tipoEnvio'] == 'pickiup')
-	                			echo "Instalaci&oacute;n: Lo pasas a buscar!"."</br>";
-	                			
+	                			echo "Instalaci&oacute;n: Lo pasas a buscar!"."</br>";	                			
 	                		
                 		}
-                		if ($datos['Vinilo'] != null){
-                			
-                			echo "Producto: Vinilo </br>";
-                			
+                		if ($datos['Vinilo'] != null){                			
+                			echo "Producto: Vinilo </br>";                			
                 		}
                 		
                 		echo "Ancho:  ". $datos['ancho']." metros </br>";

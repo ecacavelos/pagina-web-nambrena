@@ -98,7 +98,7 @@ a img {
 	padding: 5px !important;
 	text-align: right;
 	
-	width: 10%;
+	width: 17%;
 	float: right;
 }
 
@@ -107,7 +107,7 @@ a img {
 }
 
 #content-social-icons img {
-	width: 50%;
+	width: 30%;
 	height: auto;
 	
 	-ms-transition: all 0.3s ease;
@@ -148,6 +148,10 @@ a img {
 	margin-right: auto;*/	
 }
 
+#content-lower-menu:hover img {
+	opacity: 0.2;
+}
+
 #content-lower-menu img, #content-lower-menu2 input {
 	-ms-transition: all 1s ease;
 	-moz-transition: all 1s ease;
@@ -161,6 +165,7 @@ a img {
 	-moz-transform:translate(0px,-30px); /* Firefox */
 	-webkit-transform:translate(0px,-30px); /* Safari and Chrome */
 	-o-transform:translate(0px,-30px); /* Opera */
+	opacity: 1;
 }
 
 #content-lema {
@@ -209,6 +214,7 @@ img.separador_medio:hover {
 	height: auto;
 	
 	position: absolute;
+	bottom: 40%;
 	left: 40%;
 }
 
