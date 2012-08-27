@@ -64,7 +64,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'rutger',
+		'password' => '',	/* OJO PONER EL PASSWORD CORRECTO */
 		'database' => 'nambre_db',
 		'prefix' => '',
 		//'encoding' => 'utf8',
