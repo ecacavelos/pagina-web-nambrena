@@ -65,7 +65,7 @@
                 </div>
                 <div id="content-form2" class="form_gradiente">
 <!--					<form id="MainForm">-->
-					<?php echo $this->Form->create('Presupuesto', array('id' => 'MainForm' ,'action' => 'generate_pdf', 'inputDefaults' => array('div' => false, 'label' => false)));?>
+					<?php echo $this->Form->create('Presupuesto', array('id' => 'MainForm' ,'action' => 'enviar_mail', 'inputDefaults' => array('div' => false, 'label' => false)));?>
 						<fieldset id="final_fields">
                             <p><label for="nombre">Nombre</label>
 <!--                            <input id="nombre" name="nombre" type="text" class="text" required/>-->
