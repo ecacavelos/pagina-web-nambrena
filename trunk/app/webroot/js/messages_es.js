@@ -17,8 +17,8 @@ jQuery.extend(jQuery.validator.messages, {
   maxlength: jQuery.validator.format("Por favor, no escribas más de {0} caracteres."),
   minlength: jQuery.validator.format("Por favor, no escribas menos de {0} caracteres."),
   rangelength: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-  range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-  max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-  min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}."),
+  range: jQuery.validator.format("Por favor, escribe un valor numérico entre {0} y {1}."),
+  max: jQuery.validator.format("Por favor, escribe un valor numérico menor o igual a {0}."),
+  min: jQuery.validator.format("Por favor, escribe un valor numérico mayor o igual a {0}."),
   time: jQuery.validator.format("Por favor, escribe un horario válido, entre 00:00 y 23:59.")
 });

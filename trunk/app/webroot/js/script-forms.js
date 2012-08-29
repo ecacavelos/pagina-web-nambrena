@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() {	
 	$("#MainForm").validate();	
    /*
    * In-Field Label jQuery Plugin
@@ -69,15 +69,22 @@ $(document).ready(function() {
 function show_alert(){
 	var valid = $("#xy_fields").validate().form();
 	if(valid){
-		$("#instrucciones").hide();
+		$("input#ancho2").css('border','1px solid #afafaf');
+		$("input#alto2").css('border','1px solid #afafaf');
+		$("#dimensiones-image").fadeOut(400);
+		
+		$("#instrucciones").hide();		
 		$('#content-form').animate({top: '5%'}, 400);
 		$("#content-lower-menu2").animate({left: '0%'}, 400);
+		
 	}else{
 		if(!$("#MainForm").validate().element( "input#ancho" )){
 			$("input#ancho").focus();
+			$("input#ancho").css('border','1px solid red');
 		}else{
 			if(!$("#MainForm").validate().element( "input#alto" )){
 				$("input#alto").focus();
+				$("input#alto").css('border','1px solid red');
 			}
 		}
 	}

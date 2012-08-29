@@ -54,21 +54,21 @@
 				<?php echo $this->Html->link(
 					$this->Html->image('carteles.frontlight.png', array( 'class' => "frontlight" , 'alt' => "NAMBRE!", 'width'=> "450", 'height' => "492")),
 					array('controller' => 'carteles', 'action' => "front_light"),
-					array('target' => '_self', 'escape' => false , 'class' => "transition-out")
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
 <!--                    <a href="carteles_frontlight.html" class="transition-out"><img class="frontlight" src="images/carteles.frontlight.png" width="450" height="492" alt=""></a>-->
 				<?php echo $this->Html->link(
 					$this->Html->image('carteles.backlight.png', array('class' => "backlight", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
 					array('controller' => 'carteles', 'action' => "back_light"),
-					array('target' => '_self', 'escape' => false , 'class' => "transition-out")
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
 <!--                    <img class="adhesivo" src="images/carteles.adhesivo.png" width="450" height="492" alt="">-->
 				<?php echo $this->Html->link(
-					$this->Html->image('carteles.adhesivo.png', array( 'class'=>"adhesivo", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
+					$this->Html->image('carteles.adhesivo.png', array('class'=>"adhesivo", 'alt' => "NAMBRE!", 'border' => '0', 'width'=> "450", 'height' => "492")),
 					array('controller' => 'carteles', 'action' => "adhesivos"),
-					array('target' => '_self', 'escape' => false)
+					array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 				);
 			   ?>
 
