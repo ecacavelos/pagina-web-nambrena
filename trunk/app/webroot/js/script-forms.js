@@ -72,6 +72,7 @@ function show_alert(){
 		$("input#ancho2").css('border','1px solid #afafaf');
 		$("input#alto2").css('border','1px solid #afafaf');
 		$("#dimensiones-image").fadeOut(400);
+		$("#dimensiones-image-carteles").fadeOut(400);
 		
 		$("#instrucciones").hide();		
 		$('#content-form').animate({top: '5%'}, 400);
