@@ -32,6 +32,25 @@ html {
 	margin-left: 120px;
 }
 
+#dimensiones-image-carteles {
+	position: fixed;
+	left: 8%;
+	bottom: 22%;
+	width: 45%;
+	height: auto;
+	
+	text-align: center;
+	/*border: 1px solid white;*/
+}
+
+#dimensiones-image-carteles img {
+	position: relative;
+	width: 75%;
+	height: auto;
+	margin-left: 120px;
+	margin-right: 10px;
+}
+
 /* OJO */
 
 #ancho2 {	
@@ -39,17 +58,33 @@ html {
 	left: 63%;
 	top: -10%;
 }
-
 #alto2 {
 	position: absolute;
 	left: 5%;
 	bottom: 48%;
 }
 
-button#xy_ok2 {
+#ancho3 {	
 	position: absolute;
-	right: -9%;
-	bottom: 23%;	
+	left: 59%;
+	top: -10%;
+}
+#alto3 {
+	position: absolute;
+	left: 10%;
+	bottom: 62%;
+}
+#altopiso3 {
+	position: absolute;
+	left: 80%;
+	bottom: -4%;
+}
+
+button#xy_ok2 {
+	position: fixed;
+	left: 65%;
+	bottom: 20%;
+	width: 10%;
 }
 
 label.error {

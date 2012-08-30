@@ -21,6 +21,7 @@
 		<?php echo $this->Html->css('xy_input'); ?>
 		<?php echo $this->Html->css('global'); ?>
 		<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
+        <?php echo $this->Html->css('smartspinner'); ?>
 		
 		<?php echo $this->Html->script('jquery-1.7.1.min');?>
 		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min');?>
@@ -28,7 +29,7 @@
 		<?php echo $this->Html->script('jquery.validate.min');?>
 		<?php echo $this->Html->script('additional-methods.min');?>
 		<?php echo $this->Html->script('messages_es');?>
-		
+		<?php echo $this->Html->script('smartspinner'); ?>
 		
 		<?php echo $this->Html->script('script-subpages');?>
 		<?php echo $this->Html->script('script-forms');?>
@@ -43,6 +44,13 @@
 				}
             </style>
         </noscript>
+		<script type="text/javascript">
+            $(document).ready(function() {
+                $('#ancho3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
+                $('#alto3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
+				$('#altopiso3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
+            });
+        </script>        
     </head>
    <body>
         <!--Script para detectar la resoluc�n del usuario.-->
@@ -66,25 +74,18 @@
 						);
 					?>
                 </div>	
-                <div id="content-form" class="form_gradiente">
-	                <p id="instrucciones">Ingres&aacute; las dimensiones que quer&eacute;s para tu cartel.</p>
-	                <!--					<form id="MainForm">-->
-					<?php echo $this->Form->create('Cartele',array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
-						<fieldset id="xy_fields">
-                            <p><label for="ancho">Ancho</label>
-<!--                            <input id="ancho" name="ancho" type="number" class="text" min="1" required/>-->
-							 <?php echo $this->Form->input('acho', array('name' => 'ancho', 'class' => 'text', 'required' , 'id' => 'ancho' , 'min' => '1'));?>
-                            </p>
-                            <p><label for="alto">Alto</label>
-<!--                            <input id="alto" name="alto" type="number" class="text" min="1" required/>-->
-							<?php echo $this->Form->input('alto', array('name' => 'alto', 'class' => 'text', 'required' , 'id' => 'alto' , 'min' => '1'));?>
-                            </p>
-                            <p><button class="boton gray" id="xy_ok" type="button" onclick="show_alert()">OK</button>
-						</fieldset>
-<!--					</form>    -->
-					
-					      
-                </div>
+
+                <div id="dimensiones-image-carteles">
+                    <?php echo $this->Form->create('Cartele', array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
+                    <fieldset id="xy_fields">
+						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'label' => false, 'id' => 'ancho3', 'min' => '1')) ?>
+						<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!")); ?>                
+						<?php echo $this->Form->input('alto', array('name' => 'alto', 'label' => false, 'id' => 'alto3', 'min' => '1')) ?>
+                        <?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'label' => false, 'id' => 'altopiso3', 'min' => '1')) ?>
+                        <br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
+                    </fieldset>
+                </div> 
+
 			  	<div id="content-lower-menu2">
 <!--					<input type="image" name="colocado" class="colocado" id="colocado" src="images/transporte.colocado.png" width="598" height="565" alt="">-->
 <!--			        <input type="image" name="no-colocado" class="no-colocado" id="no-colocado" src="images/transporte.colocado.no.png" width="598" height="565" alt="">-->
@@ -105,7 +106,7 @@
                 </div>
                 <div id="content-lema">
 <!--                	<img src="transporte.lema.png" width="1020" height="105" alt="">-->
-				<?php  echo $this->Html->image('transporte.lema.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "1020", 'height' => "105"));?>
+				<?php  echo $this->Html->image('carteles.dimension_lema.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "1020", 'height' => "105"));?>
                 </div>
             </div>
         </div>
