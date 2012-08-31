@@ -51,6 +51,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.luminosidad', 1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
     						break;
@@ -59,6 +60,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.luminosidad', 0);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
     						break;
@@ -81,6 +83,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.luminosidad', 1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
     						break;
@@ -89,6 +92,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.luminosidad', 0);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
     						break;
@@ -111,6 +115,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', 1);
 		    					$this->Session->write('Cartele.luminosidad', -1);
     						break;
@@ -119,6 +124,7 @@ public function front_light($soporte = null , $luminosidad_mantenimiento = null)
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'front_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', 0);
 		    					$this->Session->write('Cartele.luminosidad', -1);
     						break;
@@ -169,6 +175,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
 		    					$this->Session->write('Cartele.luminosidad', 1);
 							break;
@@ -177,6 +184,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_pared');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
 		    					$this->Session->write('Cartele.luminosidad', 0);
 		    				break;
@@ -199,6 +207,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
 		    					$this->Session->write('Cartele.luminosidad', 1);
 							break;
@@ -207,6 +216,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
 		    					$this->Session->write('Cartele.luminosidad', 0);
 							break;
@@ -226,6 +236,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', 0);
 		    					$this->Session->write('Cartele.luminosidad', -1);
 							break;
@@ -234,6 +245,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'adhesivo');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', 1);
 		    					$this->Session->write('Cartele.luminosidad', -1);
 		    				break;
@@ -249,7 +261,7 @@ public function adhesivos($soporte = null , $luminosidad_mantenimiento = null){
     
     } 
        
-public function back_light($soporte = null , $luminosidad_mantenimiento = null){
+public function back_light($soporte = null , $caras_mantenimiento = null){
      
     	
 		$this->Session->write('Corporeo',null);
@@ -269,19 +281,19 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
     		switch ($soporte){
     		
     			case "sobre_pared":
-    				if ($luminosidad_mantenimiento == null){
+    				if ($caras_mantenimiento == null){
     					
     					$this->layout = 'layout_carteles_back_light-sobre_pared';
     					$this->Session->write('Cartele.tipo', 'back_light');
     					$this->Session->write('Cartele.soporte', 'sobre_pared');
     				}
     				else{
-    					switch ($luminosidad_mantenimiento){    						
+    					switch ($caras_mantenimiento){    						
      		 				case "una_cara":
 								$this->layout = 'layout_carteles_elegir_medida';
 								$this->Session->write('Cartele.tipo', 'back_light');
 								$this->Session->write('Cartele.soporte', 'sobre_pared');
-								$this->Session->write('Cartele.cara', 1);
+								$this->Session->write('Cartele.cara', 'una_cara');
 								$this->Session->write('Cartele.mantenimiento', -1);
 								$this->Session->write('Cartele.luminosidad', -1);
 							break;
@@ -290,7 +302,7 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
 								$this->layout = 'layout_carteles_elegir_medida';
 								$this->Session->write('Cartele.tipo', 'back_light');
 								$this->Session->write('Cartele.soporte', 'sobre_pared');
-								$this->Session->write('Cartele.cara', 2);
+								$this->Session->write('Cartele.cara', 'doble_cara');
 								$this->Session->write('Cartele.mantenimiento', -1);
 								$this->Session->write('Cartele.luminosidad', -1);
 							break;
@@ -300,7 +312,7 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
 
     				
     			case "sobre_poste":
-    				if ($luminosidad_mantenimiento == null){
+    				if ($caras_mantenimiento == null){
     					
     					$this->layout = 'layout_carteles_back_light-sobre_poste';
     					$this->Session->write('Cartele.tipo', 'back_light');
@@ -308,11 +320,12 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
     					
     				}
     				else{
-    					switch ($luminosidad_mantenimiento){    						
+    					switch ($caras_mantenimiento){    						
      		 				case "una_cara":
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					$this->Session->write('Cartele.cara', 'una_cara');
 		    					$this->Session->write('Cartele.luminosidad', 1);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
     						break;
@@ -321,6 +334,7 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'sobre_poste');
+		    					$this->Session->write('Cartele.cara', 'doble_cara');
 		    					$this->Session->write('Cartele.luminosidad', 0);
 		    					$this->Session->write('Cartele.mantenimiento', -1);
     						break;
@@ -330,7 +344,7 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
     				
     				
     				case "ya_poseo":
-    				if ($luminosidad_mantenimiento == null){
+    				if ($caras_mantenimiento == null){
     					
     					$this->layout = 'layout_carteles_back_light-ya_poseo';
     					$this->Session->write('Cartele.tipo', 'back_light');
@@ -339,12 +353,13 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
     					
     				}
     				else{
-    					switch ($luminosidad_mantenimiento){
+    					switch ($caras_mantenimiento){
     						
      		 				case "con_mantenimiento":
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', 1);
 		    					$this->Session->write('Cartele.luminosidad', -1);
     							break;
@@ -353,6 +368,7 @@ public function back_light($soporte = null , $luminosidad_mantenimiento = null){
 		    					$this->layout = 'layout_carteles_elegir_medida';
 		    					$this->Session->write('Cartele.tipo', 'back_light');
 		    					$this->Session->write('Cartele.soporte', 'ya_poseo');
+		    					$this->Session->write('Cartele.cara', -1);
 		    					$this->Session->write('Cartele.mantenimiento', 0);
 		    					$this->Session->write('Cartele.luminosidad', -1);
     							break;
@@ -371,6 +387,7 @@ public function ficha(){
 			// Se obtienen el ancho y alto a partir del formulario en layout_carteles_elegir_medida.ctp
 			$this->Session->write('ancho', $this->request->data['ancho']);
 			$this->Session->write('alto', $this->request->data['alto']);
+			$this->Session->write('altura_piso', $this->request->data['altura_piso']);
 			
       		// Se setea el tipo de envio que eligio el usuario. 
       		if (array_key_exists('colocado_x',$this->request->data)){//COLOCADO
