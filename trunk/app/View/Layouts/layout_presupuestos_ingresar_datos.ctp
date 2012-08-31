@@ -183,7 +183,11 @@
                 		
                 		echo "Ancho:  ". $datos['ancho']." metros </br>";
                 		echo "Alto:  ". $datos['alto']." metros </br>";
-                				
+                		if ($datos['Cartele'] != null){
+                			
+                			echo "Altura desde el piso:  ". $datos['altura_piso']." metros </br>";
+                			
+                		}		
                 		echo "</br>"
                 ?>
                 </div>

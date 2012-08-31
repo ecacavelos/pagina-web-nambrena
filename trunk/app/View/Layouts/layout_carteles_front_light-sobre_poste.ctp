@@ -72,7 +72,7 @@
 <!--                	<img class="sinluz" src="images/carteles_frontlight_sobrepared.sinluz.png" width="589" height="478" alt="">-->
 						<?php echo $this->Html->link(
 							$this->Html->image('carteles_frontlight_sobreposte.sinluz.png', array( 'class' => "sinluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
-							array('controller' => 'carteles', 'action' => "adhesivos" ,'sobre_poste', 'sin_luz'),
+							array('controller' => 'carteles', 'action' => "front_light" ,'sobre_poste', 'sin_luz'),
 							array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 							);
 			  		    ?>	
@@ -83,7 +83,7 @@
 <!--                    <img class="conluz" src="images/carteles_frontlight_sobrepared.conluz.png" width="589" height="478" alt="">-->
 						<?php echo $this->Html->link(
 							$this->Html->image('carteles_frontlight_sobreposte.conluz.png', array( 'class' => "conluz" , 'alt' => "NAMBRE!", 'width'=> "589", 'height' => "478")),
-							array('controller' => 'carteles', 'action' => "adhesivos" ,'sobre_poste', 'con_luz'),
+							array('controller' => 'carteles', 'action' => "front_light" ,'sobre_poste', 'con_luz'),
 							array('target' => '_self', 'escape' => false, 'class' => "transition-out" )
 							);
 			  		    ?>	
