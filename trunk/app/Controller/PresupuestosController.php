@@ -1,5 +1,10 @@
 <?php
 class PresupuestosController extends AppController {
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('index', 'generate_pdf', 'test');
+	}
 	
     public $name = 'Presupuestos';
     public $helpers = array('Html', 'Form');

@@ -1,12 +1,15 @@
 <?php
 class VinilosController extends AppController {
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('index', 'ficha');
+	}
 	
     public $name = 'Vinilos';
-    public $helpers = array('Html', 'Form');
-    
-	
+    public $helpers = array('Html', 'Form');	
 	    
-	 public function index() {
+	public function index() {
 	        
 	 	$this->Session->write('Cartele',null);
         $this->Session->write('Impresione',null);

@@ -77,9 +77,9 @@
                 <div id="dimensiones-image">
                     <?php echo $this->Form->create('Corporeo', array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
                     <fieldset id="xy_fields">
-                        <?php echo $this->Form->input('ancho', array('name' => 'ancho', 'label' => false, 'id' => 'ancho2', 'min' => '1')) ?>
+                        <?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho2', 'min' => '1')) ?>
                         <?php echo $this->Html->image('corporeos.dimension.png', array('alt' => "NAMBRE!")); ?>                
-                        <?php echo $this->Form->input('alto', array('name' => 'alto', 'label' => false, 'id' => 'alto2', 'min' => '1')) ?>
+                        <?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto2', 'min' => '1')) ?>
                         <br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
                     </fieldset>
                 </div>   
