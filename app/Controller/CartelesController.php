@@ -5,19 +5,24 @@ class CartelesController extends AppController {
 		parent::beforeFilter();
 		$this->Auth->allow('index', 'front_light', 'adhesivos', 'back_light', 'ficha');
 	}
-	
-    public $name = 'Carteles';
-    public $helpers = array('Html', 'Form');	
+	    
+    public $helpers = array('Html', 'Form');
+	public $components = array('Session');
+	public $name = 'Carteles';
 	    
 	public function index() {
+
+		if ($this->Auth->user('id')) {
+			$this->set('logeado', '1');
+		} else {
+			$this->set('logeado', '0');
+		}
 	        
-	        $this->layout = 'layout_carteles';
-	        $this->set('carteles_actuales', $this->Cartele->find('all'));
+		$this->layout = 'layout_carteles';
+		$this->set('carteles_actuales', $this->Cartele->find('all'));
 //	        $cartel_array = array ("Cartele" => $this->Session->read());
 //          print_r($cartel_array);
-			   
-	       
-	    }
+	}
 
     
     
