@@ -78,10 +78,10 @@
                 <div id="dimensiones-image-carteles">
                     <?php echo $this->Form->create('Cartele', array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
                     <fieldset id="xy_fields">
-						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'label' => false, 'id' => 'ancho3', 'min' => '1')) ?>
+						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho3', 'min' => '1')) ?>
 						<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!")); ?>                
-						<?php echo $this->Form->input('alto', array('name' => 'alto', 'label' => false, 'id' => 'alto3', 'min' => '1')) ?>
-                        <?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'label' => false, 'id' => 'altopiso3', 'min' => '1')) ?>
+						<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto3', 'min' => '1')) ?>
+                        <?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'text', 'label' => false, 'id' => 'altopiso3', 'min' => '1')) ?>
                         <br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
                     </fieldset>
                 </div> 

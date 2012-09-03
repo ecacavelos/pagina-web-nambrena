@@ -1,12 +1,15 @@
 <?php
 class CartelesController extends AppController {
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('index', 'front_light', 'adhesivos', 'back_light', 'ficha');
+	}
 	
     public $name = 'Carteles';
-    public $helpers = array('Html', 'Form');
-    
-	
+    public $helpers = array('Html', 'Form');	
 	    
-	 public function index() {
+	public function index() {
 	        
 	        $this->layout = 'layout_carteles';
 	        $this->set('carteles_actuales', $this->Cartele->find('all'));

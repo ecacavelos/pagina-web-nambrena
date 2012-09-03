@@ -1,12 +1,15 @@
 <?php
 class ImpresionesController extends AppController {
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('index', 'front_light', 'back_light', 'adhesivo', 'microperforado', 'ficha');
+	}
 	
     public $name = 'Impresiones';
-    public $helpers = array('Html', 'Form');
-    
-	
+    public $helpers = array('Html', 'Form');    	
 	    
-	  public function index() {
+	public function index() {
 	        
  		$this->Session->write('Cartele',null);
         $this->Session->write('Corporeo',null);
