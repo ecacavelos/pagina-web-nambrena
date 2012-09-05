@@ -76,6 +76,13 @@ a img {
 	height:0px;
 }
 
+div#flashMessage {
+	position: fixed;
+	left: 1%;
+	top: 1%;
+	width: 98%;	
+}
+
 #logo {
 	margin-right: 3%;
 	width: 15%;
