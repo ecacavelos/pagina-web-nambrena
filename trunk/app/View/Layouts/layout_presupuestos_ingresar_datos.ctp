@@ -169,7 +169,7 @@
                 			if($datos['Impresione']['tipo'] == 'Adhesivo')
 	                			echo "Tipo: Adhesivo"."</br>";
                 			if($datos['Impresione']['tipo'] == 'Microperforado')
-	                			echo "Tipo: Front light"."</br>";
+	                			echo "Tipo: Microperforado"."</br>";
 	                			
 	                		if($datos['Impresione']['tipoEnvio'] == 'envio')
 	                			echo "Instalaci&oacute;n: Te enviamos la impresi&oacute;n!"."</br>";
