@@ -3,7 +3,7 @@ class ImpresionesController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('index', 'front_light', 'back_light', 'adhesivo', 'microperforado', 'ficha');
+		$this->Auth->allow('index', 'front_light', 'back_light', 'adhesivo', 'microperforado', 'ficha', 'generate_pdf');
 	}
 	
     public $name = 'Impresiones';
@@ -391,6 +391,15 @@ protected function _sendMail(){
 	
 	
 		return 1;
+
+}
+
+public function generate_pdf() {
+	
+	 	$this->layout = 'pdf'; //this will use the pdf.ctp layout 
+       
+        
+		$this->render(); 
 
 }
     
