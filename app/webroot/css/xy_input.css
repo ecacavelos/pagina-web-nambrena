@@ -291,3 +291,21 @@ input.text {
 	width: 65%;
 	height: auto;
 }
+#leyenda_enviando {
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: 100;
+	color: #FC3;
+	text-decoration: blink;
+}
+
+#message a{
+	color:#db214c;
+	
+}
+#message a:hover{
+	color:#3bb3c2;
+	
+	
+}
