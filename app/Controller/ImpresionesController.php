@@ -204,7 +204,7 @@ protected function _sendMail(){
 				$tipo =  "Front Light";
 				$producto_seleccionado = "frontLight";
 			}
-			if ($datos['Impresione']['tipo'] == "Back Light"){
+			if ($datos['Impresione']['tipo'] == "Back light"){
 				$tipo =  "Back Light";
 				$producto_seleccionado = "backLight";
 			}
