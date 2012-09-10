@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$("#wrap").css("display", "none");
+	$("#leyenda_enviando").css("display", "none");
 	$("#progressbar").progressbar({
 		value: 100 
 	});

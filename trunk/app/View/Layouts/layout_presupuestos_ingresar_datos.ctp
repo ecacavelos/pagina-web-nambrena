@@ -100,8 +100,8 @@
                             </p>
                         </fieldset>
 					</form>
+					<div id="leyenda_enviando" >Enviando...</div>
 				</div>
-                <div id="sending" style="display: none; background-color: lightgreen;">Enviando....</div>
                 <div id="content-info" class="form_gradiente">
                 	<h3>Seleccionaste los siguientes opciones !</h3>
                 <?php $datos =  $this->Session->read();
