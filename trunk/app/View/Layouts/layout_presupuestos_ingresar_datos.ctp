@@ -34,6 +34,12 @@
 		
 		<?php echo $this->Html->script('script-subpages');?>
 		<?php echo $this->Html->script('script-forms');?>
+		<?php echo $this->Html->script('script_PDF_download.js'); ?>
+		
+		<?php // echo $this->Js->writeBuffer();?>
+		
+
+		 
 		
 		<noscript>
             <style type="text/css">
@@ -53,7 +59,14 @@
 			document.write(screen.width+'x'+screen.height+';');
 		</script>
         -->
-        <div id="progressbar">
+        
+        <!--
+		<script type="text/javascript">
+			document.write(screen.width+'x'+screen.height+';');
+		</script>
+        -->
+
+<div id="progressbar">
 <!--        <img src="images/cargando.png" width="410" height="100" alt="">-->
 		<?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100"))?>
         </div>
@@ -64,51 +77,31 @@
 				<?php echo $this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "388", 'height' => "429"))?>
                 </div>
                 <div id="content-form2" class="form_gradiente">
-<!--					<form id="MainForm">-->
-					<?php echo $this->Form->create('Presupuesto', array('id' => 'MainForm' ,'action' => 'enviar_mail', 'inputDefaults' => array('div' => false, 'label' => false)));?>
-						<fieldset id="final_fields">
-                            <p><label for="nombre">Nombre</label>
-<!--                            <input id="nombre" name="nombre" type="text" class="text" required/>-->
-							<?php echo $this->Form->input('nombre', array('name' => 'nombre', 'class' => 'text', 'required' , 'id' => 'nombre'));?>
-                            </p>     
-                            <p><label for="apellido">Apellido</label>
-<!--                            <input id="apellido" name="apellido" type="text" class="text" required/>-->
-                            <?php echo $this->Form->input('apellido', array('name' => 'apellido', 'class' => 'text', 'required' , 'id' => 'apellido'));?>
+					<div id="contact_form">
+					<form id="MainForm" name="contact" method="post" action="">
+						<fieldset  id="final_fields">
+                            <p><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" class="text" required/>
                             </p>
-                            <p><label for="empresa">Empresa</label>
-<!--                            <input id="empresa" name="empresa" type="text" class="text" required/>-->
-							<?php echo $this->Form->input('empresa', array('name' => 'empresa', 'class' => 'text', 'required' , 'id' => 'empresa'));?>
+                            <p><label for="apellido">Apellido</label><input id="apellido" name="apellido" type="text" class="text" required/>
                             </p>
-                            <p><label for="email">Email</label>
-<!--                            <input id="email" name="email" type="email" class="text" required/>-->
-							<?php echo $this->Form->input('email', array('name' => 'email', 'class' => 'text', 'required' , 'id' => 'email', 'type' => 'email'));?>
+                            <p><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" class="text" required/>
                             </p>
-                            <p><label for="email_verificacion">Email de Verificacion</label>
-<!--                            <input id="email_verificacion" name="email_verificacion" type="email" class="text" required/>-->
-							<?php echo $this->Form->input('email_verificacion', array('name' => 'email_verificacion', 'class' => 'text', 'required' , 'id' => 'email_verificacion', 'type' => 'email'));?>
+                            <p><label for="email">Email</label><input id="email" name="email" type="email" class="text" required/>
                             </p>
-                            <p><label for="telefono">Telefono</label>
-<!--                            <input id="telefono" name="telefono" type="tel" class="text" required/>-->
-                            <?php echo $this->Form->input('telefono', array('name' => 'telefono', 'class' => 'text', 'required' , 'id' => 'telefono'));?>
+                            <p><label for="email_verificacion">Email de Verificacion</label><input id="email_verificacion" name="email_verificacion" type="email" class="text" required/>
                             </p>
-                            <p><label for="departamento">Ubicacion</label>
-<!--                            <input id="departamento" name="departamento" type="text" class="text" required/>-->
-                            <?php echo $this->Form->input('departamento', array('name' => 'departamento', 'class' => 'text', 'required' , 'id' => 'departamento'));?>
+                            <p><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" class="text" required/>
                             </p>
-                            <p><label for="direccion">Direccion</label>
-<!--                            <input id="direccion" name="direccion" type="text" class="text" />-->
-                            <?php echo $this->Form->input('direccion', array('name' => 'direccion', 'class' => 'text', 'id' => 'direccion'));?>
+                            <p><label for="departamento">Ubicacion</label><input id="departamento" name="departamento" type="text" class="text" required/>
                             </p>
-                            <p><label for="hora_trabajo">Hora de Trabajo (hh:mm)</label>
-<!--                            <input id="hora_trabajo" name="hora_trabajo" type="time" class="text" required=/>-->
-							<?php echo $this->Form->input('hora_trabajo', array('name' => 'hora_trabajo', 'required' , 'class' => 'text', 'id' => 'hora_trabajo' , 'type'=>"time"));?>
-                            </p>                                                       
-                            
-                            <p><button class="boton gray" id="form_ok" type="submit">OK</button>
+                            <p><label for="direccion">Direccion</label><input id="direccion" name="direccion" type="text" class="text" />
                             </p>                         
+                            <p><input type="submit" name="submit" class="boton gray" id="submit_btn" value="OK" />
+                            </p>
                         </fieldset>
 					</form>
-                </div>
+				</div>
+                <div id="sending" style="display: none; background-color: lightgreen;">Enviando....</div>
                 <div id="content-info" class="form_gradiente">
                 	<h3>Seleccionaste los siguientes opciones !</h3>
                 <?php $datos =  $this->Session->read();
