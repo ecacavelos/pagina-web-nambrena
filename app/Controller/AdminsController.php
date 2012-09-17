@@ -24,25 +24,25 @@ class AdminsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->set('testingvar', '22');
 
-			$foobar = $this->request->data;
+			$datosrequest = $this->request->data;
 
-			Configure::write('Poste.precio_m2', $foobar['admins']['a001']);
-			Configure::write('Altura.factor', $foobar['admins']['a002']);
-			Configure::write('Altura.limite', $foobar['admins']['a003']);
+			Configure::write('Poste.precio_m2', $datosrequest['admins']['a001']);
+			Configure::write('Altura.factor', $datosrequest['admins']['a002']);
+			Configure::write('Altura.limite', $datosrequest['admins']['a003']);
 
-			Configure::write('Cartel.reflector_precio', $foobar['admins']['a004']);
-			Configure::write('Cartel.instalacion_factor', $foobar['admins']['a005']);
-			Configure::write('Cartel.frontLight', $foobar['admins']['a006']);
-			Configure::write('Cartel.backLight', $foobar['admins']['a007']);
-			Configure::write('Cartel.adhesivo', $foobar['admins']['a008']);
-			Configure::write('Cartel.frontLight_LONA', $foobar['admins']['a009']);
-			Configure::write('Cartel.backLight_LONA', $foobar['admins']['a010']);
-			Configure::write('Cartel.adhesivo_LONA', $foobar['admins']['a011']);
+			Configure::write('Cartel.reflector_precio', $datosrequest['admins']['a004']);
+			Configure::write('Cartel.instalacion_factor', $datosrequest['admins']['a005']);
+			Configure::write('Cartel.frontLight', $datosrequest['admins']['a006']);
+			Configure::write('Cartel.backLight', $datosrequest['admins']['a007']);
+			Configure::write('Cartel.adhesivo', $datosrequest['admins']['a008']);
+			Configure::write('Cartel.frontLight_LONA', $datosrequest['admins']['a009']);
+			Configure::write('Cartel.backLight_LONA', $datosrequest['admins']['a010']);
+			Configure::write('Cartel.adhesivo_LONA', $datosrequest['admins']['a011']);
 
-			Configure::write('Impresion.frontLight', $foobar['admins']['a012']);
-			Configure::write('Impresion.backLight', $foobar['admins']['a013']);
-			Configure::write('Impresion.adhesivo', $foobar['admins']['a014']);
-			Configure::write('Impresion.microperforado', $foobar['admins']['a015']);
+			Configure::write('Impresion.frontLight', $datosrequest['admins']['a012']);
+			Configure::write('Impresion.backLight', $datosrequest['admins']['a013']);
+			Configure::write('Impresion.adhesivo', $datosrequest['admins']['a014']);
+			Configure::write('Impresion.microperforado', $datosrequest['admins']['a015']);
 
 			Configure::dump('nambrena_config.php', 'default', array('Poste', 'Altura', 'Cartel', 'Impresion'));
 

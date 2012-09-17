@@ -47,8 +47,7 @@
 		<script type="text/javascript">
             $(document).ready(function() {
                 $('#ancho3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
-                $('#alto3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
-				$('#altopiso3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
+                $('#alto3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });				
             });
         </script>        
     </head>
@@ -81,7 +80,7 @@
 						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho3', 'min' => '1')) ?>
 						<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!")); ?>                
 						<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto3', 'min' => '1')) ?>
-                        <?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'text', 'label' => false, 'id' => 'altopiso3', 'min' => '1')) ?>
+                        <?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'checkbox', 'label' => 'Altura mayor a 7 metros?', 'id' => 'altopiso3')) ?>
                         <br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
                     </fieldset>
                 </div> 

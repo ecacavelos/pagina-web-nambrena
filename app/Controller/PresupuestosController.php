@@ -161,7 +161,7 @@ class PresupuestosController extends AppController {
 		
 		
 		//MENSAJE
-		$mensaje = 'Estimado/a '.$this->request->data['nombre'].":"."\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado\n\n"."Producto: ".$producto."\nTipo: ".$tipo."\nSoporte: ".$soporte;
+		$mensaje = 'Estimado/a '.$this->request->data['nombre'].":"."\n\nHemos registrado su pedido.\nA continuacion se encuentra el presupuesto solicitado\n\n"."Producto: ".$producto."\nTipo: ".$tipo."\nSoporte: ".$soporte;
 
 		// LUMINOSIDAD CARAS Y MANTENIMIENTO
 		if ($datos['Cartele']['luminosidad'] != -1){

@@ -12,6 +12,11 @@ html {
 	top: 5%;
 	margin-left: 12%;
 	float: left;
+	text-align: center;
+}
+#back-to-home {
+	text-decoration: none;
+	display: none;
 }
 
 #dimensiones-image {
@@ -75,9 +80,11 @@ html {
 	bottom: 62%;
 }
 #altopiso3 {
-	position: absolute;
-	left: 65%;
-	bottom: -4%;
+	margin-right: 10px;	
+}
+
+#xy_fields label {
+	color: red;
 }
 
 button#xy_ok2 {

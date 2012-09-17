@@ -73,8 +73,9 @@
 		<div id="wrap">
             <div id="content">
                 <div id="main-logo">
-<!--                    <img src="images/index.logo.png" width="388" height="429" alt="">-->
-				<?php echo $this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "388", 'height' => "429"))?>
+					<!--<img src="images/index.logo.png" width="388" height="429" alt="">-->
+					<?php echo $this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "388", 'height' => "429"))?>
+					<?php echo $this->Html->link($this->Html->image("volver.png", array("alt" => "Volver al Inicio")), array('controller' => 'pages', 'action' => 'display', 'home'), array('id' => 'back-to-home', 'escape' => false)); ?>
                 </div>
                 <div id="content-form2" class="form_gradiente">
 					<div id="contact_form">
@@ -90,11 +91,11 @@
                             </p>
                             <p><label for="email_verificacion">Email de Verificacion</label><input id="email_verificacion" name="email_verificacion" type="email" class="text" required/>
                             </p>
-                            <p><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" class="text" required/>
-                            </p>
-                            <p><label for="departamento">Ubicacion</label><input id="departamento" name="departamento" type="text" class="text" required/>
-                            </p>
                             <p><label for="direccion">Direccion</label><input id="direccion" name="direccion" type="text" class="text" />
+                            </p>
+                            <p><label for="departamento">Ciudad</label><input id="departamento" name="departamento" type="text" class="text" required/>
+                            </p>                            
+                            <p><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" class="text" required/>
                             </p>                         
                             <p><input type="submit" name="submit" class="boton gray" id="submit_btn" value="OK" />
                             </p>
@@ -178,7 +179,13 @@
                 		echo "Alto:  ". $datos['alto']." metros </br>";
                 		if ($datos['Cartele'] != null){
                 			
-                			echo "Altura desde el piso:  ". $datos['altura_piso']." metros </br>";
+                			echo "Altura desde el piso: "; 
+                			
+                			if ($datos['altura_piso'] == 0){                				
+								echo "MENOR a " . $limite_altura . " metros<br>";
+                			} else {
+                				echo "MAYOR a " . $limite_altura . " metros<br>";
+                			}
                 			
                 		}		
                 		echo "</br>"
