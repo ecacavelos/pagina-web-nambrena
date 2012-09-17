@@ -401,6 +401,9 @@ public function ficha(){
 	}
 	else
 	{
+		Configure::load('nambrena_config');
+		$this->set('limite_altura', Configure::read('Altura.limite'));
+		
 		// Se setea el layout para presentar el formulario antes de generar el presupuesto.
 		$this->layout = 'layout_presupuestos_ingresar_datos';
 			
