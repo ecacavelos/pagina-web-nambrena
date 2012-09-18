@@ -67,17 +67,17 @@
 <!--            <img src="images/index.icontw.png" width="83" height="81" alt=""><img src="images/index.iconfb.png" width="83" height="81" alt="">-->
 				<?php echo $this->Html->link(
 					$this->Html->image('index.icontw.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
-					'https://twitter.com/#!/Nambrena_nmb',
+					'http://twitter.com/#!/Nambrena_nmb',
 					array('target' => '_blank', 'escape' => false)
 				);
 			   ?><?php echo $this->Html->link(
 					$this->Html->image('index.iconfb.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
-					'https://www.facebook.com/pages/Nambrena-nmb/217230554954632',
+					'http://www.facebook.com/pages/Nambrena-nmb/217230554954632',
 					array('target' => '_blank', 'escape' => false)
 				);
 			   ?><?php echo $this->Html->link(
 					$this->Html->image('index.iconbl.png', array('alt' => "NAMBRE!", 'width'=> "83", 'height' => "81")),
-					'https://www.facebook.com/pages/Nambrena-nmb/217230554954632',
+					'http://www.nambrena.com.py/blog/',
 					array('target' => '_blank', 'escape' => false)
 				);
 			   ?>               

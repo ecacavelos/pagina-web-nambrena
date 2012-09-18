@@ -85,6 +85,7 @@ html {
 
 #xy_fields label {
 	color: red;
+	font-size: 18px;
 }
 
 button#xy_ok2 {
@@ -287,7 +288,7 @@ input.text {
 }
 
 .error {
-	font-size: 12px;
+	font-size: 13px !important;
 }
 
 #content-lema {
