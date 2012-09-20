@@ -6,6 +6,14 @@
 	height: auto;
 }
 
+#content-upper-left img#back-arrow {
+	position: relative;
+	width: 10% !important;
+	height: auto !important;
+	vertical-align: top;
+	margin-top: 5%;
+}
+
 img.sobrepared {
 	vertical-align: middle;
 	width: 22%;

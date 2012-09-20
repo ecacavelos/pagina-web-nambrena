@@ -25,11 +25,14 @@
                 #content-lower-menu {
                     left: 0px;
                 }
+				#progressbar{
+					display: none;
+				}                
             </style>
         </noscript>
     </head>
     <body>
-        <!--Script para detectar la resoluc—n del usuario.-->
+        <!--Script para detectar la resolucï¿½n del usuario.-->
 		<!--
         <script type="text/javascript">
 			document.write(screen.width+'x'+screen.height);
@@ -59,16 +62,16 @@
 <!--                        <td>Email:</td><td><input type="text" name="email" /></td>-->
 <!--                        </tr>-->
 <!--                        <tr>-->
-<!--                        <td>Email de Verificaci—n:</td><td><input type="text" name="email_verificacion" /></td>-->
+<!--                        <td>Email de Verificaciï¿½n:</td><td><input type="text" name="email_verificacion" /></td>-->
 <!--                        </tr>-->
 <!--                        <tr>-->
-<!--                        <td>TelŽfono:</td><td><input type="text" name="telefono" /></td>-->
+<!--                        <td>Telï¿½fono:</td><td><input type="text" name="telefono" /></td>-->
 <!--                        </tr>-->
 <!--                        <tr>-->
-<!--                        <td>Ubicaci—n (Departamento):</td><td><input type="text" name="departamento" /></td>-->
+<!--                        <td>Ubicaciï¿½n (Departamento):</td><td><input type="text" name="departamento" /></td>-->
 <!--                        </tr>-->
 <!--                        <tr>-->
-<!--                        <td>Direcci—n:</td><td><input type="text" name="direccion" /></td>-->
+<!--                        <td>Direcciï¿½n:</td><td><input type="text" name="direccion" /></td>-->
 <!--                        </tr>-->
 <!--                        <tr>-->
 <!--                        <td>Hora de Trabajo:</td><td><input type="text" name="hora_trabajo" /></td>-->

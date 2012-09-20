@@ -6,6 +6,14 @@
 	height: auto;
 }
 
+#content-upper-left img#back-arrow {
+	position: relative;
+	width: 5% !important;
+	height: auto !important;
+	vertical-align: top;
+	margin-top: 4%;
+}
+
 /*#content-lower-menu {
 	top: 25% !important;
 }*/

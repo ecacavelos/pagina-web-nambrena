@@ -159,7 +159,7 @@ div#flashMessage {
 	opacity: 0.2;
 }
 
-#content-lower-menu img, #content-lower-menu2 input {
+#content-lower-menu img, #content-lower-menu2 input, #back-arrow {
 	-ms-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-webkit-transition: all 1s ease;
@@ -172,6 +172,15 @@ div#flashMessage {
 	-moz-transform:translate(0px,-30px); /* Firefox */
 	-webkit-transform:translate(0px,-30px); /* Safari and Chrome */
 	-o-transform:translate(0px,-30px); /* Opera */
+	opacity: 1;
+}
+
+#back-arrow:hover {
+	/*transform:translate(0px,-30px);*/
+	-ms-transform:translate(0px,-10px); /* IE 9 */
+	-moz-transform:translate(0px,-10px); /* Firefox */
+	-webkit-transform:translate(0px,-10px); /* Safari and Chrome */
+	-o-transform:translate(0px,-10px); /* Opera */
 	opacity: 1;
 }
 

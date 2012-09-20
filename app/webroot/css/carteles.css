@@ -8,8 +8,15 @@
 
 #content-upper-left img {
 	margin-top: 3%;
-	width: 100%;
+	width: 85%;
 	height: auto;
+}
+
+#content-upper-left img#back-arrow {
+	position: relative;
+	top: -22px;	
+	width: 15% !important;
+	height: auto !important;
 }
 
 img.frontlight {

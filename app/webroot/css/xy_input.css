@@ -19,6 +19,20 @@ html {
 	display: none;
 }
 
+#logo {
+	text-align: center;
+}
+#logo a#back-arrow-link {
+	position: relative;
+	top: 40px;
+}
+#logo img#back-arrow {
+	position: relative;
+	width: 45% !important;
+	height: auto !important;
+	vertical-align: top;	
+}
+
 #dimensiones-image {
 	position: fixed;
 	left: 8%;	

@@ -38,9 +38,6 @@
 		
 		<?php // echo $this->Js->writeBuffer();?>
 		
-
-		 
-		
 		<noscript>
             <style type="text/css">
                 #content-lower-menu {
@@ -59,17 +56,10 @@
 			document.write(screen.width+'x'+screen.height+';');
 		</script>
         -->
-        
-        <!--
-		<script type="text/javascript">
-			document.write(screen.width+'x'+screen.height+';');
-		</script>
-        -->
-
-<div id="progressbar">
-<!--        <img src="images/cargando.png" width="410" height="100" alt="">-->
-		<?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100"))?>
-        </div>
+		<div id="progressbar">
+			<!--<img src="images/cargando.png" width="410" height="100" alt="">-->
+			<?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100"))?>
+	    </div>
 		<div id="wrap">
             <div id="content">
                 <div id="main-logo">
