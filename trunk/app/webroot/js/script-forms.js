@@ -1,5 +1,5 @@
 $(document).ready(function() {	
-	$("#MainForm").validate();	
+	$("#MainForm0").validate();	
    /*
    * In-Field Label jQuery Plugin
    * http://fuelyourcoding.com/scripts/infield.html

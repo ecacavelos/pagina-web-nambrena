@@ -13,7 +13,7 @@ $(function() {
 				type : "POST",
 				data : dataString,
 				success : function() {
-					$('#content-form2').html('<div id="message" style="display: block;"><h3>Gracias!<br>Te enviamos el presupuesto a tu email.<br>Tambi&eacute;n pod&eacute;s:<br><a href="generate_pdf" target="_self">DESCARGAR EN PDF.</a></h3><br>* Si no lo encuentras entre tus correos recibidos, por favor revisa tu carpeta de Spam.</div>');
+					$('#content-form2').html('<div id="message" style="display: block;"><h3>Gracias!<br>Te enviamos el presupuesto a tu email.<br>Tambi&eacute;n pod&eacute;s:<br><a href="generate_pdf" target="_self">DESCARGAR EN PDF.</a></h3><br>* Si no lo encuentras entre tus correos recibidos, por favor revisa tu carpeta de Spam.<br> <br></div>');
 					$('#main-logo').css('position','fixed');
 					$('#main-logo').animate({
 						width: '24%',

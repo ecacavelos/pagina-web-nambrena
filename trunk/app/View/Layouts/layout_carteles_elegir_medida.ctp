@@ -31,15 +31,29 @@
 			#content-lower-menu {
 				left: 0px;
 			}
-			#progressbar{
+			#progressbar {
 				display: none;
 			}
 		</style>
 	</noscript>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#ancho3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
-			$('#alto3').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });				
+			$('#ancho3').spinit({
+				height : 30,
+				width : 100,
+				min : 1,
+				initValue : 1,
+				max : 99,
+				btnWidth : 3
+			});
+			$('#alto3').spinit({
+				height : 30,
+				width : 100,
+				min : 1,
+				initValue : 1,
+				max : 99,
+				btnWidth : 3
+			});
 		});
 	</script>
 </head>
@@ -49,29 +63,39 @@
 	<!--<div id="progressbar"><img src="images/cargando.png" width="410" height="100" alt=""></div>-->
 	<div id="progressbar">
 		<!--<img src="images/cargando.png" width="410" height="100" alt="">-->
-		<?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "410", 'height' => "100")); ?>
+		<?php echo $this->Html->image('cargando.png', array('alt' => "NAMBRE!", 'border' => '0', 'width' => "410", 'height' => "100")); ?>
 	</div>
 	<div id="wrap">
 		<div id="content">
 			<div id="logo">
 				<!--<img src="images/logo.png" width="304" height="322" alt="">-->
-				<?php echo $this->Html->link(
-					$this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "304", 'height' => "322")), '/',
-					array('target' => '_self', 'escape' => false, 'class' => "transition-back")
-				);
-				?>
+				<?php echo $this->Html->link($this->Html->image('logo.png', array('alt' => "NAMBRE!", 'border' => '0', 'width' => "304", 'height' => "322")), '/', array('target' => '_self', 'escape' => false, 'class' => "transition-back")); ?>
 				<?php
-					//echo $this->Html->link($this->Html->image("back-arrow.png", array("alt" => "Volver", 'height' => '120px', 'width' => '120px', 'id' => 'back-arrow')), array('controller' => 'carteles', 'action' => "adhesivos"), array('escape' => false, 'class' => 'transition-back', 'title' => "Volver", 'id' => "back-arrow-link"));
+					//print_r($array_datos['Cartele']);
+					if ($array_datos['Cartele']['tipo'] == 'front_light') {
+						if ($array_datos['Cartele']['soporte'] == 'sobre_pared') {
+							echo $this->Html->link($this->Html->image("back-arrow.png", array("alt" => "Volver", 'height' => '120px', 'width' => '120px', 'id' => 'back-arrow')), array('controller' => 'carteles', 'action' => 'front_light', 'sobre_pared'), array('escape' => false, 'class' => 'transition-back', 'title' => "Volver", 'id' => "back-arrow-link"));
+						}
+						if ($array_datos['Cartele']['soporte'] == 'sobre_poste') {
+							echo $this->Html->link($this->Html->image("back-arrow.png", array("alt" => "Volver", 'height' => '120px', 'width' => '120px', 'id' => 'back-arrow')), array('controller' => 'carteles', 'action' => 'front_light', 'sobre_poste'), array('escape' => false, 'class' => 'transition-back', 'title' => "Volver", 'id' => "back-arrow-link"));
+						}
+						if ($array_datos['Cartele']['soporte'] == 'ya_poseo') {
+							echo $this->Html->link($this->Html->image("back-arrow.png", array("alt" => "Volver", 'height' => '120px', 'width' => '120px', 'id' => 'back-arrow')), array('controller' => 'carteles', 'action' => 'front_light', 'ya_poseo'), array('escape' => false, 'class' => 'transition-back', 'title' => "Volver", 'id' => "back-arrow-link"));
+						}
+					}
 				?>
 			</div>
 			<div id="dimensiones-image-carteles">
-				<?php echo $this->Form->create('Cartele', array('id' => 'MainForm' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false))); ?>
+				<?php echo $this->Form->create('Cartele', array('id' => 'MainForm0', 'name' => 'opa', 'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false))); ?>
 				<fieldset id="xy_fields">
 					<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho3', 'min' => '1')); ?>
 					<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!")); ?>
 					<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto3', 'min' => '1')); ?>
 					<?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'checkbox', 'label' => 'Altura mayor a 7 metros?', 'id' => 'altopiso3')); ?>
-					<br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
+					<br />
+					<button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">
+						OK
+					</button>
 				</fieldset>
 			</div>
 			<div id="content-lower-menu2">
@@ -80,22 +104,22 @@
 				<!--<input type="image" name="pickup" class="pickup" id="pickup" src="images/transporte.pickup.png" width="596" height="565" alt="">-->
 				<!--<input type="image" name="envio" class="envio" id="envio" src="images/transporte.envio.png" width="598" height="565" alt="">-->
 				<?php $pathColocado = $this->webroot;
-					$pathColocado=$pathColocado.'img/transporte.colocado.png';
-					echo $this->Form->input('transporte.colocado.png', array('type' => 'image','name' => 'colocado', 'class' => 'colocado', 'id' => 'colocado'  ,  'src' => $pathColocado,'width' => '598', 'height' => '565'));
+					$pathColocado = $pathColocado . 'img/transporte.colocado.png';
+					echo $this->Form->input('transporte.colocado.png', array('type' => 'image', 'name' => 'colocado', 'class' => 'colocado', 'id' => 'colocado', 'src' => $pathColocado, 'width' => '598', 'height' => '565'));
 				?>
 				<?php $pathPickup = $this->webroot;
-					$pathPickup=$pathPickup.'img/transporte.pickup.png';
-					echo $this->Form->input('transporte.pickup.png', array('type' => 'image','name' => 'pickup', 'class' => 'pickup', 'id' => 'pickup'  ,  'src' => $pathPickup,'width' => '598', 'height' => '565'));
+					$pathPickup = $pathPickup . 'img/transporte.pickup.png';
+					echo $this->Form->input('transporte.pickup.png', array('type' => 'image', 'name' => 'pickup', 'class' => 'pickup', 'id' => 'pickup', 'src' => $pathPickup, 'width' => '598', 'height' => '565'));
 				?>
 				<?php $pathEnvio = $this->webroot;
-					$pathEnvio=$pathEnvio.'img/transporte.envio.png';
-					echo $this->Form->input('transporte.envio.png', array('type' => 'image','name' => 'envio', 'class' => 'envio', 'id' => 'envio'  ,  'src' => $pathEnvio,'width' => '598', 'height' => '565'));
+					$pathEnvio = $pathEnvio . 'img/transporte.envio.png';
+					echo $this->Form->input('transporte.envio.png', array('type' => 'image', 'name' => 'envio', 'class' => 'envio', 'id' => 'envio', 'src' => $pathEnvio, 'width' => '598', 'height' => '565'));
 				?>
-				<?php echo $this->Form->end();?>
+				<?php echo $this->Form->end(); ?>
 			</div>
 			<div id="content-lema">
-			<!--<img src="transporte.lema.png" width="1020" height="105" alt="">-->
-			<?php echo $this->Html->image('carteles.dimension_lema.png', array('alt' => "NAMBRE!", 'border' => '0', 'width'=> "1020", 'height' => "105")); ?>
+				<!--<img src="transporte.lema.png" width="1020" height="105" alt="">-->
+				<?php echo $this->Html->image('carteles.dimension_lema.png', array('alt' => "NAMBRE!", 'border' => '0', 'width' => "1020", 'height' => "105")); ?>
 			</div>
 		</div>
 	</div>
