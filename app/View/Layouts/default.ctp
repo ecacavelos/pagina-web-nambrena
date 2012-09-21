@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="robots" content="noindex" />
-        <title>:::Nambrena Industria Publicitaria:::</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>.: Nambrena Industria Publicitaria :.</title>
 
-
-<!--		<link rel="stylesheet" type="text/css" href="css/frontpage.css" />-->
-<!--        <link rel="stylesheet" type="text/css" href="global.css" />-->
-<!--        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
-<!--        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
-<!--        <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>-->
-<!--        <script type="text/javascript" src="js/script-frontpage.js"></script>-->
-        
-		
-		<?php echo $this->Html->css('frontpage'); ?>
-		<?php echo $this->Html->css('global'); ?>
-		<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom');?>
-		<?php echo $this->Html->script('jquery-1.7.1.min');?>
-		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min.js');?>
-		<?php echo $this->Html->script('script-frontpage.js');?>
-       
-        <noscript>
-            <style type="text/css">
-                #content-lower-menu {
-                    left: 0px;
-                }
-				#progressbar{
-					display: none;
-				}
-            </style>
-        </noscript>
-        
-    </head>
+	<!--<link rel="stylesheet" type="text/css" href="css/frontpage.css" />-->
+	<!--<link rel="stylesheet" type="text/css" href="global.css" />-->
+	<!--<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
+	<!--<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
+	<!--<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>-->
+	<!--<script type="text/javascript" src="js/script-frontpage.js"></script>-->        
+	
+	<?php echo $this->Html->css('frontpage'); ?>
+	<?php echo $this->Html->css('global'); ?>
+	<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
+	<?php echo $this->Html->script('jquery-1.7.1.min'); ?>
+	<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min.js'); ?>
+	<?php echo $this->Html->script('script-frontpage.js'); ?>
+   
+    <noscript>
+        <style type="text/css">
+            #content-lower-menu {
+                left: 0px;
+            }
+			#progressbar{
+				display: none;
+			}
+        </style>
+    </noscript>
+    
+</head>
     <body>
         <!--Script para detectar la resoluc�n del usuario.-->
 		<!--
@@ -105,7 +103,7 @@
 <!--                    <img src="images/index.corporeos.png" width="465" height="401" alt="">-->
                     <?php echo $this->Html->link(
 						$this->Html->image('index.corporeos.png', array('alt' => "NAMBRE!", 'width'=> "465", 'height' => "401")),
-						array('controller' => 'corporeos'),
+						array('controller' => 'corporeos', 'action' => 'proximamente'),
 						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
 <!--                    <img src="images/index.impresiones.png" width="504" height="401" alt="">-->
@@ -117,7 +115,7 @@
 <!--                    <img src="images/index.cortedevinilos.png" width="449" height="401" alt="">-->
                     <?php echo $this->Html->link(
 						$this->Html->image('index.cortedevinilos.png', array('alt' => "NAMBRE!", 'width'=> "441", 'height' => "401")),
-						array('controller' => 'vinilos'),
+						array('controller' => 'vinilos', 'action' => 'proximamente'),
 						array('target' => '_self', 'escape' => false, 'class' => "transition-out")
 					);?>
                 </div>

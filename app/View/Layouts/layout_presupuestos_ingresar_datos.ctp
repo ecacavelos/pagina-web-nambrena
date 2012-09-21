@@ -5,38 +5,36 @@
         <meta name="robots" content="noindex" />
         <title>Nambrena Industria Publicitaria</title>
 		
-<!--		<link rel="stylesheet" type="text/css" href="css/xy_input.css" />-->
-<!--        <link rel="stylesheet" type="text/css" href="global.css" />-->
-<!--        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
-<!--        -->
-<!--		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
-<!--        <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>-->
-<!--        -->
-<!--		<script type="text/javascript" src="js/jquery.validate.min.js"></script>-->
-<!--        <script type="text/javascript" src="js/additional-methods.min.js"></script>-->
-<!--        <script type="text/javascript" src="js/messages_es.js"></script>-->
-<!--        -->
-<!--		<script type="text/javascript" src="js/script-subpages.js"></script>-->
-<!--        <script type="text/javascript" src="js/script-forms.js"></script>-->
+		<!--<link rel="stylesheet" type="text/css" href="css/xy_input.css" />-->
+		<!--<link rel="stylesheet" type="text/css" href="global.css" />-->
+		<!--<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />-->
+		
+		<!--<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
+		<!--<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>-->
 
+		<!--<script type="text/javascript" src="js/jquery.validate.min.js"></script>-->
+		<!--<script type="text/javascript" src="js/additional-methods.min.js"></script>-->
+		<!--<script type="text/javascript" src="js/messages_es.js"></script>-->
+
+		<!--<script type="text/javascript" src="js/script-subpages.js"></script>-->
+		<!--<script type="text/javascript" src="js/script-forms.js"></script>-->
 
 		<?php echo $this->Html->css('xy_input'); ?>
 		<?php echo $this->Html->css('global'); ?>
 		<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
 		
-		<?php echo $this->Html->script('jquery-1.7.1.min');?>
-		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min');?>
+		<?php echo $this->Html->script('jquery-1.7.1.min'); ?>
+		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min'); ?>
 		
-		<?php echo $this->Html->script('jquery.validate.min');?>
-		<?php echo $this->Html->script('additional-methods.min');?>
-		<?php echo $this->Html->script('messages_es');?>
+		<?php echo $this->Html->script('jquery.validate.min'); ?>
+		<?php echo $this->Html->script('additional-methods.min'); ?>
+		<?php echo $this->Html->script('messages_es'); ?>		
 		
-		
-		<?php echo $this->Html->script('script-subpages');?>
-		<?php echo $this->Html->script('script-forms');?>
+		<?php echo $this->Html->script('script-subpages'); ?>
+		<?php echo $this->Html->script('script-forms'); ?>
 		<?php echo $this->Html->script('script_PDF_download.js'); ?>
 		
-		<?php // echo $this->Js->writeBuffer();?>
+		<?php // echo $this->Js->writeBuffer(); ?>
 		
 		<noscript>
             <style type="text/css">
