@@ -91,7 +91,7 @@
 					<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho3', 'min' => '1')); ?>
 					<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!")); ?>
 					<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto3', 'min' => '1')); ?>
-					<?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'checkbox', 'label' => 'Altura mayor a 7 metros?', 'id' => 'altopiso3')); ?>
+					<p><?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'checkbox', 'label' => 'Altura mayor a 7 metros?', 'id' => 'altopiso3')); ?></p>
 					<br />
 					<button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">
 						OK
