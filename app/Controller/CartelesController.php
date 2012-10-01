@@ -450,7 +450,7 @@ class CartelesController extends AppController {
 		/////////////
 
 		// Se obtienen el tipo, soporte, luminosidad y mantenimiento.
-		global $tipo, $soporte, $mantenimiento, $luminosidad, $cara, $envio;
+		global $tipo, $soporte, $mantenimiento, $luminosidad, $cara, $envio, $sobre_poste_si_no, $ya_poseo_si_no, $ya_poseo_si_no, $pickup_si_no;
 
 		if ($datos['Cartele'] != null) {// Esto significa que el producto es un cartel
 
@@ -469,12 +469,18 @@ class CartelesController extends AppController {
 
 			if ($datos['Cartele']['soporte'] == "sobre_pared") {
 				$soporte = "Sobre pared";
+				$sobre_poste_si_no = 0;
+				$ya_poseo_si_no = 1;
 			}
 			if ($datos['Cartele']['soporte'] == "sobre_poste") {
 				$soporte = "Sobre poste";
+				$sobre_poste_si_no = 1;
+				$ya_poseo_si_no=1;
 			}
 			if ($datos['Cartele']['soporte'] == "ya_poseo") {
 				$soporte = "Ya posee";
+				$sobre_poste_si_no = 0;
+				$ya_poseo_si_no= 0;
 			}
 
 			if ($datos['Cartele']['luminosidad'] == 0) {
@@ -497,7 +503,8 @@ class CartelesController extends AppController {
 			if ($datos['Cartele']['cara'] == "doble_cara") {
 				$cara = "Doble cara";
 			}
-			$envio = $datos['Cartele']['tipoEnvio'];
+			$envio = $datos['Cartele']['tipoEnvio']; 
+			
 			//TIPO DE ENVIO
 		} else if ($datos['Impresione'] != null) {
 			if ($datos['Impresione']['tipo'] == "Front light") {
@@ -545,28 +552,102 @@ class CartelesController extends AppController {
 			$mensaje = $mensaje . "\nInstalacion: Te lo enviamos";
 		}
 
-		//PRECIO
-
-		/******************************************************************************
-		 * Primero se leen todos los valores involucrados en los precios de los productos
-		 * *******************************************************************************/
-		$altura_factor = Configure::read('Altura.factor');
-		$altura_limite = Configure::read('Altura.limite');
-		$precio_poste = Configure::read('Poste.precio_m2');
-		$precio_reflector = Configure::read('Cartel.reflector_precio');
-		$factor_colocacion = Configure::read('Cartel.instalacion_factor');
+		
+		/*
+		 * *******************
+		 * DEFINICION DEL PRECIO!!
+		 * *******************
+		 * */
+		
+		/*
+		 * 
+		 * PRECIO REFLECTORES
+		 * 
+		 * */
+		if ($datos['Cartele']['luminosidad'] == 0) {
+				$precio_reflector = 0;
+		}
+		if ($datos['Cartele']['luminosidad'] == 1) {
+				$precio_reflector = Configure::read('Cartel.reflector_precio');
+		}
+		/*
+		 * 
+		 * PRECIO REFLECTORES
+		 * 
+		 * */
+		
+		
+		
+		/*
+		 * 
+		 * PICKUP: SE PASA A BUSCAR O NO.
+		 * 
+		 * */
+		if ($envio == 'pickup'){
+			$factor_colocacion = Configure::read('Cartel.instalacion_factor'); // se hace el descuento
+		}
+		else{
+			$factor_colocacion = 1; // No se hace el descuento
+		}
+		/*
+		 * 
+		 * PICKUP: SE PASA A BUSCAR O NO.
+		 * 
+		 * */
+		
+		
+		
+		
+		/*
+		 * 
+		 * ALTURA DESDE EL PISO
+		 * 
+		 * */
+		if (($datos['altura_piso'] > Configure::read('Altura.limite'))) {
+			$altura_factor = Configure::read('Altura.factor'); // se sobrepasa la altura limite
+		}
+		else{
+			$altura_factor = 1;
+		}
+		/*
+		 * 
+		 * ALTURA DESDE EL PISO
+		 * 
+		 * */
+		
+		
+		
+		/*
+		 * 
+		 * POSTE
+		 * 
+		 * */
+		if ($sobre_poste_si_no == 1){
+			$precio_poste = Configure::read('Poste.precio_m2');
+		}
+		else{
+			$precio_poste = 0;
+		}
+				/*
+		 * 
+		 * POSTE
+		 * 
+		 * */
+		
+		
 		$ancho = $datos['ancho'];
 		$alto = $datos['alto'];
 		$precio_producto_metro = Configure::read($producto . '.' . $producto_seleccionado);
-		// Se trae el costo del archivo de configuracion
-		$precio_producto_metro_lona = Configure::read($producto . '.' . $producto_seleccionado . '_LONA');
-		// Se trae el costo del archivo de configuracion
-
+		$precio_producto_metro_mantenimiento = Configure::read($producto . '.' . $producto_seleccionado . '_MANTENIMIENTO');
+		
 		/***************************************************************************/
 		/*********************** Calcular el precio teniendo todos *****************/
 		/************************* los datos involucrados **************************/
 		/***************************************************************************/
-		if ($producto == 'Cartel') {//CARTEL
+		//FORMULA UNICA: (((ancho X alto X tipo_cartel) + (ancho X largo X precio_poste_m2) + (ancho X largo X precio_reflector_m2))*altura_factor*factor_colocacion)*si_ya_poseo+(alto X largo X costo_mantenimiento*si_con_mantenimiento)
+		$precio = ((($ancho * $alto * $precio_producto_metro) + ($ancho * $alto * $precio_poste) + ($ancho * $alto * $precio_reflector))*$altura_factor*$factor_colocacion)*$ya_poseo_si_no+($ancho * $alto * $precio_producto_metro_mantenimiento*$datos['Cartele']['mantenimiento']);
+		
+		/*if ($producto == 'Cartel') {//CARTEL
 			if ($soporte == "Sobre poste") {//CARTEL - SOBRE POSTE
 				if ($luminosidad == "Con luz") {//CARTEL - SOBRE POSTE - CON REFLECTOR
 					if (($datos['altura_piso'] > $altura_limite)) {
@@ -653,7 +734,7 @@ class CartelesController extends AppController {
 		} else if ($producto == 'Vinilo') {// VINILO
 
 			//TODO: TODA LA LOGICA PARA LOS CORPOREOS. EN LA SIGUIENTE VERSION.
-		}
+		}*/
 
 		/***************************************************************************/
 		/***************************************************************************/
