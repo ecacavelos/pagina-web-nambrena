@@ -14,9 +14,9 @@ echo $this->Form->input('a005', array('label' => 'Cartel) instalacion_factor: ',
 echo $this->Form->input('a006', array('label' => 'Cartel) frontLight: ', 'default' => $cartel_frontlight));
 echo $this->Form->input('a007', array('label' => 'Cartel) backLight: ', 'default' => $cartel_backlight));
 echo $this->Form->input('a008', array('label' => 'Cartel) adhesivo: ', 'default' => $cartel_adhesivo));
-echo $this->Form->input('a009', array('label' => 'Cartel) frontLight_LONA: ', 'default' => $cartel_frontlight_lona));
-echo $this->Form->input('a010', array('label' => 'Cartel) backLight_LONA: ', 'default' => $cartel_backlight_lona));
-echo $this->Form->input('a011', array('label' => 'Cartel) adhesivo_LONA: ', 'default' => $cartel_adhesivo_lona));
+echo $this->Form->input('a009', array('label' => 'Cartel) frontLight_MANTENIMIENTO: ', 'default' => $cartel_frontlight_lona));
+echo $this->Form->input('a010', array('label' => 'Cartel) backLight_MANTENIMIENTO: ', 'default' => $cartel_backlight_lona));
+echo $this->Form->input('a011', array('label' => 'Cartel) adhesivo_MANTENIMIENTO: ', 'default' => $cartel_adhesivo_lona));
 echo '<br>';
 echo $this->Form->input('a012', array('label' => 'Impresion) frontLight: ', 'default' => $impresion_frontlight));
 echo $this->Form->input('a013', array('label' => 'Impresion) backLight: ', 'default' => $impresion_backlight));

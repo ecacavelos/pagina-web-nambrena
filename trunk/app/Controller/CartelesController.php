@@ -450,7 +450,7 @@ class CartelesController extends AppController {
 		/////////////
 
 		// Se obtienen el tipo, soporte, luminosidad y mantenimiento.
-		global $tipo, $soporte, $mantenimiento, $luminosidad, $cara, $envio, $sobre_poste_si_no, $ya_poseo_si_no, $ya_poseo_si_no, $pickup_si_no;
+		global $tipo, $soporte, $mantenimiento, $luminosidad, $cara, $envio, $sobre_poste_si_no, $mantenimiento_si_no, $ya_poseo_si_no, $pickup_si_no;
 
 		if ($datos['Cartele'] != null) {// Esto significa que el producto es un cartel
 
@@ -564,11 +564,11 @@ class CartelesController extends AppController {
 		 * PRECIO REFLECTORES
 		 * 
 		 * */
-		if ($datos['Cartele']['luminosidad'] == 0) {
-				$precio_reflector = 0;
-		}
 		if ($datos['Cartele']['luminosidad'] == 1) {
 				$precio_reflector = Configure::read('Cartel.reflector_precio');
+		}
+		else{
+					$precio_reflector = 0;
 		}
 		/*
 		 * 
@@ -635,6 +635,24 @@ class CartelesController extends AppController {
 		 * */
 		
 		
+	   	/*
+		 * 
+		 * MANTENIMIENTO
+		 * 
+		 * */
+		if ($datos['Cartele']['luminosidad'] == 1) {
+				$mantenimiento_si_no = 1;
+		}
+		else{
+				$mantenimiento_si_no = 0;
+		}
+		/*
+		 * 
+		 * MANTENIMIENTO
+		 * 
+		 * */
+		
+		
 		$ancho = $datos['ancho'];
 		$alto = $datos['alto'];
 		$precio_producto_metro = Configure::read($producto . '.' . $producto_seleccionado);
@@ -645,7 +663,9 @@ class CartelesController extends AppController {
 		/************************* los datos involucrados **************************/
 		/***************************************************************************/
 		//FORMULA UNICA: (((ancho X alto X tipo_cartel) + (ancho X largo X precio_poste_m2) + (ancho X largo X precio_reflector_m2))*altura_factor*factor_colocacion)*si_ya_poseo+(alto X largo X costo_mantenimiento*si_con_mantenimiento)
-		$precio = ((($ancho * $alto * $precio_producto_metro) + ($ancho * $alto * $precio_poste) + ($ancho * $alto * $precio_reflector))*$altura_factor*$factor_colocacion)*$ya_poseo_si_no+($ancho * $alto * $precio_producto_metro_mantenimiento*$datos['Cartele']['mantenimiento']);
+		$precio = number_format(((($ancho * $alto * $precio_producto_metro) + ($ancho * $alto * $precio_poste) + ($ancho * $alto * $precio_reflector))*$altura_factor*$factor_colocacion)*$ya_poseo_si_no+
+								($ancho * $alto * $precio_producto_metro_mantenimiento*$mantenimiento_si_no),
+								0, '.', '.');
 		
 		/*if ($producto == 'Cartel') {//CARTEL
 			if ($soporte == "Sobre poste") {//CARTEL - SOBRE POSTE
@@ -752,6 +772,18 @@ class CartelesController extends AppController {
 		//print_r($this->request->data);echo "\n";
 		//print_r($datos);
 		//echo "\n\nEnvio: ".$envio. "soporte: ". $soporte. "mantenimiento: ".$mantenimiento."luminosidad: ".$luminosidad."cara: ".$cara;
+		echo '$precio = ((($ancho * $alto * $precio_producto_metro) + ($ancho * $alto * $precio_poste) + ($ancho * $alto * $precio_reflector))*$altura_factor*$factor_colocacion)*$ya_poseo_si_no+($ancho * $alto * $precio_producto_metro_mantenimiento*$datos["Cartele"]["mantenimiento"]);';
+		$array_datos =  '\n ancho: '.$ancho.
+			 '\n alto: '. $alto. 
+			 '\n precio_producto_metro: '. $precio_producto_metro.
+			 '\n precio_poste: '. $precio_poste.
+			 '\n precio_reflector: ' .$precio_reflector.
+			 '\n altura_factor: '. $altura_factor.
+			 '\n factor_colocacion: ' .$factor_colocacion.
+			 '\n ya_poseo_si_no: '.	$ya_poseo_si_no.
+			 '\n precio_producto_metro_mantenimiento: '. $precio_producto_metro_mantenimiento;
+			 '\n datos["Cartele"]["mantenimiento"]: '.$datos['Cartele']['mantenimiento'];
+		debug($array_datos);
 		/***************************************************************************/
 		/***************************************************************************/
 		/***********************LOGICA DE ENVIO DE MAILS****************************/
