@@ -35,9 +35,9 @@ class AdminsController extends AppController {
 			Configure::write('Cartel.frontLight', $datosrequest['admins']['a006']);
 			Configure::write('Cartel.backLight', $datosrequest['admins']['a007']);
 			Configure::write('Cartel.adhesivo', $datosrequest['admins']['a008']);
-			Configure::write('Cartel.frontLight_LONA', $datosrequest['admins']['a009']);
-			Configure::write('Cartel.backLight_LONA', $datosrequest['admins']['a010']);
-			Configure::write('Cartel.adhesivo_LONA', $datosrequest['admins']['a011']);
+			Configure::write('Cartel.frontLight_MANTENIMIENTO', $datosrequest['admins']['a009']);
+			Configure::write('Cartel.backLight_MANTENIMIENTO', $datosrequest['admins']['a010']);
+			Configure::write('Cartel.adhesivo_MANTENIMIENTO', $datosrequest['admins']['a011']);
 
 			Configure::write('Impresion.frontLight', $datosrequest['admins']['a012']);
 			Configure::write('Impresion.backLight', $datosrequest['admins']['a013']);
@@ -59,9 +59,9 @@ class AdminsController extends AppController {
 		$this->set('cartel_frontlight', Configure::read('Cartel.frontLight'));
 		$this->set('cartel_backlight', Configure::read('Cartel.backLight'));
 		$this->set('cartel_adhesivo', Configure::read('Cartel.adhesivo'));
-		$this->set('cartel_frontlight_lona', Configure::read('Cartel.frontLight_LONA'));
-		$this->set('cartel_backlight_lona', Configure::read('Cartel.backLight_LONA'));
-		$this->set('cartel_adhesivo_lona', Configure::read('Cartel.adhesivo_LONA'));
+		$this->set('cartel_frontlight_lona', Configure::read('Cartel.frontLight_MANTENIMIENTO'));
+		$this->set('cartel_backlight_lona', Configure::read('Cartel.backLight_MANTENIMIENTO'));
+		$this->set('cartel_adhesivo_lona', Configure::read('Cartel.adhesivo_MANTENIMIENTO'));
 
 		$this->set('impresion_frontlight', Configure::read('Impresion.frontLight'));
 		$this->set('impresion_backlight', Configure::read('Impresion.backLight'));
