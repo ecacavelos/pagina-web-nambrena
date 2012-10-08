@@ -33,6 +33,7 @@
 		<?php echo $this->Html->script('script-subpages'); ?>
 		<?php echo $this->Html->script('script-forms'); ?>
 		<?php echo $this->Html->script('script_PDF_download.js'); ?>
+		<?php echo $this->Html->meta('icon');?>
 		
 		<?php // echo $this->Js->writeBuffer(); ?>
 		
