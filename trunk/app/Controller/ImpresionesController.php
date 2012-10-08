@@ -225,8 +225,8 @@ class ImpresionesController extends AppController {
 		}
 
 		//MENSAJE
-		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado\n\n" . "Producto: " . $producto . "\nTipo: " . $tipo;
-
+		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado:\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo;
+		
 		// TIPO DE ENVIO
 		if ($envio == "colocado") {
 			$mensaje = $mensaje . "\nInstalacion: Colocado";
@@ -239,116 +239,39 @@ class ImpresionesController extends AppController {
 		}
 
 		//PRECIO
+		
+		
+		/*
+		 * 
+		 * PICKUP: SE PASA A BUSCAR O NO.
+		 * 
+		 * */
+		if ($envio == 'pickup'){
+			$factor_colocacion = Configure::read('Cartel.instalacion_factor'); // se hace el descuento
+		}
+		else{
+			$factor_colocacion = 1; // No se hace el descuento
+		}
+		/*
+		 * 
+		 * PICKUP: SE PASA A BUSCAR O NO.
+		 * 
+		 * */
 
 		/*********************************************************************************
 		 * Primero se leen todos los valores involucrados en los precios de los productos
 		 *********************************************************************************/
-		$altura_factor = Configure::read('Altura.factor');
-		$altura_limite = Configure::read('Altura.limite');
-		$precio_poste = Configure::read('Poste.precio_m2');
-		$precio_reflector = Configure::read('Cartel.reflector_precio');
-		$factor_colocacion = Configure::read('Cartel.instalacion_factor');
 		$ancho = $datos['ancho'];
 		$alto = $datos['alto'];
 		$precio_producto_metro = Configure::read($producto . '.' . $producto_seleccionado);
-		// Se trae el costo del archivo de configuracion
-		$precio_producto_metro_lona = Configure::read($producto . '.' . $producto_seleccionado . '_LONA');
-		// Se trae el costo del archivo de configuracion
-
+		
 		/***************************************************************************/
+		/*********************** Calcular el precio teniendo todos *****************/
+		/************************* los datos involucrados **************************/
 		/***************************************************************************/
-		/*********************** Calcular el precio teniendo todos******************
-		 **************************los datos involucrados***************************/
-		/***************************************************************************/
-		/***************************************************************************/
-		if ($producto == 'Cartel') {//CARTEL
-			if ($soporte == "Sobre poste") {//CARTEL - SOBRE POSTE
-				if ($luminosidad == "Con luz") {//CARTEL - SOBRE POSTE - CON REFLECTOR
-					if (($datos['altura_piso'] > $altura_limite)) {
-						if ($envio == 'pickup')//CARTEL - SOBRE POSTE - CON REFLECTOR - PASANDO ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste + ($ancho * $precio_reflector)) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE POSTE - CON REFLECTOR -  PASANDO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste + ($ancho * $precio_reflector)) * $altura_factor, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					} else {
-						if ($envio == 'pickup')//CARTEL - SOBRE POSTE - CON REFLECTOR - DEBAJO DE ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste + ($ancho * $precio_reflector)) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE POSTE - CON REFLECTOR -  DEBAJO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste + ($ancho * $precio_reflector)), 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					}
-				} else if ($luminosidad == "Sin luz") {//CARTEL - SOBRE POSTE - SIN REFLECTOR
-					if (($datos['altura_piso'] > $altura_limite)) {
-						if ($envio == 'pickup')//CARTEL - SOBRE POSTE - SIN REFLECTOR - PASANDO ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE POSTE - SIN REFLECTOR -  PASANDO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste) * $altura_factor, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					} else {
-						if ($envio == 'pickup')//CARTEL - SOBRE POSTE - SIN REFLECTOR - DEBAJO DE ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE POSTE - SIN REFLECTOR -  DEBAJO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + $precio_poste), 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					}
-				}
-			} else if ($soporte == "Sobre pared") {//CARTEL - SOBRE PARED
-				if ($luminosidad == "Con luz") {//CARTEL - SOBRE PARED - CON REFLECTOR
-					if (($datos['altura_piso'] > $altura_limite)) {
-						if ($envio == 'pickup')//CARTEL - SOBRE PARED - CON REFLECTOR - PASANDO ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + ($ancho * $precio_reflector)) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE PARED - CON REFLECTOR -  PASANDO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + ($ancho * $precio_reflector)) * $altura_factor, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					} else {
-						if ($envio == 'pickup')//CARTEL - SOBRE PARED - CON REFLECTOR - DEBAJO DE ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + ($ancho * $precio_reflector)) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE PARED - CON REFLECTOR -  DEBAJO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro + ($ancho * $precio_reflector)), 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					}
-				} else if ($luminosidad == "Sin luz") {//CARTEL - SOBRE PARED - SIN REFLECTOR
-					if (($datos['altura_piso'] > $altura_limite)) {
-						if ($envio == 'pickup')//CARTEL - SOBRE PARED - SIN REFLECTOR - PASANDO ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE PARED - SIN REFLECTOR -  PASANDO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro) * $altura_factor, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					} else {
-						if ($envio == 'pickup')//CARTEL - SOBRE PARED - SIN REFLECTOR - DEBAJO DE ALTURA LIMITE -  PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro) * $factor_colocacion, 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-						else//CARTEL - SOBRE PARED - SIN REFLECTOR -  DEBAJO ALTURA LIMITE - NO PICKUP
-							$precio = number_format(($ancho * $alto * $precio_producto_metro), 0, '.', '.');
-						// Se formatea el numero con los puntos como separador de miles.
-					}
-				}
-			} else if ($soporte == "Ya posee") {
-				if ($mantenimiento == "Sin mantenimiento") {//CARTEL - YA POSEE - SIN MANTENIMIENTO
-					$precio = number_format(($ancho * $alto * $precio_producto_metro_lona), 0, '.', '.');
-					// Se formatea el numero con los puntos como separador de miles.
-				} else if ($mantenimiento == "Con mantenimiento") {//CARTEL - YA POSEE - CON MANTENIMIENTO
-					$precio = "Precio no disponible";
-				}
-			}
-		} else if ($producto == 'Corporeo') {// CORPOREOS
-
-			//TODO: TODA LA LOGICA PARA LOS CORPOREOS. EN LA SIGUIENTE VERSION.
-		} else if ($producto == 'Impresion') {// IMPRESION
-
-			$precio = number_format(($ancho * $alto * $precio_producto_metro), 0, '.', '.');
-			// Se formatea el numero con los puntos como separador de miles.
-		} else if ($producto == 'Vinilo') {// VINILO
-
-			//TODO: TODA LA LOGICA PARA LOS CORPOREOS. EN LA SIGUIENTE VERSION.
-		}
+		//FORMULA UNICA: (((ancho X alto X tipo_cartel) + (ancho X largo X precio_poste_m2) + (ancho X largo X precio_reflector_m2))*altura_factor*factor_colocacion)*si_ya_poseo+(alto X largo X costo_mantenimiento*si_con_mantenimiento)
+		$precio = number_format(($ancho * $alto * $precio_producto_metro*$factor_colocacion),
+								0, '.', '.');
 
 		/***************************************************************************/
 		/***************************************************************************/
