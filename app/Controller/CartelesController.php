@@ -528,7 +528,7 @@ class CartelesController extends AppController {
 		}
 
 		//MENSAJE
-		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo . "\nSoporte: " . $soporte;
+		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado:\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo . "\nSoporte: " . $soporte;
 
 		// LUMINOSIDAD CARAS Y MANTENIMIENTO
 		if ($datos['Cartele']['luminosidad'] != -1) {
