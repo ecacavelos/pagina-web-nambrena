@@ -127,6 +127,11 @@
 	                		if($datos['Cartele']['mantenimiento'] == 1)
 	                			echo "Luminosidad: Con Mantenimiento"."</br>";
 	                			
+							if($datos['Cartele']['cara'] == "una_cara")
+	                			echo "Tipo de Backlight: Una cara"."</br>";
+							if($datos['Cartele']['cara'] == "doble_cara")
+	                			echo "Tipo de Backlight: Doble cara"."</br>";
+	                				                			
 	                		if($datos['Cartele']['tipoEnvio'] == 'envio')
 	                			echo "Instalaci&oacute;n: Te enviamos el cartel!"."</br>";	                			
 	                		if($datos['Cartele']['tipoEnvio'] == 'colocado')

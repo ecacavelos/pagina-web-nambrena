@@ -16,6 +16,7 @@
 	<?php echo $this->Html->script('jquery-1.7.1.min'); ?>
 	<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min'); ?>
 	<?php echo $this->Html->script('script-subpages'); ?>
+	<?php echo $this->Html->meta('icon');?>
 	<noscript>
 		<style type="text/css">
 			#content-lower-menu {

@@ -314,7 +314,7 @@ class CartelesController extends AppController {
 								$this->Session->write('Cartele.tipo', 'back_light');
 								$this->Session->write('Cartele.soporte', 'sobre_poste');
 								$this->Session->write('Cartele.cara', 'una_cara');
-								$this->Session->write('Cartele.luminosidad', 1);
+								$this->Session->write('Cartele.luminosidad', -1);
 								$this->Session->write('Cartele.mantenimiento', -1);
 								break;
 
@@ -323,7 +323,7 @@ class CartelesController extends AppController {
 								$this->Session->write('Cartele.tipo', 'back_light');
 								$this->Session->write('Cartele.soporte', 'sobre_poste');
 								$this->Session->write('Cartele.cara', 'doble_cara');
-								$this->Session->write('Cartele.luminosidad', 0);
+								$this->Session->write('Cartele.luminosidad', -1);
 								$this->Session->write('Cartele.mantenimiento', -1);
 								break;
 						}
@@ -528,7 +528,7 @@ class CartelesController extends AppController {
 		}
 
 		//MENSAJE
-		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado\n\n" . "Producto: " . $producto . "\nTipo: " . $tipo . "\nSoporte: " . $soporte;
+		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo . "\nSoporte: " . $soporte;
 
 		// LUMINOSIDAD CARAS Y MANTENIMIENTO
 		if ($datos['Cartele']['luminosidad'] != -1) {
@@ -603,7 +603,7 @@ class CartelesController extends AppController {
 		 * ALTURA DESDE EL PISO
 		 * 
 		 * */
-		if (($datos['altura_piso'] > Configure::read('Altura.limite'))) {
+		if ($datos['altura_piso'] == 1) {
 			$altura_factor = Configure::read('Altura.factor'); // se sobrepasa la altura limite
 		}
 		else{
@@ -663,7 +663,7 @@ class CartelesController extends AppController {
 		/************************* los datos involucrados **************************/
 		/***************************************************************************/
 		//FORMULA UNICA: (((ancho X alto X tipo_cartel) + (ancho X largo X precio_poste_m2) + (ancho X largo X precio_reflector_m2))*altura_factor*factor_colocacion)*si_ya_poseo+(alto X largo X costo_mantenimiento*si_con_mantenimiento)
-		$precio = number_format(((($ancho * $alto * $precio_producto_metro) + ($ancho * $alto * $precio_poste) + ($ancho * $alto * $precio_reflector))*$altura_factor*$factor_colocacion)*$ya_poseo_si_no+
+		$precio = number_format((($ancho * $alto * $precio_producto_metro*$altura_factor*$factor_colocacion) + ($ancho * $alto * $precio_poste) + ($ancho * $alto * $precio_reflector))*$ya_poseo_si_no+
 								($ancho * $alto * $precio_producto_metro_mantenimiento*$mantenimiento_si_no),
 								0, '.', '.');
 		
@@ -784,6 +784,7 @@ class CartelesController extends AppController {
 			 '\n precio_producto_metro_mantenimiento: '. $precio_producto_metro_mantenimiento;
 			 '\n datos["Cartele"]["mantenimiento"]: '.$datos['Cartele']['mantenimiento'];
 		debug($array_datos);
+		//$mensaje = $mensaje. "\n\n".$array_datos;
 		/***************************************************************************/
 		/***************************************************************************/
 		/***********************LOGICA DE ENVIO DE MAILS****************************/

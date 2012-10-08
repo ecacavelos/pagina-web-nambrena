@@ -33,6 +33,7 @@
 		
 		<?php echo $this->Html->script('script-subpages');?>
 		<?php echo $this->Html->script('script-forms');?>
+		<?php echo $this->Html->meta('icon');?>
 		
 		<noscript>
             <style type="text/css">
