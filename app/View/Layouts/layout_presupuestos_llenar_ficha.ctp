@@ -19,6 +19,7 @@
 		
 		<!--		<script type="text/javascript" src="js/script-subpages.js"></script>-->
 		<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min.js');?>
+		<?php echo $this->Html->meta('icon');?>
 		
 		<noscript>
             <style type="text/css">
