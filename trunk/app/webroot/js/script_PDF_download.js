@@ -3,6 +3,12 @@ $(function() {
 
 		// validate and process form here -> no me calienta tu validacion, solo voy a copiar lo que me sirve
 		if ($("#MainForm").valid()) {
+			
+			if($("input#email").val() != $("input#email_verificacion").val()){
+				alert("El email de verificación no coincide.");
+				return true;
+			}
+			
 			$("#leyenda_enviando").css("display", "");
 			var name = $("input#nombre").val();
 			var email = $("input#email").val();
