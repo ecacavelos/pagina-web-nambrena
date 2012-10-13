@@ -223,19 +223,30 @@ class ImpresionesController extends AppController {
 		} elseif ($datos['Vinilo'] != null) {
 			//TODO: ESTABLECER TIPO
 		}
+		
+		$this->Session->write('PDF.nombre', $this->request->data['nombre']);
+		$this->Session->write('PDF.producto', $producto);
+		$this->Session->write('PDF.alto', $datos['alto']);
+		$this->Session->write('PDF.ancho', $datos['ancho']);
+		$this->Session->write('PDF.tipo', $tipo);
+		$this->Session->write('PDF.soporte', -1);
+		$this->Session->write('PDF.limunisidad', $luminosidad);
+		$this->Session->write('PDF.mantenimiento', $mantenimiento);
+		$this->Session->write('PDF.caras', $cara);
+		$this->Session->write('PDF.envio', $envio);
 
 		//MENSAJE
-		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado:\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo;
+		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuación se encuentra el presupuesto solicitado:\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo;
 		
 		// TIPO DE ENVIO
 		if ($envio == "colocado") {
-			$mensaje = $mensaje . "\nInstalacion: Colocado";
+			$mensaje = $mensaje . "\nInstalación: Colocado";
 		}
 		if ($envio == "pickup") {
-			$mensaje = $mensaje . "\nInstalacion: Lo pasas a buscar";
+			$mensaje = $mensaje . "\nInstalación: Lo pasas a buscar";
 		}
 		if ($envio == "envio") {
-			$mensaje = $mensaje . "\nInstalacion: Te lo enviamos";
+			$mensaje = $mensaje . "\nInstalación: Te lo enviamos";
 		}
 
 		//PRECIO
@@ -277,6 +288,7 @@ class ImpresionesController extends AppController {
 		/***************************************************************************/
 
 		$precio = $precio . ' Gs.';
+		$this->Session->write('PDF.precio', $precio);
 		//PRECIO
 		$mensaje = $mensaje . "\nPrecio: " . $precio;
 		//MENSAJE
