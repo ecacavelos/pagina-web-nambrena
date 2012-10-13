@@ -227,7 +227,7 @@ fieldset label.infield /* .infield label added by JS */ {
 	/*line-height: 29px;*/
 }
 
-input.text {
+input.text, textarea.text {
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;

@@ -83,10 +83,12 @@
                             <p><label for="direccion">Direccion</label><input id="direccion" name="direccion" type="text" class="text" />
                             </p>
                             <p><label for="departamento">Ciudad</label><input id="departamento" name="departamento" type="text" class="text" required/>
-                            </p>                            
+                            </p>
                             <p><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" class="text" required/>
-                            </p>                         
-                            <p><input type="submit" name="submit" class="boton gray" id="submit_btn" value="OK" />
+                            </p>
+                            <p><label for="comentario">Comentario (Opcional)</label><textarea id="comentario" name="comentario" type="text" class="text" cols="20" rows="3"/></textarea>
+                            </p>                            
+                            <p><input type="button" name="submit" class="boton gray" id="submit_btn" value="OK" />
                             </p>
                         </fieldset>
 					</form>
