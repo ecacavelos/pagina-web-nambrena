@@ -450,7 +450,7 @@ class CartelesController extends AppController {
 		/////////////
 
 		// Se obtienen el tipo, soporte, luminosidad y mantenimiento.
-		global $tipo, $soporte, $mantenimiento, $luminosidad, $cara, $envio, $sobre_poste_si_no, $mantenimiento_si_no, $ya_poseo_si_no, $pickup_si_no;
+		$tipo=null; $soporte=null; $mantenimiento = null; $luminosidad=null; $cara=null; $envio=null; $sobre_poste_si_no=null; $mantenimiento_si_no=null; $ya_poseo_si_no=null; $pickup_si_no=null;
 
 		if ($datos['Cartele'] != null) {// Esto significa que el producto es un cartel
 
@@ -528,8 +528,18 @@ class CartelesController extends AppController {
 		}
 
 		//MENSAJE
-		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuacion se encuentra el presupuesto solicitado:\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo . "\nSoporte: " . $soporte;
-
+		$mensaje = 'Estimado/a ' . $this->request->data['nombre'] . ":" . "\n\nHemos regitrado su pedido. A continuación se encuentra el presupuesto solicitado:\n\n" . "Producto: " . $producto . "\nAlto: ".$datos['alto']." metros". "\nAncho: ".$datos['ancho']." metros". "\nTipo: " . $tipo . "\nSoporte: " . $soporte;
+		$this->Session->write('PDF.nombre', $this->request->data['nombre']);
+		$this->Session->write('PDF.producto', $producto);
+		$this->Session->write('PDF.alto', $datos['alto']);
+		$this->Session->write('PDF.ancho', $datos['ancho']);
+		$this->Session->write('PDF.tipo', $tipo);
+		$this->Session->write('PDF.soporte', $soporte);
+		$this->Session->write('PDF.limunisidad', $luminosidad);
+		$this->Session->write('PDF.mantenimiento', $mantenimiento);
+		$this->Session->write('PDF.caras', $cara);
+		$this->Session->write('PDF.envio', $envio);
+		
 		// LUMINOSIDAD CARAS Y MANTENIMIENTO
 		if ($datos['Cartele']['luminosidad'] != -1) {
 			$mensaje = $mensaje . "\nLuminosidad: " . $luminosidad;
@@ -543,13 +553,13 @@ class CartelesController extends AppController {
 
 		// TIPO DE ENVIO
 		if ($envio == "colocado") {
-			$mensaje = $mensaje . "\nInstalacion: Colocado";
+			$mensaje = $mensaje . "\nInstalación: Colocado";
 		}
 		if ($envio == "pickup") {
-			$mensaje = $mensaje . "\nInstalacion: Lo pasas a buscar";
+			$mensaje = $mensaje . "\nInstalación: Lo pasas a buscar";
 		}
 		if ($envio == "envio") {
-			$mensaje = $mensaje . "\nInstalacion: Te lo enviamos";
+			$mensaje = $mensaje . "\nInstalación: Te lo enviamos";
 		}
 
 		
@@ -760,6 +770,7 @@ class CartelesController extends AppController {
 		/***************************************************************************/
 
 		$precio = $precio . ' Gs.';
+		$this->Session->write('PDF.precio', $precio);
 		//PRECIO
 		$mensaje = $mensaje . "\nPrecio: " . $precio;
 		//MENSAJE

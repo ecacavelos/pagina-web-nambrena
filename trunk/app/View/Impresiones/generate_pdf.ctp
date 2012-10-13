@@ -1,90 +1,87 @@
 <?php
+App::import('Vendor','config/lang/eng');
 App::import('Vendor','tcpdf/tcpdf');
+
+
+
 $datos = $this->Session->read(); // VARIABLE SESSION.
 Configure::load('nambrena_config'); // Se leen los datos de configuracion de la aplicacion. app/nambrena_config.php
 //$producto_seleccionado = null; // Variable en la que se va a ir cargando como un string, la configuracion del producto. Ej -> frontLight_sobrePared_sinLuz, lo cual sirve para traer el precio
  //por metro cuadrado del archivo de configuracion.
-	
-$producto = 'Impresion';
+// Extend the TCPDF class to create custom Header and Footer
+class MYPDF extends TCPDF {
 
-/////////////
-
-// Se obtienen el tipo, soporte, luminosidad y mantenimiento.
-global $tipo, $soporte , $mantenimiento, $luminosidad, $cara, $envio;
-
-	if ($datos['Impresione'] != null){
-			if ($datos['Impresione']['tipo'] == "Front light"){
-				$tipo =  "Front Light";
-				$producto_seleccionado = "frontLight";
-			}
-			if ($datos['Impresione']['tipo'] == "Back light"){
-				$tipo =  "Back Light";
-				$producto_seleccionado = "backLight";
-			}
-			if ($datos['Impresione']['tipo'] == "Adhesivo"){
-				$tipo =  "Adhesivo";
-				$producto_seleccionado = "adhesivo";
-			}
-			if ($datos['Impresione']['tipo'] == "Microperforado"){
-				$tipo =  "Microperforado";
-				$producto_seleccionado = "microperforado";
-			}
-			$envio = $datos['Impresione']['tipoEnvio']; //TIPO DE ENVIO
-		}
-
-
-
-
-
-	
-//CALCULO DE PRECIO
-/******************************************************************************
- * Primero se leen todos los valores involucrados en los precios de los productos
- * *******************************************************************************/
-$altura_factor = Configure::read('Altura.factor');
-$altura_limite = Configure::read('Altura.limite');
-$precio_poste = Configure::read('Poste.precio_m2');
-$precio_reflector = Configure::read('Cartel.reflector_precio');
-$factor_colocacion = Configure::read('Cartel.instalacion_factor');
-$ancho = $datos['ancho'];
-$alto = $datos['alto'];
-$precio_producto_metro = Configure::read($producto.'.'.$producto_seleccionado); // Se trae el costo del archivo de configuracion
-$precio_producto_metro_lona = Configure::read($producto.'.'.$producto_seleccionado.'_LONA'); // Se trae el costo del archivo de configuracion
-
-
-/***************************************************************************/
-/***************************************************************************/
-/*********************** Calcular el precio teniendo todos******************
- * ************************los datos involucrados****************************/
-/***************************************************************************/
-/***************************************************************************/
-		// TIPO DE ENVIO
-		if ($envio=="colocado"){
-			$envio = "Te lo instalamos";
-		}
-		if ($envio=="pickup"){
-			$envio = "Lo pasas a buscar";
-		}
-		if ($envio=="envio"){
-			$envio = "Te lo enviamos";
-		}
+	//Page header
+	public function Header() {
+		// Logo
+		$image_file = K_PATH_IMAGES.'NAMBRENA.HEADER.png';
+		$this->Image($image_file, 20, 10, 170, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		
-		
-		if ($producto == 'Impresion'){ // IMPRESION
-			
-			$precio = number_format(($ancho*$alto*$precio_producto_metro),0,'.','.');// Se formatea el numero con los puntos como separador de miles.
-		}
+	}
+}
+
+
+
+//Primera parte de creacion del pdf
+// create new PDF document
+$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+// set document information
+$pdf->SetCreator(PDF_CREATOR);
+$pdf->SetAuthor('Nambrena');
+$pdf->SetTitle('Nambrena');
+$pdf->SetSubject('Nambrena');
+$pdf->SetKeywords('nambrena');
+
+// set default monospaced font
+//$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+//set some language-dependent strings
+$pdf->setLanguageArray($l);
+
+
+// set default header data
+//$pdf->SetHeaderData('NAMBRENA.HEADER.png', 170);
+
+
+
+
+
+//set margins
+$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->SetHeaderMargin(5);
+$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+//set auto page breaks
+//$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+//set image scale factor
+$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+
 
 /***************************************************************************/
 /***************************************************************************/
 
-$precio = $precio.' Gs.'; //PRECIO
+
+//$myString = "Test with accents óó"; 
+//$fh=fopen('presupuesto.txt',"w"); 
+//file_put_contents('hola.txt', "\xEF\xBB\xBF".  $myString);
+//fclose($fh);
+//$utf8text = file_get_contents('hola.txt', false);
 	
 
+// set color for text
+//$pdf->SetTextColor(0, 63, 127);
+
+//Write($h, $txt, $link='', $fill=0, $align='', $ln=false, $stretch=0, $firstline=false, $firstblock=false, $maxh=0)
+
+// write the text
+//$pdf->Write(5, $utf8text, '', 0, '', false, 0, false, false, 0);
 
 /***************************************************************************/
 /***************************************************************************/
-/***********************DATOS PARA DEBUGGEAR****************************/
+/***********************DATOS PARA DEBUGGEAR*******************sx*********/
 /***************************************************************************/
 /***************************************************************************/
 //print_r($this->request->data);echo "\n";
@@ -99,94 +96,120 @@ $precio = $precio.' Gs.'; //PRECIO
 /***************************************************************************/
 /***************************************************************************/
 
+// set font
+$fontname = $pdf->addTTFfont('fonts/Calibri.ttf', 'TrueTypeUnicode', '', 32);
 
-//Primera parte de creacion del pdf
-// create new PDF document
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-
-
-// set document information
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nambrena');
-$pdf->SetTitle('Nambrena');
-$pdf->SetSubject('Nambrena');
-$pdf->SetKeywords('nambrena');
-
-// set default header data
-$pdf->SetHeaderData('logo_nambre.png', 21, 'Nambrena Industria publicitaria', '');
-
-// set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
-// set default monospaced font
-$pdf->SetDefaultMonospacedFont(PDF_FONT_NAME_MAIN);
-
-//set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-//set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
-//set image scale factor
-$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
-
-
-
-// ---------------------------------------------------------
+// set default font subsetting mode
+$pdf->setFontSubsetting(true);
 
 // set font
-$pdf->SetFont('dejavusans', 'B', 18);
-
+$pdf->SetFont($fontname, '', 12);
 // add a page
 $pdf->AddPage();
 
-$pdf->Ln(1);$pdf->Ln(1);$pdf->Ln(1);
+$pdf->Ln(6);$pdf->Ln(6);
 
 
 
-$pdf->Write(0, 'Presupuesto tentativo de ' .$producto, '', 0, 'C', true, 0, false, false, 0);
 
-$pdf->Ln(5);
+$pdf->Write(0, 'De nuestra mayor consideración: ' , '', 0, 'L', true, 0, false, false, 0);
+$pdf->Ln(2);$pdf->Ln(2);$pdf->Ln(2);
+$pdf->Write(0, '          Tenemos el agrado de dirigirnos a usted, con el fin de presentarle el presupuesto de lo solicitado en nuestra página WEB. ' , '', 0, 'L', true, 0, false, false, 0);
+$pdf->Ln(2);
 
-
-$pdf->SetFont('dejavusans','I', 11);
-$pdf->Write(0, 'Detalles del producto seleccionado', '', 0, 'L', true, 0, false, false, 0);
-$pdf->Ln(1);
-$pdf->Ln(1);
-// write the first column
-
-// MultiCell($w, $h, $txt, $border=0, $align='J', $fill=0, $ln=1, $x='', $y='', $reseth=true, $stretch=0, $ishtml=false, $autopadding=true, $maxh=0)
-
-/// set color for background
-$pdf->SetFillColor(255, 255, 255);
-
-// set color for text
-$pdf->SetTextColor(0, 63, 127);
-$pdf->SetFont('dejavusans', 10);
-// write the first column
+$pdf->Ln(3);
 
 
-	                		
-	                		
-	$pdf->MultiCell(30, 0, 'Tipo', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(50, 0, $tipo, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(30, 0, 'Envio', 1, 'L', 1, 0, '', '', true, 0, false, true, 0);
-	$pdf->MultiCell(50, 0, $envio, 1, 'L', 2, 1, '', '', true, 0, false, true, 0);
+// set font
+$fontname = $pdf->addTTFfont('fonts/CalibriBold.ttf', 'TrueTypeUnicode', '', 32);
+
+// set default font subsetting mode
+$pdf->setFontSubsetting(true);
+
+// set font
+$pdf->SetFont($fontname, '', 12);
+
+$pdf->Write(0, 'Producto: '.$datos['PDF']['producto'],'', 0, 'L', true, 0, false, false, 0);
+$pdf->Write(0, 'Dimensiones: '.$datos['PDF']['ancho']. ' x '.$datos['PDF']['alto'].' metros','', 0, 'L', true, 0, false, false, 0);
+$pdf->Write(0, 'Tipo de '.$datos['PDF']['producto'].' : '.$datos['PDF']['tipo'],'', 0, 'L', true, 0, false, false, 0);
+if($datos['PDF']['envio'] == "colocado"){
+	$pdf->Write(0, 'Forma de entrega: '.'Instalación del producto en el lugar indicado','', 0, 'L', true, 0, false, false, 0);	
+}
+elseif ($datos['PDF']['envio'] == "pickup") {
+	$pdf->Write(0, 'Forma de entrega: '.'Retira el producto de nuestras oficinas','', 0, 'L', true, 0, false, false, 0);	
 	
-	$pdf->Ln(1);
-	$pdf->Ln(1);
-	$pdf->SetFontSize(12);
-	$pdf->Write(0, 'Precio estimativo: '.$precio, '', 0, 'L', true, 0, false, false, 0);
-	
+}
+elseif ($datos['PDF']['envio'] == "envio") {
+	$pdf->Write(0, 'Forma de entrega: '.'Le enviamos el producto','', 0, 'L', true, 0, false, false, 0);	
+}
+
+
+
+//$pdf->SetFont('calibri','B', 11);
+
+// set font
+$fontname = $pdf->addTTFfont('fonts/CalibriItalic.ttf', 'TrueTypeUnicode', '', 32);
+$pdf->SetFont($fontname, '', 13);
+$pdf->SetTextColor(255, 0, 0);
+$pdf->Write(0, 'Precio : ');
+$fontname = $pdf->addTTFfont('fonts/CalibriBoldItalic.ttf', 'TrueTypeUnicode', '', 32);
+$pdf->SetFont($fontname, '', 13);
+$pdf->Write(0, $datos['PDF']['precio'], '', 0, 'L', true, 0, false, false, 0);
+
+$pdf->Ln(3);$pdf->Ln(3);
+
+
+//OBS
+// set font
+$fontname = $pdf->addTTFfont('fonts/CalibriBold.ttf', 'TrueTypeUnicode', '', 32);
+
+// set default font subsetting mode
+$pdf->setFontSubsetting(true);
+$pdf->SetTextColor(0,0,0);
+
+// set font
+$pdf->SetFont($fontname, '', 13);
+$pdf->SetFillColor(0, 0, 100, 0);
+
+$pdf->Write(0, '          Obs.: LOS PRECIOS INDICADOS MAS ARRIBA ESTAN BASADOS EN LOS MEJORES' , '', 0, 'L', true, 0, false, false, 0);
+$pdf->Write(0, '          ESTANDARES DE CALIDAD CON RESPECTO A LOS MATERIALES UTILIZADOS. ESTE PRECIO' , '', 0, 'L', true, 0, false, false, 0);
+$pdf->Write(0, '          ES IVA INCLUIDO.' , '', 0, 'L', true, 0, false, false, 0);
+
+$pdf->Ln(3);$pdf->Ln(3);
+
+//DESPEDIDA
+
+// set font
+$fontname = $pdf->addTTFfont('fonts/Calibri.ttf', 'TrueTypeUnicode', '', 32);
+
+// set default font subsetting mode
+$pdf->setFontSubsetting(true);
+
+// set font
+$pdf->SetFont($fontname, '', 12);
+
+$pdf->Write(0, '     Esperando una acogida favorable, aprovechamos la ocasión para saludarles con nuestra más alta' , '', 0, 'L', true, 0, false, false, 0);
+$pdf->Write(0, '     consideración y estima.' , '', 0, 'L', true, 0, false, false, 0);
+
+$pdf->Ln(3);$pdf->Ln(3);
+
+$pdf->Write(0, '     Atentamente.' , '', 0, 'L', true, 0, false, false, 0);
+
+
+$pdf->Ln(3);$pdf->Ln(3);$pdf->Ln(3);$pdf->Ln(3);
+$pdf->Write(0, '                                                 ventas@nambrena.com.py.' , '', 0, 'L', true, 0, false, false, 0);
+                                                 
+
+
+
+
+
+
 
 
 //Close and output PDF document
 ob_clean();
-$pdf->Output('Presupuesto-'.$producto.'.pdf', 'D');
+$pdf->Output('Presupuesto-'.'producto'.'-'. date('d-m-y') .$datos['PDF']['nombre'].'.pdf', 'D');
 
 
 ?>
