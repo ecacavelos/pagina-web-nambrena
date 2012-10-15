@@ -12,8 +12,15 @@ $(function() {
 			$("#leyenda_enviando").css("display", "");
 			var name = $("input#nombre").val();
 			var email = $("input#email").val();
-
-			var dataString = 'nombre=' + name + '&email=' + email;
+			var apellido = $("input#apellido").val();
+			var empresa = $("input#empresa").val();
+			var direccion = $("input#direccion").val();
+			var ciudad = $("input#departamento").val();
+			var telefono = $("input#telefono").val();
+			var comentario = $("textarea#comentario").val();
+			
+			
+			var dataString = 'nombre=' + name + '&email=' + email + '&apellido=' + apellido + '&empresa=' + empresa + '&direccion=' + direccion + '&ciudad=' + ciudad + '&telefono=' + telefono + '&comentario=' + comentario;
 			//alert (dataString);return false;
 			$.ajax({
 				type : "POST",

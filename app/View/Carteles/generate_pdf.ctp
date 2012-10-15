@@ -225,7 +225,7 @@ $pdf->Write(0, '                                                 ventas@nambrena
 
 //Close and output PDF document
 ob_clean();
-$pdf->Output('Presupuesto-'.'producto'.'-'. date('d-m-y') .$datos['PDF']['nombre'].'.pdf', 'D');
+$pdf->Output('Presupuesto-'.$datos['PDF']['producto'].'-'. date('d-m-y') .$datos['PDF']['nombre'].'.pdf', 'D');
 
 
 ?>
