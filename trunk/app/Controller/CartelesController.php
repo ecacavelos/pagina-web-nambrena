@@ -773,8 +773,9 @@ class CartelesController extends AppController {
 		$this->Session->write('PDF.precio', $precio);
 		//PRECIO
 		$mensaje = $mensaje . "\nPrecio: " . $precio;
+		$mensaje = $mensaje. "\n\n\n--\nDpto. de Ventas - Nambrena";
 		//MENSAJE
-
+		
 		/***************************************************************************/
 		/***************************************************************************/
 		/***********************DATOS PARA DEBUGGEAR********************************/
@@ -809,10 +810,28 @@ class CartelesController extends AppController {
 		$correo_empresa_destinataria = 'test@cbi.com.py';
 
 		//MAIL PARA EL LA EMPRESA
-		//$email = new CakeEmail($servidor_mail);
-		//$email->to($correo_empresa_destinataria);
-		//$email->subject('Mensaje de un usuario a traves de la pagina');
-		//$email->send('fadfasfasdf');
+		//** Descomentar loas siguientes lineas por cada mail que se quiera enviar a la empresa. 
+		/*$email = new CakeEmail($servidor_mail);
+		$email->to("esteban.cacavelos@cbi.com.py");
+		$email->subject('Se ha solicitado presupuesto a traves de la WEB');
+		$mensaje_empresa= "Se ha solicitado un presupuesto mediante la web. Los datos del usuario son los siguientes:\n\n".
+		"Email: ".$this->request->data['email'].
+		"\nNombre: ".$this->request->data['nombre'].
+		"\nApellido: ".$this->request->data['apellido'].
+		"\nEmpresa: ".$this->request->data['empresa'].
+		"\nDirección: ".$this->request->data['direccion'].
+		"\nCiudad: ".$this->request->data['ciudad'].
+		"\nTeléfono: ".$this->request->data['telefono'].
+		"\nComentario: ".$this->request->data['comentario'];
+		
+		$mensaje_empresa=$mensaje_empresa."\n\n El mensaje enviado al cliente es el siguiente: \n\n";
+		$mensaje_empresa=$mensaje_empresa."--------------------------------------------------------\n--------------------------------------------------------\n".
+		$mensaje.
+		"\n--------------------------------------------------------\n--------------------------------------------------------\n";
+		$email->send($mensaje_empresa);*/
+		
+		
+		
 		//MAIL PARA EL CLIENTE
 		$email = new CakeEmail($servidor_mail);
 		$email->to($this->request->data['email']);
