@@ -5,6 +5,12 @@ html {
 	overflow-y: auto !important;
 }
 
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 #main-logo {
 	position: absolute;
 	width: 15%;
@@ -62,7 +68,7 @@ html {
 	/*border: 1px solid white;*/
 }
 
-#dimensiones-image-carteles img {
+#carretera {
 	position: relative;
 	width: 75%;
 	height: auto;
@@ -83,15 +89,36 @@ html {
 	bottom: 48%;
 }
 
-#ancho3 {	
+#ancho3_container {
 	position: absolute;
 	left: 53%;
-	top: -10%;
+	top: -10%;	
 }
-#alto3 {
+#ancho3 {	
+	/*position: absolute;
+	left: 53%;
+	top: -10%;*/
+	width: 75px;
+	height: 17px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+#alto3_container {
 	position: absolute;
 	left: 10%;
-	bottom: 62%;
+	bottom: 68%;
+	width: 100px;
+	overflow-x: visible;
+}
+#alto3 {
+	/*position: absolute;
+	left: 10%;
+	bottom: 62%;*/
+	width: 75px;
+	height: 17px;
+	text-align: left;
+	vertical-align: middle;	
 }
 #altopiso3 {
 	margin-right: 10px;	
@@ -111,6 +138,12 @@ button#xy_ok2 {
 
 label.error {
 	color: red;
+	
+	width: 135px;
+	position: absolute;
+	top: 0px;
+	left: -135px;
+	display: block;
 }
 
 /* OJO */
