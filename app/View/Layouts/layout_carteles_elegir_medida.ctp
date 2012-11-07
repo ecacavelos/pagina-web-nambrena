@@ -16,18 +16,15 @@
 	<!--<script type="text/javascript" src="js/script-forms.js"></script>-->
 	<?php echo $this->Html->css('xy_input'); ?>
 	<?php echo $this->Html->css('global'); ?>
-	<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
-	<?php echo $this->Html->css('smartspinner'); ?>
+	<?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>	
 	<?php echo $this->Html->script('jquery-1.7.1.min'); ?>
 	<?php echo $this->Html->script('jquery-ui-1.8.18.custom.min'); ?>
 	<?php echo $this->Html->script('jquery.validate.min'); ?>
 	<?php echo $this->Html->script('additional-methods.min'); ?>
-	<?php echo $this->Html->script('messages_es'); ?>
-	<?php /*echo $this->Html->script('smartspinner');*/ ?>
+	<?php echo $this->Html->script('messages_es'); ?>	
 	<?php echo $this->Html->script('jquery-spin'); ?>
 	<?php echo $this->Html->script('script-subpages'); ?>
 	<?php echo $this->Html->script('script-forms'); ?>
-	<?php /*echo $this->Html->script('jquery.caret.min');*/ ?>
 	<?php echo $this->Html->meta('icon'); ?>
 	<noscript>
 		<style type="text/css">
@@ -41,23 +38,21 @@
 	</noscript>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#ancho3').spin({
+			$('#ancho').spin({
 				max: 99,
 				min: 1,
-				/*imageBasePath: '../img/spin/'*/
 				<?php
-					echo "imageBasePath: '".substr(str_replace("\\", "/", $this->webroot), 0)."img/spin/"."'";															
-					/*echo "imageBasePath: '".substr(str_replace("\\", "/", WWW_ROOT), 0)."img/spin/"."'";*/
-				?>				
-			});			
-			$('#alto3').spin({
+					echo "imageBasePath: '".substr(str_replace("\\", "/", $this->webroot), 0)."img/spin/"."'";
+				?>
+			});
+			$('#alto').spin({
 				max: 99,
 				min: 1,
-				<?php															
+				<?php
 					echo "imageBasePath: '".substr(str_replace("\\", "/", $this->webroot), 0)."img/spin/"."'";
-				?>				
-			});			
-		});		
+				?>
+			});
+		});
 	</script>
 </head>
 <body>	
@@ -92,11 +87,11 @@
 				<?php echo $this->Form->create('Cartele', array('id' => 'MainForm0', 'name' => 'opa', 'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false))); ?>
 				<fieldset id="xy_fields">
 					<div id="ancho3_container">
-						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'number', 'label' => false, 'id' => 'ancho3', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
+						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'number', 'label' => false, 'id' => 'ancho', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
 					</div>
-					<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!", 'id' => 'carretera')); ?>
+					<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!", 'id' => 'carteles-ancho-alto-image')); ?>
 					<div id="alto3_container">
-						<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'number', 'label' => false, 'id' => 'alto3', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
+						<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'number', 'label' => false, 'id' => 'alto', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
 					</div>
 					<p><?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'checkbox', 'label' => 'Altura mayor a 7 metros?', 'id' => 'altopiso3')); ?></p>
 					<br />
