@@ -16,14 +16,13 @@
     <!--<script type="text/javascript" src="js/script-forms.js"></script>-->
     <?php echo $this->Html->css('xy_input'); ?>
     <?php echo $this->Html->css('global'); ?>
-    <?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>
-    <?php echo $this->Html->css('smartspinner'); ?>
+    <?php echo $this->Html->css('ui-lightness/jquery-ui-1.8.18.custom'); ?>    
     <?php echo $this->Html->script('jquery-1.7.1.min'); ?>
     <?php echo $this->Html->script('jquery-ui-1.8.18.custom.min'); ?>
     <?php echo $this->Html->script('jquery.validate.min'); ?>
     <?php echo $this->Html->script('additional-methods.min'); ?>
     <?php echo $this->Html->script('messages_es'); ?>
-	<?php echo $this->Html->script('smartspinner'); ?>
+    <?php echo $this->Html->script('jquery-spin'); ?>
     <?php echo $this->Html->script('script-subpages'); ?>
     <?php echo $this->Html->script('script-forms'); ?>
     <?php echo $this->Html->meta('icon');?>
@@ -39,8 +38,22 @@
     </noscript>
     <script type="text/javascript">
 		$(document).ready(function() {
-			$('#ancho2').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
-			$('#alto2').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
+			$('#ancho').spin({
+				max: 99,
+				min: 1,
+				<?php
+					echo "imageBasePath: '".substr(str_replace("\\", "/", $this->webroot), 0)."img/spin/"."'";
+				?>
+			});
+			$('#alto').spin({
+				max: 99,
+				min: 1,
+				<?php
+					echo "imageBasePath: '".substr(str_replace("\\", "/", $this->webroot), 0)."img/spin/"."'";
+				?>
+			});
+			/*$('#ancho2').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
+			$('#alto2').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });*/
 		});
 	</script>
 </head>
@@ -66,9 +79,13 @@
 			<div id="dimensiones-image">
             	<?php echo $this->Form->create('Impresione', array('id' => 'MainForm0' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
                 <fieldset id="xy_fields">
-					<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho2', 'min' => '1')); ?>
-                    <?php echo $this->Html->image('impresiones.dimension.png', array('alt' => "NAMBRE!")); ?>
-                    <?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto2', 'min' => '1')); ?>
+                	<div id="ancho2_container">
+						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'number', 'label' => false, 'id' => 'ancho', 'value' => 1, 'min' => '1', 'max' => '99')); ?>
+					</div>
+                    <?php echo $this->Html->image('impresiones.dimension.png', array('alt' => "NAMBRE!", 'id' => "impresiones-ancho-alto-image")); ?>
+                    <div id="alto2_container">
+                    	<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'number', 'label' => false, 'id' => 'alto', 'value' => 1, 'min' => '1', 'max' => '99')); ?>
+                    </div>
                     <br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
                 </fieldset>
             </div>
@@ -79,13 +96,11 @@
                 	$pathEnvio = $this->webroot;
 					$pathEnvio = $pathEnvio.'img/transporte.envio.png';
 					echo $this->Form->input('transporte.envio.png', array('type' => 'image','name' => 'envio', 'class' => 'envio', 'id' => 'envio'  ,  'src' => $pathEnvio,'width' => '598', 'height' => '565'));
-				?>
-                <?php
                 	$pathPickup = $this->webroot;
 					$pathPickup = $pathPickup.'img/transporte.pickup2.png';
 					echo $this->Form->input('transporte.pickup.png', array('type' => 'image','name' => 'pickup', 'class' => 'pickup', 'id' => 'pickup'  ,  'src' => $pathPickup,'width' => '598', 'height' => '565'));
+					echo $this->Form->end();
 				?>
-                <?php echo $this->Form->end(); ?>  
 			</div>
 			<div id="content-lema">
 				<!--<img src="transporte.lema.png" width="1020" height="105" alt="">-->

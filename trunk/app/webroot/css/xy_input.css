@@ -50,7 +50,7 @@ form input[type='number']::-webkit-inner-spin-button {
 	/*border: 1px solid white;*/
 }
 
-#dimensiones-image img {
+#impresiones-ancho-alto-image {
 	position: relative;
 	width: 100%;
 	height: auto;
@@ -68,7 +68,7 @@ form input[type='number']::-webkit-inner-spin-button {
 	/*border: 1px solid white;*/
 }
 
-#carretera {
+#carteles-ancho-alto-image {
 	position: relative;
 	width: 75%;
 	height: auto;
@@ -78,15 +78,16 @@ form input[type='number']::-webkit-inner-spin-button {
 
 /* OJO */
 
-#ancho2 {	
+#ancho2_container {
 	position: absolute;
 	left: 63%;
 	top: -10%;
+	
 }
-#alto2 {
+#alto2_container {
 	position: absolute;
 	left: 5%;
-	bottom: 48%;
+	bottom: 48%;	
 }
 
 #ancho3_container {
@@ -94,16 +95,6 @@ form input[type='number']::-webkit-inner-spin-button {
 	left: 53%;
 	top: -10%;	
 }
-#ancho3 {	
-	/*position: absolute;
-	left: 53%;
-	top: -10%;*/
-	width: 75px;
-	height: 17px;
-	text-align: left;
-	vertical-align: middle;
-}
-
 #alto3_container {
 	position: absolute;
 	left: 10%;
@@ -111,10 +102,14 @@ form input[type='number']::-webkit-inner-spin-button {
 	width: 100px;
 	overflow-x: visible;
 }
-#alto3 {
-	/*position: absolute;
-	left: 10%;
-	bottom: 62%;*/
+
+input#ancho {	
+	width: 75px;
+	height: 17px;
+	text-align: left;
+	vertical-align: middle;
+}
+input#alto {
 	width: 75px;
 	height: 17px;
 	text-align: left;
