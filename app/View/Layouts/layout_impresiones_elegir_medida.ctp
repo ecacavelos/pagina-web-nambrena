@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noindex" />
@@ -25,13 +25,13 @@
     <?php echo $this->Html->script('jquery-spin'); ?>
     <?php echo $this->Html->script('script-subpages'); ?>
     <?php echo $this->Html->script('script-forms'); ?>
-    <?php echo $this->Html->meta('icon');?>
+    <?php echo $this->Html->meta('icon'); ?>
     <noscript>
         <style type="text/css">
             #content-lower-menu {
                 left: 0px;
             }
-            #progressbar{
+            #progressbar {
                 display: none;
             }
         </style>
@@ -52,8 +52,6 @@
 					echo "imageBasePath: '".substr(str_replace("\\", "/", $this->webroot), 0)."img/spin/"."'";
 				?>
 			});
-			/*$('#ancho2').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });
-			$('#alto2').spinit({ height: 30, width: 100, min: 1, initValue: 1, max: 99, btnWidth: 3 });*/
 		});
 	</script>
 </head>
@@ -80,11 +78,11 @@
             	<?php echo $this->Form->create('Impresione', array('id' => 'MainForm0' , 'name' => 'opa' ,'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false)));?>
                 <fieldset id="xy_fields">
                 	<div id="ancho2_container">
-						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'number', 'label' => false, 'id' => 'ancho', 'value' => 1, 'min' => '1', 'max' => '99')); ?>
+						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho', 'value' => 1, 'min' => '1', 'max' => '99')); ?>
 					</div>
                     <?php echo $this->Html->image('impresiones.dimension.png', array('alt' => "NAMBRE!", 'id' => "impresiones-ancho-alto-image")); ?>
                     <div id="alto2_container">
-                    	<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'number', 'label' => false, 'id' => 'alto', 'value' => 1, 'min' => '1', 'max' => '99')); ?>
+                    	<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto', 'value' => 1, 'min' => '1', 'max' => '99')); ?>
                     </div>
                     <br /><button class="boton gray" id="xy_ok2" type="button" onclick="show_alert()">OK</button>
                 </fieldset>

@@ -87,11 +87,11 @@
 				<?php echo $this->Form->create('Cartele', array('id' => 'MainForm0', 'name' => 'opa', 'action' => 'ficha', 'inputDefaults' => array('div' => false, 'label' => false))); ?>
 				<fieldset id="xy_fields">
 					<div id="ancho3_container">
-						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'number', 'label' => false, 'id' => 'ancho', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
+						<?php echo $this->Form->input('ancho', array('name' => 'ancho', 'type' => 'text', 'label' => false, 'id' => 'ancho', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
 					</div>
 					<?php echo $this->Html->image('carteles.dimension.png', array('alt' => "NAMBRE!", 'id' => 'carteles-ancho-alto-image')); ?>
 					<div id="alto3_container">
-						<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'number', 'label' => false, 'id' => 'alto', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
+						<?php echo $this->Form->input('alto', array('name' => 'alto', 'type' => 'text', 'label' => false, 'id' => 'alto', 'value' => '1', 'min' => '1', 'max' => '99')); ?>
 					</div>
 					<p><?php echo $this->Form->input('altura_piso', array('name' => 'altura_piso', 'type' => 'checkbox', 'label' => 'Altura mayor a 7 metros?', 'id' => 'altopiso3')); ?></p>
 					<br />
