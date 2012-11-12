@@ -144,7 +144,7 @@ class ImpresionesController extends AppController {
 			$producto = 'Corporeo';
 		}
 		if ($datos['Impresione'] != null) {
-			$producto = 'Impresión';
+			$producto = 'Impresion';
 		}
 		if ($datos['Vinilo'] != null) {
 			$producto = 'Vinilo';
